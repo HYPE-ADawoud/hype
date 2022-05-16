@@ -3,7 +3,7 @@
    <application
         android:label="hype"
         android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/ic_notification">
         <activity
             android:name=".MainActivity"
             android:exported="true"
