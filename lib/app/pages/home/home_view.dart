@@ -33,13 +33,16 @@ class HomeView extends GetView<HomeController> {
 
   AppToolbar _buildToolbar() {
     return AppToolbar(
-      title: 'Home Page',
+      title: 'Home View',
       drawerCallBack: () => scaffoldKey.currentState?.openDrawer(),
     );
   }
 
   Widget _buildBodyView() {
-    return Container(
+    return Stack(
+      children: [
+        
+      ],
     );
   }
 
