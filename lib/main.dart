@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:hype/app/common/themes/app_theme.dart';
+import 'package:hype/app/pages/home/home_binding.dart';
 import 'package:hype/app/pages/splash/splash_binding.dart';
 import 'package:hype/setup.dart';
 
@@ -20,7 +21,7 @@ void main() async{
         // Use this line to prevent extra rebuilds
         useInheritedMediaQuery: true,
         title: "HYPE",
-        initialBinding: SplashBinding(),
+        initialBinding: HomeBinding(),
         getPages: AppPages.routes,
         initialRoute: AppPages.INITIAL,
         enableLog: BUILD_TYPE == BuildType.debug,
