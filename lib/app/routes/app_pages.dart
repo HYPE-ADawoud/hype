@@ -11,6 +11,8 @@ import 'package:hype/app/pages/auth/verify_mobile_number/verify_mobile_number_bi
 import 'package:hype/app/pages/auth/verify_mobile_number/verify_mobile_number_view.dart';
 import 'package:hype/app/pages/home/home_binding.dart';
 import 'package:hype/app/pages/home/home_view.dart';
+import 'package:hype/app/pages/side_menu/side_menu_binding.dart';
+import 'package:hype/app/pages/side_menu/side_menu_view.dart';
 import 'package:hype/app/pages/splash/splash_binding.dart';
 import 'package:hype/app/pages/splash/splash_view.dart';
 
@@ -65,6 +67,12 @@ class AppPages {
         name: _Paths.CHANGE_PASSWORD,
         page: () => ChangePasswordView(),
         binding: ChangePasswordBinding(),
+        transition: _pageTransition,
+        transitionDuration: _transitionDuration),
+    GetPage(
+        name: _Paths.SIDE_MENU,
+        page: () => SideMenuView(),
+        binding: SideMenuBinding(),
         transition: _pageTransition,
         transitionDuration: _transitionDuration),
   ];
