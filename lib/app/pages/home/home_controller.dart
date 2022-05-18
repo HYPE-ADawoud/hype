@@ -38,7 +38,7 @@ class HomeController extends GetxController {
         deadlineTime: '12:00 PM',
         assignedFor: 'Amera Ayman',
         assignedBy: 'Ahmed Dawoud',
-      isSelected: false.obs
+      isExpanded: false.obs
     ),
     TaskModel(
         name: 'Hugo Boss',
@@ -52,7 +52,7 @@ class HomeController extends GetxController {
         deadlineTime: '12:00 PM',
         assignedFor: 'Amera Ayman',
         assignedBy: 'Ahmed Dawoud',
-        isSelected: false.obs
+        isExpanded: false.obs
     ),
     TaskModel(
         name: 'Monkey Maze',
@@ -66,7 +66,7 @@ class HomeController extends GetxController {
         deadlineTime: '12:00 PM',
         assignedFor: 'Amera Ayman',
         assignedBy: 'Ahmed Dawoud',
-        isSelected: false.obs
+        isExpanded: false.obs
     ),
     TaskModel(
         name: 'Tryset',
@@ -80,7 +80,7 @@ class HomeController extends GetxController {
         deadlineTime: '12:00 PM',
         assignedFor: 'Amera Ayman',
         assignedBy: 'Ahmed Dawoud',
-        isSelected: false.obs
+        isExpanded: false.obs
     ),
     TaskModel(
         name: 'Tryset',
@@ -94,7 +94,7 @@ class HomeController extends GetxController {
         deadlineTime: '12:00 PM',
         assignedFor: 'Amera Ayman',
         assignedBy: 'Ahmed Dawoud',
-        isSelected: false.obs
+        isExpanded: false.obs
     ),
   ].obs;
   final _action = ActionCenter();
@@ -143,7 +143,7 @@ class TaskModel {
   String requestTime;
   String deadlineDay;
   String deadlineTime;
-  RxBool? isSelected;
+  RxBool isExpanded;
 
   TaskModel({required this.name,
     required this.status,
@@ -156,6 +156,6 @@ class TaskModel {
     required this.deadlineTime,
     required this.assignedFor,
     required this.assignedBy,
-    this.isSelected
+    required this.isExpanded
   });
 }

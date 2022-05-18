@@ -32,7 +32,9 @@ class TaskItem extends StatelessWidget {
 
   Widget _buildTaskHeader() {
     return InkWell(
-      onTap: (){taskModel.isSelected!.value = !taskModel.isSelected!.value;},
+      onTap: () {
+        taskModel.isExpanded.value = !taskModel.isExpanded.value;
+      },
       child: Padding(
         padding: EdgeInsets.symmetric(vertical: 8.0.h),
         child: Column(
@@ -58,7 +60,7 @@ class TaskItem extends StatelessWidget {
   Widget _buildCollapsedTaskData() {
     return Obx(() {
       return Visibility(
-          visible: taskModel.isSelected?.value??false,
+          visible: taskModel.isExpanded.value,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -77,7 +79,8 @@ class TaskItem extends StatelessWidget {
   Widget _buildTaskName() {
     return Row(
       children: [
-        Text(taskModel.name, style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.bold, color: AppColors.current.text)),
+        Text(taskModel.name,
+            style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.bold, color: AppColors.current.text)),
         Empty(width: 4.w),
         SvgPicture.asset(AppAssets.editIcon, color: AppColors.current.text, width: 14.w, height: 14.h)
       ],
@@ -88,9 +91,14 @@ class TaskItem extends StatelessWidget {
     return Row(
       children: [
         Text(taskModel.status,
-          style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.bold, fontStyle: FontStyle.italic, color: AppColors.current.text),),
+          style: TextStyle(fontSize: 16.sp,
+              fontWeight: FontWeight.bold,
+              fontStyle: FontStyle.italic,
+              color: AppColors.current.text),),
         Empty(width: 4.w),
-        Icon(CupertinoIcons.chevron_down_circle_fill, color: AppColors.current.neutral, size: 17.w,),
+        Obx(() {
+          return Icon(taskModel.isExpanded.value? CupertinoIcons.chevron_up_circle_fill:CupertinoIcons.chevron_down_circle_fill, color: AppColors.current.neutral, size: 17.w,);
+        })
       ],
     );
   }
@@ -98,16 +106,17 @@ class TaskItem extends StatelessWidget {
   Widget _buildTaskDesc() {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: AppDims.paddingSize5),
-      child: Text(taskModel.taskDesc, style: TextStyle(fontSize: AppDims.fontSizeMedium, color: AppColors.current.dimmedX)),
+      child: Text(
+          taskModel.taskDesc, style: TextStyle(fontSize: AppDims.fontSizeMedium, color: AppColors.current.dimmedX)),
     );
   }
 
   Widget _buildDivider() {
     return Divider(
-      height: 0.5.h,
-      color: AppColors.current.dimmedXX,
-      endIndent: 16.w,
-      indent: 16.w
+        height: 0.5.h,
+        color: AppColors.current.dimmedXX,
+        endIndent: 16.w,
+        indent: 16.w
     );
   }
 
@@ -119,7 +128,8 @@ class TaskItem extends StatelessWidget {
           '${taskModel.assignedFor} / Assigned by ${taskModel.assignedBy}',
           textAlign: TextAlign.center,
           maxLines: 1,
-          style: TextStyle(color: AppColors.current.dimmedXX, fontSize: AppDims.fontSizeMediumX, fontWeight: FontWeight.w700),
+          style: TextStyle(
+              color: AppColors.current.dimmedXX, fontSize: AppDims.fontSizeMediumX, fontWeight: FontWeight.w700),
         ),
       ),
     );
@@ -127,7 +137,7 @@ class TaskItem extends StatelessWidget {
 
   Widget _buildTimer() {
     return InkWell(
-      onTap: (){},
+      onTap: () {},
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: AppDims.paddingSize8),
         child: Row(
@@ -167,13 +177,15 @@ class TaskItem extends StatelessWidget {
     );
   }
 
-  Widget _buildRequestAndDeadlineDate({required String text, required String date, required String hour, required Color colorText}) {
+  Widget _buildRequestAndDeadlineDate(
+      {required String text, required String date, required String hour, required Color colorText}) {
     return Expanded(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text(text, style: TextStyle(fontSize: AppDims.fontSizeMediumX, fontWeight: FontWeight.w900, color: colorText,),),
+          Text(
+            text, style: TextStyle(fontSize: AppDims.fontSizeMediumX, fontWeight: FontWeight.w900, color: colorText,),),
           Empty(height: AppDims.paddingSize5),
           Text(date),
           Empty(height: AppDims.paddingSize5),
