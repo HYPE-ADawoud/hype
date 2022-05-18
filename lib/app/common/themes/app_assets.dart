@@ -23,4 +23,6 @@ abstract class AppAssets{
   static const String passwordIcon = 'assets/svg/password_icon.svg';
   static const String emailIcon = 'assets/svg/email_icon.svg';
   static const String playIcon = 'assets/svg/play_icon.svg';
+  static const String sideMenuIcon = 'assets/svg/side_menu.svg';
+  static const String searchIcon = 'assets/svg/search.svg';
 }

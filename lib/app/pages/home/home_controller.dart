@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:hype/app/common/action_center/action_center.dart';
 import 'package:hype/app/common/managers/api/home/i_home_api_manager.dart';
 import 'package:hype/app/common/managers/cache/i_cache_manager.dart';
+import 'package:hype/app/common/themes/app_colors.dart';
 import 'package:hype/setup.dart';
 
 class HomeController extends GetxController {
@@ -25,41 +26,75 @@ class HomeController extends GetxController {
     isVisible.value = !isVisible.value;
 
   }
-  List<HomeModel> list=[
-    HomeModel(
+  List<TaskModel> list=[
+    TaskModel(
       name: 'Hype',
-      nameJob: 'Hiring Post Account director',
+      taskDesc: 'Hiring Post Account director',
       nameEmployee:'Amera Ayman / Assigned by Amera Ayman' ,
-      status: 'completed',
-        color: const Color(0xff7CFA4D)
+      status: 'completed', color: AppColors.current.green,
+        requestDay: 'April 20, 2022',
+        requestTime: '12:00 AM',
+        deadlineDay: 'April 22, 2022',
+        deadlineTime: '12:00 PM',
+        assignedFor: 'Amera Ayman',
+        assignedBy: 'Ahmed Dawoud',
+      isSelected: false.obs
     ),
-    HomeModel(
+    TaskModel(
         name: 'Hugo Boss',
-        nameJob: 'Hiring Post Account director',
+        taskDesc: 'Hiring Post Account director',
         nameEmployee:'Amera Ayman / Assigned by Amera Ayman' ,
         status: 'Assigned',
-        color: const Color(0xffEF9D39)
+        color: AppColors.current.orange,
+        requestDay: 'April 20, 2022',
+        requestTime: '12:00 AM',
+        deadlineDay: 'April 22, 2022',
+        deadlineTime: '12:00 PM',
+        assignedFor: 'Amera Ayman',
+        assignedBy: 'Ahmed Dawoud',
+        isSelected: false.obs
     ),
-    HomeModel(
+    TaskModel(
         name: 'Monkey Maze',
-        nameJob: 'Hiring Post Account director',
+        taskDesc: 'Hiring Post Account director',
         nameEmployee:'Amera Ayman / Assigned by Amera Ayman' ,
         status: 'Client Review',
-        color: const Color(0xff4A70BA)
+        color: AppColors.current.blue ,
+        requestDay: 'April 20, 2022',
+        requestTime: '12:00 AM',
+        deadlineDay: 'April 22, 2022',
+        deadlineTime: '12:00 PM',
+        assignedFor: 'Amera Ayman',
+        assignedBy: 'Ahmed Dawoud',
+        isSelected: false.obs
     ),
-    HomeModel(
+    TaskModel(
         name: 'Tryset',
-        nameJob: 'Hiring Post Account director',
+        taskDesc: 'Hiring Post Account director',
         nameEmployee:'Amera Ayman / Assigned by Amera Ayman' ,
         status: 'In The Works',
-        color: const Color(0xffDEBAB1)
+        color: AppColors.current.peach,
+        requestDay: 'April 20, 2022',
+        requestTime: '12:00 AM',
+        deadlineDay: 'April 22, 2022',
+        deadlineTime: '12:00 PM',
+        assignedFor: 'Amera Ayman',
+        assignedBy: 'Ahmed Dawoud',
+        isSelected: false.obs
     ),
-    HomeModel(
+    TaskModel(
         name: 'Tryset',
-        nameJob: 'Hiring Post Account director',
+        taskDesc: 'Hiring Post Account director',
         nameEmployee:'Amera Ayman / Assigned by Amera Ayman' ,
         status: 'On hold',
-        color: const Color(0xff7CFA4D)
+        color: AppColors.current.green,
+        requestDay: 'April 20, 2022',
+        requestTime: '12:00 AM',
+        deadlineDay: 'April 22, 2022',
+        deadlineTime: '12:00 PM',
+        assignedFor: 'Amera Ayman',
+        assignedBy: 'Ahmed Dawoud',
+        isSelected: false.obs
     ),
   ].obs;
   final _action = ActionCenter();
@@ -95,20 +130,32 @@ class HomeController extends GetxController {
 
 }
 
-class HomeModel{
+class TaskModel {
   String name;
   String nameEmployee;
   String status;
-  String nameJob;
+  String taskDesc;
   Color color;
+  String assignedFor;
+  String assignedBy;
 
-  HomeModel(
-  {
-    required this.name,
-   required  this.status,
-   required this.nameJob,
+  String requestDay;
+  String requestTime;
+  String deadlineDay;
+  String deadlineTime;
+  RxBool? isSelected;
+
+  TaskModel({required this.name,
+    required this.status,
+    required this.taskDesc,
     required this.nameEmployee,
-    required this.color
-  }
-      );
+    required this.color,
+    required this.requestDay,
+    required this.requestTime,
+    required this.deadlineDay,
+    required this.deadlineTime,
+    required this.assignedFor,
+    required this.assignedBy,
+    this.isSelected
+  });
 }
