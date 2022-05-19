@@ -21,7 +21,7 @@ abstract class AppTheme {
       highlightColor: colors.primaryLight,
       //> app bar
       appBarTheme: AppBarTheme(
-        backgroundColor: colors.primary,
+        backgroundColor: colors.neutral,
         centerTitle: true,
       ),
       //> dialog
@@ -30,7 +30,6 @@ abstract class AppTheme {
         backgroundColor: colors.background,//.withOpacity(.6),
         shape: _roundedRecShapeOuter
       ),
-
       //> button
       textButtonTheme: TextButtonThemeData(
         style: ButtonStyle(
