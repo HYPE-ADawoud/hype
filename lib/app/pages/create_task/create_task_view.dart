@@ -7,13 +7,13 @@ import 'package:hype/app/common/themes/app_assets.dart';
 import 'package:hype/app/common/themes/app_colors.dart';
 import 'package:hype/app/common/themes/app_dims.dart';
 import 'package:hype/app/common/widgets/app_toolbar.dart';
+import 'package:hype/app/pages/create_task/create_task_controller.dart';
 import 'package:hype/app/pages/side_menu/side_menu_view.dart';
 import 'package:hype/utils/ui/empty.dart';
 
-import '../controllers/create_task_controller.dart';
-
 class CreateTaskView extends GetView<CreateTaskController> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
+  CreateTaskView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,20 +21,23 @@ class CreateTaskView extends GetView<CreateTaskController> {
       key: scaffoldKey,
       drawer: SideMenuView(),
       backgroundColor: AppColors.current.neutral,
-      body: SafeArea(
-        child: Column(
-          children: [
-            AppToolbar(
-              backCallBack: () {},
-              title: 'Create',
-            ),
-            _buildBodyView(),
-          ],
-        ),
-      ),
+      body:_buildBody(),
     );
   }
 
+  Widget _buildBody(){
+    return  SafeArea(
+      child: Column(
+        children: [
+          AppToolbar(
+            backCallBack: () {},
+            title: 'Create',
+          ),
+          _buildBodyView(),
+        ],
+      ),
+    );
+  }
   Widget _buildBodyView() {
     return Expanded(
       child: Container(
@@ -58,6 +61,8 @@ class CreateTaskView extends GetView<CreateTaskController> {
               _buildBriefDescriptionFormField(),
               ///// part five
               _buildButtonCreateTask(),
+              // Part SIX
+              _buildLine(),
             ],
           ),
         ),
@@ -213,6 +218,10 @@ class CreateTaskView extends GetView<CreateTaskController> {
         child: TextFormField(
           decoration: InputDecoration(
             border: InputBorder.none,
+            focusedBorder: InputBorder.none,
+            enabledBorder: InputBorder.none,
+            errorBorder: InputBorder.none,
+            disabledBorder: InputBorder.none,
             hintText: 'Assigned By',
             hintStyle: TextStyle(
               fontWeight: FontWeight.normal,
@@ -220,7 +229,7 @@ class CreateTaskView extends GetView<CreateTaskController> {
               color: AppColors.current.dimmedX,
             ),
           ),
-          maxLines: 2,
+
         ),
       ),
     );
@@ -239,6 +248,10 @@ class CreateTaskView extends GetView<CreateTaskController> {
         child: TextFormField(
           decoration: InputDecoration(
             border: InputBorder.none,
+            focusedBorder: InputBorder.none,
+            enabledBorder: InputBorder.none,
+            errorBorder: InputBorder.none,
+            disabledBorder: InputBorder.none,
             suffixIcon: Padding(
               padding: const EdgeInsets.only(top: 8.0, right: 8),
               child: Text(
@@ -258,7 +271,7 @@ class CreateTaskView extends GetView<CreateTaskController> {
               color: AppColors.current.dimmedX,
             ),
           ),
-          maxLines: 2,
+
         ),
       ),
     );
@@ -305,6 +318,10 @@ class CreateTaskView extends GetView<CreateTaskController> {
         child: TextFormField(
           decoration: InputDecoration(
             border: InputBorder.none,
+            focusedBorder: InputBorder.none,
+            enabledBorder: InputBorder.none,
+            errorBorder: InputBorder.none,
+            disabledBorder: InputBorder.none,
             hintText: 'Briefs',
             hintStyle: TextStyle(
               fontWeight: FontWeight.normal,
@@ -312,7 +329,6 @@ class CreateTaskView extends GetView<CreateTaskController> {
               color: AppColors.current.dimmedX,
             ),
           ),
-          maxLines: 2,
         ),
       ),
     );
@@ -644,6 +660,10 @@ class CreateTaskView extends GetView<CreateTaskController> {
         child: TextFormField(
           decoration: InputDecoration(
             border: InputBorder.none,
+            focusedBorder: InputBorder.none,
+            enabledBorder: InputBorder.none,
+            errorBorder: InputBorder.none,
+            disabledBorder: InputBorder.none,
             hintText: 'Reference Link',
             hintStyle: TextStyle(
               fontWeight: FontWeight.normal,
@@ -651,7 +671,7 @@ class CreateTaskView extends GetView<CreateTaskController> {
               color: AppColors.current.dimmedX,
             ),
           ),
-          maxLines: 5,
+
         ),
       ),
     );
@@ -670,6 +690,10 @@ class CreateTaskView extends GetView<CreateTaskController> {
         child: TextFormField(
           decoration: InputDecoration(
             border: InputBorder.none,
+            focusedBorder: InputBorder.none,
+            enabledBorder: InputBorder.none,
+            errorBorder: InputBorder.none,
+            disabledBorder: InputBorder.none,
             hintText: 'Material',
             hintStyle: TextStyle(
               fontWeight: FontWeight.normal,
@@ -677,7 +701,7 @@ class CreateTaskView extends GetView<CreateTaskController> {
               color: AppColors.current.dimmedX,
             ),
           ),
-          maxLines: 5,
+
         ),
       ),
     );
@@ -696,6 +720,10 @@ class CreateTaskView extends GetView<CreateTaskController> {
         child: TextFormField(
           decoration: InputDecoration(
             border: InputBorder.none,
+            focusedBorder: InputBorder.none,
+            enabledBorder: InputBorder.none,
+            errorBorder: InputBorder.none,
+            disabledBorder: InputBorder.none,
             hintText: 'Brand Guidelines',
             hintStyle: TextStyle(
               fontWeight: FontWeight.normal,
@@ -703,7 +731,6 @@ class CreateTaskView extends GetView<CreateTaskController> {
               color: AppColors.current.dimmedX,
             ),
           ),
-          maxLines: 5,
         ),
       ),
     );
@@ -722,6 +749,10 @@ class CreateTaskView extends GetView<CreateTaskController> {
         child: TextFormField(
           decoration: InputDecoration(
             border: InputBorder.none,
+            focusedBorder: InputBorder.none,
+            enabledBorder: InputBorder.none,
+            errorBorder: InputBorder.none,
+            disabledBorder: InputBorder.none,
             hintText: 'Brief Description',
             hintStyle: TextStyle(
               fontWeight: FontWeight.normal,
@@ -729,7 +760,7 @@ class CreateTaskView extends GetView<CreateTaskController> {
               color: AppColors.current.dimmedX,
             ),
           ),
-          maxLines: 5,
+
         ),
       ),
     );
@@ -749,6 +780,20 @@ class CreateTaskView extends GetView<CreateTaskController> {
                   fontSize: AppDims.fontSizeMediumX, color: AppColors.current.primary, fontWeight: FontWeight.w500),
             ),
             onPressed: () {}),
+      ),
+    );
+  }
+
+  Widget _buildLine() {
+    return Padding(
+      padding: EdgeInsets.only(right: 120.w, left: 120.w, bottom: 10.h),
+      child: Container(
+        height: 5.h,
+        width: 135.w,
+        decoration: BoxDecoration(
+          color: AppColors.current.text,
+          borderRadius: BorderRadius.circular(AppDims.borderRadiusLine),
+        ),
       ),
     );
   }

@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:hype/app/common/themes/app_theme.dart';
-import 'package:hype/app/pages/create_task/bindings/create_task_binding.dart';
-import 'package:hype/app/pages/home/home_binding.dart';
-import 'package:hype/app/pages/splash/splash_binding.dart';
+import 'package:hype/app/pages/admin/admin_binding.dart';
+import 'package:hype/app/pages/create_task/create_task_binding.dart';
+import 'package:hype/app/pages/department/department_binding.dart';
 import 'package:hype/setup.dart';
 
 import 'app/routes/app_pages.dart';

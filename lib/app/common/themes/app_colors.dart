@@ -19,6 +19,7 @@ class AppColors {
     required this.dimmedXX,
     required this.dimmedXXX,
     required this.dimmedXXXX,
+    required this.dimmedXXXXX,
     required this.dimmedLight,
     required this.accent,
     required this.accentLight,
@@ -49,6 +50,7 @@ class AppColors {
   Color dimmedXX;
   Color dimmedXXX;
   Color dimmedXXXX;
+  Color dimmedXXXXX;
   Color dimmedLight;
   Color success;
   Color transparent;
@@ -77,6 +79,7 @@ var _defaultLightColors = AppColors(
   dimmedXX: Colors.grey.shade700,
   dimmedXXX: const Color(0xff1C0D33),
   dimmedXXXX:const Color(0xff494949),
+  dimmedXXXXX:const Color(0xff000000),
   success: const Color.fromRGBO(0, 128, 0, 1),
   neutral: Colors.white,
   transparent: Colors.transparent,

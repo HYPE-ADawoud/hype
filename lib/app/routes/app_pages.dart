@@ -1,4 +1,6 @@
 import 'package:get/get.dart';
+import 'package:hype/app/pages/admin/admin_binding.dart';
+import 'package:hype/app/pages/admin/admin_view.dart';
 
 import 'package:hype/app/pages/auth/change_password/change_password_binding.dart';
 import 'package:hype/app/pages/auth/change_password/change_password_view.dart';
@@ -10,8 +12,10 @@ import 'package:hype/app/pages/auth/new_password/new_password_binding.dart';
 import 'package:hype/app/pages/auth/new_password/new_password_view.dart';
 import 'package:hype/app/pages/auth/verify_mobile_number/verify_mobile_number_binding.dart';
 import 'package:hype/app/pages/auth/verify_mobile_number/verify_mobile_number_view.dart';
-import 'package:hype/app/pages/create_task/bindings/create_task_binding.dart';
-import 'package:hype/app/pages/create_task/views/create_task_view.dart';
+import 'package:hype/app/pages/create_task/create_task_binding.dart';
+import 'package:hype/app/pages/create_task/create_task_view.dart';
+import 'package:hype/app/pages/department/department_binding.dart';
+import 'package:hype/app/pages/department/department_view.dart';
 import 'package:hype/app/pages/home/home_binding.dart';
 import 'package:hype/app/pages/home/home_view.dart';
 import 'package:hype/app/pages/side_menu/side_menu_binding.dart';
@@ -82,6 +86,16 @@ class AppPages {
       name: _Paths.CREATE_TASK,
       page: () => CreateTaskView(),
       binding: CreateTaskBinding(),
+    ),
+    GetPage(
+      name: _Paths.DEPARTMENT,
+      page: () => DepartmentView(),
+      binding: DepartmentBinding(),
+    ),
+    GetPage(
+      name: _Paths.ADMIN,
+      page: () => AdminView(),
+      binding: AdminBinding(),
     ),
   ];
 }
