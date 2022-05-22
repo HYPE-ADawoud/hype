@@ -1,24 +1,37 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:hype/app/common/themes/app_assets.dart';
 import 'package:hype/app/common/themes/app_colors.dart';
 import 'package:hype/app/common/themes/app_dims.dart';
 import 'package:hype/app/common/widgets/app_toolbar.dart';
+import 'package:hype/app/pages/admin/_widgets/build_content_item_brief.dart';
+import 'package:hype/app/pages/admin/_widgets/build_content_item_user.dart';
 import 'package:hype/app/pages/admin/admin_controller.dart';
+import 'package:hype/app/pages/side_menu/side_menu_view.dart';
+import 'package:hype/app/routes/app_pages.dart';
+
+import '../../../utils/ui/empty.dart';
 
 class AdminView extends StatelessWidget {
-  AdminView({Key? key}) : super(key: key);
   AdminController controller = Get.find();
   final scaffoldKey = GlobalKey<ScaffoldState>();
+  AdminView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      key: scaffoldKey,
-      backgroundColor: AppColors.current.neutral,
-      body: _buildBody(),
-    );
+    return Obx(() {
+      return DefaultTabController(
+        length: controller.selectedIndex.value,
+        child: Scaffold(
+          key: scaffoldKey,
+          backgroundColor: AppColors.current.neutral,
+          drawer: SideMenuView(),
+          body: _buildBody(),
+        ),
+      );
+    });
   }
 
   Widget _buildBody() {
@@ -26,171 +39,112 @@ class AdminView extends StatelessWidget {
       child: Column(
         children: [
           AppToolbar(
-            backCallBack: () {},
             title: 'Admin',
+            drawerCallBack: () => scaffoldKey.currentState?.openDrawer(),
+            actions: IconButton(onPressed: () {}, icon: SvgPicture.asset(AppAssets.searchIcon)),
           ),
-          _buildBodyView(),
+          _buildViewBody(),
         ],
       ),
     );
   }
 
-  Widget _buildBodyView() {
+  Widget _buildViewBody() {
     return Expanded(
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: AppDims.paddingSize24.w),
+        width: double.infinity,
         color: AppColors.current.primary,
-        child: _buildFormAdmin(),
+        child: Column(
+          children: [
+            _buildTabs(),
+            _buildContent(),
+          ],
+        ),
       ),
     );
   }
 
-  Widget _buildFormAdmin() {
-    return Column(
-      children: [
-        _buildName(),
-        _buildJobTitle(),
-        _buildDescription(),
-        _buildDoneButton(),
-        _buildSpacer(),
-        _buildLine(),
-      ],
-    );
-  }
-
-  Widget _buildName() {
+  Widget _buildTabs() {
     return Padding(
-      padding: EdgeInsets.only(top: 40.h),
+      padding: const EdgeInsets.symmetric(horizontal: 18.0, vertical: 36),
       child: Container(
-        width: 324.w,
-        height: 44.h,
+        width: 320.w,
+        height: 30.h,
         decoration: BoxDecoration(
-          color: AppColors.current.text,
-          borderRadius: BorderRadius.circular(AppDims.borderRadius),
+          borderRadius: BorderRadius.circular(AppDims.borderRadius,),
+          color: AppColors.current.neutral,
         ),
-        child: TextFormField(
-          decoration: InputDecoration(
-            border: InputBorder.none,
-            focusedBorder: InputBorder.none,
-            enabledBorder: InputBorder.none,
-            errorBorder: InputBorder.none,
-            disabledBorder: InputBorder.none,
-            hintText: 'Name',
-            hintStyle: TextStyle(
-              fontWeight: FontWeight.normal,
-              fontSize: AppDims.fontSizeMediumX,
-              color: AppColors.current.dimmedX,
+        padding: const EdgeInsets.all(2),
+        child: TabBar(
+          controller: controller.tabController,
+          onTap: (index) => controller.onTabClick(index),
+          indicator: BoxDecoration(
+            borderRadius: BorderRadius.circular(
+              AppDims.borderRadius,
             ),
+            color: AppColors.current.primary,
           ),
+          labelColor: AppColors.current.neutral,
+          unselectedLabelColor: AppColors.current.primary,
+          tabs: [
+             _buildTabUser(),
+            _buildTabBrief(),
+          ],
         ),
       ),
     );
   }
 
-  Widget _buildJobTitle() {
-    return Obx(
-      () => Padding(
-        padding: EdgeInsets.symmetric(vertical: 13.h),
-        child: Container(
-          width: 339.w,
-          height: 44.h,
-          decoration:
-              BoxDecoration(color: AppColors.current.text, borderRadius: BorderRadius.circular(AppDims.borderRadius)),
-          child: Center(
-            child: DropdownButtonHideUnderline(
-              child: DropdownButton(
-                isExpanded: true,
-                // Initial status Value
-                value: controller.dropDownValue.value,
-                icon: Icon(
-                  Icons.keyboard_arrow_down,
-                  color: AppColors.current.primary,
-                  size: 30.h,
-                ),
-                // list of status items
-                items: controller.items.map((String items) {
-                  return DropdownMenuItem(
-                    alignment: Alignment.center,
-                    value: items,
-                    child: Text(
-                      items,
-                      style: TextStyle(
-                          color: AppColors.current.dimmedXXXX,
-                          fontWeight: FontWeight.w600,
-                          fontSize: AppDims.fontSizeMedium.sp),
-                    ),
-                  );
-                }).toList(),
-                onChanged: (newValue) => controller.setSelected(newValue),
-              ),
-            ),
-          ),
+  Widget _buildTabUser() {
+    return Tab(
+      child: Text(
+        'Users',
+        style: TextStyle(
+          fontSize: AppDims.fontSizeMedium,
+          fontWeight: FontWeight.w400,
         ),
       ),
     );
   }
 
-  Widget _buildDescription() {
-    return Padding(
-      padding: EdgeInsets.only(bottom: 237.0.h),
-      child: Container(
-        width: 324.w,
-        height: 143.h,
-        decoration: BoxDecoration(
-          color: AppColors.current.text,
-          borderRadius: BorderRadius.circular(AppDims.borderRadius),
-        ),
-        child: TextField(
-          decoration: InputDecoration(
-            border: InputBorder.none,
-            focusedBorder: InputBorder.none,
-            enabledBorder: InputBorder.none,
-            errorBorder: InputBorder.none,
-            disabledBorder: InputBorder.none,
-            hintText: 'Description',
-            hintStyle: TextStyle(
-              fontWeight: FontWeight.normal,
-              fontSize: AppDims.fontSizeMediumX,
-              color: AppColors.current.dimmedX,
-            ),
-          ),
+  Widget _buildTabBrief() {
+    return Tab(
+      child: Text(
+        'Brief Types',
+        style: TextStyle(
+          fontSize: AppDims.fontSizeMedium,
+          fontWeight: FontWeight.w400,
         ),
       ),
     );
   }
 
-  Widget _buildDoneButton() {
-    return SizedBox(
-      width: 324.w,
-      height: 60.h,
-      child: ElevatedButton(
-        onPressed: () {},
-        child: Text(
-          'Done',
-          style: TextStyle(
-              fontSize: AppDims.fontSizeMediumX, color: AppColors.current.primary, fontWeight: FontWeight.w500),
-        ),
-      ),
+  Widget _buildContent() {
+    return Expanded(
+      child: TabBarView(
+          controller: controller.tabController,
+          children: [
+            _buildContentUser(),
+            _buildContentBrief(),
+      ]),
     );
   }
 
-  Widget _buildSpacer() {
-    return const Spacer(
-      flex: 1,
+  Widget _buildContentUser(){
+    return ListView.builder(
+      itemCount: controller.users.length,
+      itemBuilder: (context, index) {
+        return ContentItemUser(user: controller.users[index],);
+      },
     );
   }
 
-  Widget _buildLine() {
-    return Padding(
-      padding: EdgeInsets.only(right: 120.w, left: 120.w, bottom: 10.h),
-      child: Container(
-        height: 5.h,
-        width: 135.w,
-        decoration: BoxDecoration(
-          color: AppColors.current.text,
-          borderRadius: BorderRadius.circular(AppDims.borderRadiusLine),
-        ),
-      ),
+  Widget _buildContentBrief(){
+    return ListView.builder(
+      itemCount: controller.briefs.length,
+      itemBuilder: (context, index) {
+        return ContentItemBrief(brief: controller.briefs[index],);
+      },
     );
   }
 }
