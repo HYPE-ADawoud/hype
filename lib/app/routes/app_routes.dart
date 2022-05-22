@@ -26,6 +26,13 @@ abstract class Routes {
   static const DETAILS_COURSE = _Paths.DETAILS_COURSE;
   static const BIRTH_PLACE = _Paths.BIRTH_PLACE;
   static const PRIZES = _Paths.PRIZES;
+  static const CREATE_TASK = _Paths.CREATE_TASK;
+  static const DEPARTMENT = _Paths.DEPARTMENT;
+  static const ADMIN_DEPARTMENT = _Paths.ADMIN_DEPARTMENT;
+    static const ADMIN = _Paths.ADMIN;
+  static const EDIT_ADMIN_USER = _Paths.EDIT_ADMIN_USER;
+  static const EDIT_ADMIN_BRIEF = _Paths.EDIT_ADMIN_BRIEF;
+
 }
 
 abstract class _Paths {
@@ -51,4 +58,12 @@ abstract class _Paths {
   static const TRAINING_COURSE = '/training_course';
   static const DETAILS_COURSE = '/details_course';
   static const PRIZES = '/prizes';
+  static const CREATE_TASK = '/create-task';
+  static const DEPARTMENT = '/department';
+  static const ADMIN_DEPARTMENT = '/admin_department';
+  static const ADMIN = '/admin';
+  static const EDIT_ADMIN_USER = '/edit_admin_user';
+  static const EDIT_ADMIN_BRIEF = '/edit_admin_brief';
+
+
 }
