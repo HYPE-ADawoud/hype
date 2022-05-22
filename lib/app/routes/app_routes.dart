@@ -30,7 +30,7 @@ abstract class Routes {
   static const DEPARTMENT = _Paths.DEPARTMENT;
   static const ADMIN_DEPARTMENT = _Paths.ADMIN_DEPARTMENT;
     static const ADMIN = _Paths.ADMIN;
-
+  static const EDIT_ADMIN_USER = _Paths.EDIT_ADMIN_USER;
 }
 
 abstract class _Paths {
@@ -60,6 +60,7 @@ abstract class _Paths {
   static const DEPARTMENT = '/department';
   static const ADMIN_DEPARTMENT = '/admin_department';
   static const ADMIN = '/admin';
+  static const EDIT_ADMIN_USER = '/edit_admin_user';
 
 
 }
