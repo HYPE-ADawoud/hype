@@ -49,7 +49,7 @@ class ContentItemUser extends StatelessWidget {
           style: TextStyle(fontSize: 20.sp, color: AppColors.current.primary, fontWeight: FontWeight.w700),
         ),
         InkWell(
-          onTap: () => Get.toNamed(Routes.ADMIN),
+          onTap: () => Get.toNamed(Routes.EDIT_ADMIN_USER),
           child: SvgPicture.asset(
             AppAssets.editIcon,
             width: 16,

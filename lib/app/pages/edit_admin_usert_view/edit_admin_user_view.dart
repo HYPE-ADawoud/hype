@@ -65,26 +65,26 @@ class EditAdminUserView extends StatelessWidget {
   Widget _buildEmail() {
     return Padding(
       padding: EdgeInsets.only(top: 40.h),
-      child: Container(
-        width: 324.w,
-        height: 44.h,
-        decoration: BoxDecoration(
-          color: AppColors.current.text,
-          borderRadius: BorderRadius.circular(AppDims.borderRadius),
-        ),
-        child: TextFormField(
-          decoration: InputDecoration(
-            border: InputBorder.none,
-            focusedBorder: InputBorder.none,
-            enabledBorder: InputBorder.none,
-            errorBorder: InputBorder.none,
-            disabledBorder: InputBorder.none,
-            hintText: 'Email',
-            hintStyle: TextStyle(
-              fontWeight: FontWeight.normal,
-              fontSize: AppDims.fontSizeMediumX,
-              color: AppColors.current.dimmedX,
+      child: TextFormField(
+        decoration: InputDecoration(
+          border: InputBorder.none,
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(8.0),
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(8.0),
+            borderSide: BorderSide(
+              color: AppColors.current.primary,
+              width: 1.0,
             ),
+          ),
+          errorBorder: InputBorder.none,
+          disabledBorder: InputBorder.none,
+          hintText: 'Email',
+          hintStyle: TextStyle(
+            fontWeight: FontWeight.normal,
+            fontSize: AppDims.fontSizeMediumX,
+            color: AppColors.current.dimmedX,
           ),
         ),
       ),
@@ -94,60 +94,33 @@ class EditAdminUserView extends StatelessWidget {
   Widget _buildUserName() {
     return Padding(
       padding: EdgeInsets.only(top: 13.h),
-      child: Container(
-        width: 324.w,
-        height: 44.h,
-        decoration: BoxDecoration(
-          color: AppColors.current.text,
-          borderRadius: BorderRadius.circular(AppDims.borderRadius),
-        ),
-        child: TextFormField(
-          decoration: InputDecoration(
-            border: InputBorder.none,
-            focusedBorder: InputBorder.none,
-            enabledBorder: InputBorder.none,
-            errorBorder: InputBorder.none,
-            disabledBorder: InputBorder.none,
-            hintText: 'UserName',
-            hintStyle: TextStyle(
-              fontWeight: FontWeight.normal,
-              fontSize: AppDims.fontSizeMediumX,
-              color: AppColors.current.dimmedX,
+      child: TextFormField(
+        decoration: InputDecoration(
+          border: InputBorder.none,
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(8.0),
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(8.0),
+            borderSide: BorderSide(
+              color: AppColors.current.primary,
+              width: 1.0,
             ),
+          ),
+          errorBorder: InputBorder.none,
+          disabledBorder: InputBorder.none,
+          hintText: 'UserName',
+          hintStyle: TextStyle(
+            fontWeight: FontWeight.normal,
+            fontSize: AppDims.fontSizeMediumX,
+            color: AppColors.current.dimmedX,
           ),
         ),
       ),
     );
   }
 
-  Widget _buildFirstName() {
-    return Padding(
-      padding: EdgeInsets.only(top: 13.h),
-      child: Container(
-        width: 324.w,
-        height: 44.h,
-        decoration: BoxDecoration(
-          color: AppColors.current.text,
-          borderRadius: BorderRadius.circular(AppDims.borderRadius),
-        ),
-        child: TextFormField(
-          decoration: InputDecoration(
-            border: InputBorder.none,
-            focusedBorder: InputBorder.none,
-            enabledBorder: InputBorder.none,
-            errorBorder: InputBorder.none,
-            disabledBorder: InputBorder.none,
-            hintText: 'FirstName',
-            hintStyle: TextStyle(
-              fontWeight: FontWeight.normal,
-              fontSize: AppDims.fontSizeMediumX,
-              color: AppColors.current.dimmedX,
-            ),
-          ),
-        ),
-      ),
-    );
-  }
+
 
   Widget _buildRole() {
     return Obx(
@@ -234,30 +207,57 @@ class EditAdminUserView extends StatelessWidget {
       ),
     );
   }
-
+  Widget _buildFirstName() {
+    return Padding(
+      padding: EdgeInsets.only(top: 13.h),
+      child: TextFormField(
+        decoration: InputDecoration(
+          border: InputBorder.none,
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(8.0),
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(8.0),
+            borderSide: BorderSide(
+              color: AppColors.current.primary,
+              width: 1.0,
+            ),
+          ),
+          errorBorder: InputBorder.none,
+          disabledBorder: InputBorder.none,
+          hintText: 'FirstName',
+          hintStyle: TextStyle(
+            fontWeight: FontWeight.normal,
+            fontSize: AppDims.fontSizeMediumX,
+            color: AppColors.current.dimmedX,
+          ),
+        ),
+      ),
+    );
+  }
   Widget _buildLastName() {
     return Padding(
       padding: EdgeInsets.only(top: 13.h),
-      child: Container(
-        width: 324.w,
-        height: 44.h,
-        decoration: BoxDecoration(
-          color: AppColors.current.text,
-          borderRadius: BorderRadius.circular(AppDims.borderRadius),
-        ),
-        child: TextFormField(
-          decoration: InputDecoration(
-            border: InputBorder.none,
-            focusedBorder: InputBorder.none,
-            enabledBorder: InputBorder.none,
-            errorBorder: InputBorder.none,
-            disabledBorder: InputBorder.none,
-            hintText: 'LastName',
-            hintStyle: TextStyle(
-              fontWeight: FontWeight.normal,
-              fontSize: AppDims.fontSizeMediumX,
-              color: AppColors.current.dimmedX,
+      child: TextFormField(
+        decoration: InputDecoration(
+          border: InputBorder.none,
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(8.0),
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(8.0),
+            borderSide: BorderSide(
+              color: AppColors.current.primary,
+              width: 1.0,
             ),
+          ),
+          errorBorder: InputBorder.none,
+          disabledBorder: InputBorder.none,
+          hintText: 'LastName',
+          hintStyle: TextStyle(
+            fontWeight: FontWeight.normal,
+            fontSize: AppDims.fontSizeMediumX,
+            color: AppColors.current.dimmedX,
           ),
         ),
       ),
@@ -267,26 +267,26 @@ class EditAdminUserView extends StatelessWidget {
   Widget _buildPhone() {
     return Padding(
       padding: EdgeInsets.only(top: 13.h,bottom: 100.h),
-      child: Container(
-        width: 324.w,
-        height: 44.h,
-        decoration: BoxDecoration(
-          color: AppColors.current.text,
-          borderRadius: BorderRadius.circular(AppDims.borderRadius),
-        ),
-        child: TextFormField(
-          decoration: InputDecoration(
-            border: InputBorder.none,
-            focusedBorder: InputBorder.none,
-            enabledBorder: InputBorder.none,
-            errorBorder: InputBorder.none,
-            disabledBorder: InputBorder.none,
-            hintText: 'Phone',
-            hintStyle: TextStyle(
-              fontWeight: FontWeight.normal,
-              fontSize: AppDims.fontSizeMediumX,
-              color: AppColors.current.dimmedX,
+      child: TextFormField(
+        decoration: InputDecoration(
+          border: InputBorder.none,
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(8.0),
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(8.0),
+            borderSide: BorderSide(
+              color: AppColors.current.primary,
+              width: 1.0,
             ),
+          ),
+          errorBorder: InputBorder.none,
+          disabledBorder: InputBorder.none,
+          hintText: 'Phone',
+          hintStyle: TextStyle(
+            fontWeight: FontWeight.normal,
+            fontSize: AppDims.fontSizeMediumX,
+            color: AppColors.current.dimmedX,
           ),
         ),
       ),

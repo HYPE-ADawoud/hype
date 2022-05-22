@@ -57,7 +57,7 @@ class ContentItemBrief extends StatelessWidget {
           style: TextStyle(fontSize: 16.sp, color: AppColors.current.primary, fontWeight: FontWeight.w700),
         ),
         InkWell(
-          onTap: () => Get.toNamed(Routes.ADMIN),
+          onTap: () => Get.toNamed(Routes.EDIT_ADMIN_BRIEF),
           child: SvgPicture.asset(
             AppAssets.editIcon,
             width: 16,

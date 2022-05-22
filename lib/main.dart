@@ -3,8 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:hype/app/common/themes/app_theme.dart';
 import 'package:hype/app/pages/admin/admin_binding.dart';
-import 'package:hype/app/pages/create_task/create_task_binding.dart';
-import 'package:hype/app/pages/edit_admin_usert_view/edit_admin_user_binding.dart';
 import 'package:hype/setup.dart';
 
 import 'app/routes/app_pages.dart';
@@ -22,7 +20,7 @@ void main() async{
         // Use this line to prevent extra rebuilds
         useInheritedMediaQuery: true,
         title: "HYPE",
-        initialBinding: EditAdminUserBinding(),
+        initialBinding: AdminBinding(),
         getPages: AppPages.routes,
         initialRoute: AppPages.INITIAL,
         enableLog: BUILD_TYPE == BuildType.debug,

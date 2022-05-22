@@ -17,6 +17,8 @@ import 'package:hype/app/pages/create_task/create_task_binding.dart';
 import 'package:hype/app/pages/create_task/create_task_view.dart';
 import 'package:hype/app/pages/department/department_binding.dart';
 import 'package:hype/app/pages/department/department_view.dart';
+import 'package:hype/app/pages/edit_admin_brief/edit_admin_brief_binding.dart';
+import 'package:hype/app/pages/edit_admin_brief/edit_admin_brief_view.dart';
 import 'package:hype/app/pages/edit_admin_usert_view/edit_admin_user_binding.dart';
 import 'package:hype/app/pages/edit_admin_usert_view/edit_admin_user_view.dart';
 import 'package:hype/app/pages/home/home_binding.dart';
@@ -34,7 +36,7 @@ const _transitionDuration = Duration(milliseconds: 700);
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.EDIT_ADMIN_USER;
+  static const INITIAL = Routes.ADMIN;
 
   static final routes = [
     GetPage(
@@ -109,6 +111,11 @@ class AppPages {
       name: _Paths.EDIT_ADMIN_USER,
       page: () => EditAdminUserView(),
       binding: EditAdminUserBinding(),
+    ),
+    GetPage(
+      name: _Paths.EDIT_ADMIN_BRIEF,
+      page: () => EditAdminBriefView(),
+      binding: EditAdminBriefBinding(),
     ),
   ];
 }
