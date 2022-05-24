@@ -11,6 +11,7 @@ class AppColors {
 
   AppColors({
     required this.primary,
+    required this.primaryX,
     required this.secondary,
     required this.primaryLight,
     required this.text,
@@ -21,6 +22,8 @@ class AppColors {
     required this.dimmedXXXX,
     required this.dimmedXXXXX,
     required this.dimmedLight,
+    required this.dimmedLightX,
+    required this.dimmedLightXX,
     required this.accent,
     required this.accentLight,
     required this.error,
@@ -34,9 +37,11 @@ class AppColors {
     required this.brown,
     required this.peach,
     required this.orange,
+
   });
 
   Color primary;
+  Color primaryX;
   Color secondary;
   Color primaryLight;
   Color accent;
@@ -52,6 +57,8 @@ class AppColors {
   Color dimmedXXXX;
   Color dimmedXXXXX;
   Color dimmedLight;
+  Color dimmedLightX;
+  Color dimmedLightXX;
   Color success;
   Color transparent;
   Color green;
@@ -65,6 +72,7 @@ class AppColors {
 var _defaultLightColors = AppColors(
   background: const Color(0xFFCE2028),
   primary: const Color(0xFFCE2028),
+  primaryX:const Color(0xffB02E2E),
   primaryLight: const Color(0xffF44336),
   secondary: const Color(0xffCB7FE6),
   accent: const Color(0xffF47321),
@@ -74,6 +82,8 @@ var _defaultLightColors = AppColors(
 
   /// gray colors.
   dimmedLight: Colors.grey.shade300,
+  dimmedLightX: Colors.grey.shade100,
+  dimmedLightXX: const Color(0xffECECEC),
   dimmed: Colors.grey.shade400,
   dimmedX: Colors.grey.shade600,
   dimmedXX: Colors.grey.shade700,

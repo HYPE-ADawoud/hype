@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:hype/app/common/themes/app_theme.dart';
+import 'package:hype/app/pages/account_allocation/acount_allocation_binding.dart';
+import 'package:hype/app/pages/account_allocation_edit/edit_acount_allocation_binding.dart';
 import 'package:hype/app/pages/admin/admin_binding.dart';
 import 'package:hype/setup.dart';
 
@@ -20,7 +22,7 @@ void main() async{
         // Use this line to prevent extra rebuilds
         useInheritedMediaQuery: true,
         title: "HYPE",
-        initialBinding: AdminBinding(),
+        initialBinding: EditAccountAllocationBinding(),
         getPages: AppPages.routes,
         initialRoute: AppPages.INITIAL,
         enableLog: BUILD_TYPE == BuildType.debug,
