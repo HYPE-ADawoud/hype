@@ -84,11 +84,11 @@ class AccountAllocationView extends StatelessWidget {
           vertical: AppDims.paddingSize24),
       child: Container(
         width: 339.w,
-        height: 580.h,
+        height: 700.h,
         decoration: BoxDecoration(borderRadius: BorderRadius.circular(12), color: AppColors.current.neutral),
         child: Stack(
           children: [
-            Column(
+             Column(
               mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -472,7 +472,7 @@ Widget _buildAddAccountAllocation(){
         child: InkWell(
           onTap: ()=>Get.toNamed(Routes.ADD_ACCOUNT_ALLOCATION),
           child: SvgPicture.asset(
-            AppAssets.addIcon,
+            AppAssets.plusIcon,
             fit: BoxFit.scaleDown,
           ),
         ),

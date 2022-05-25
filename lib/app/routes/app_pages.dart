@@ -5,6 +5,8 @@ import 'package:hype/app/pages/account_allocation_add/add_acount_allocation_bind
 import 'package:hype/app/pages/account_allocation_add/add_acount_allocation_view.dart';
 import 'package:hype/app/pages/account_allocation_edit/edit_acount_allocation_binding.dart';
 import 'package:hype/app/pages/account_allocation_edit/edit_acount_allocation_view.dart';
+import 'package:hype/app/pages/account_allocation_home/acount_allocation_view.dart';
+import 'package:hype/app/pages/account_allocation_home/main_acount_allocation_binding.dart';
 import 'package:hype/app/pages/admin/admin_binding.dart';
 import 'package:hype/app/pages/admin/admin_view.dart';
 import 'package:hype/app/pages/admin_department/admin_department_binding.dart';
@@ -42,7 +44,7 @@ const _transitionDuration = Duration(milliseconds: 700);
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.ADD_ACCOUNT_ALLOCATION;
+  static const INITIAL = Routes.MAIN_ACCOUNT_ALLOCATION;
 
   static final routes = [
     GetPage(
@@ -124,6 +126,17 @@ class AppPages {
       binding: EditAdminBriefBinding(),
     ),
     GetPage(
+      name: _Paths.MAIN_ACCOUNT_ALLOCATION,
+      page: () => MainAccountAllocationView(),
+      binding: MainAccountAllocationBinding(),
+    ),
+
+    GetPage(
+      name: _Paths.ADD_ACCOUNT_ALLOCATION,
+      page: () => AddAccountAllocationView(),
+      binding: AddAccountAllocationBinding(),
+    ),
+    GetPage(
       name: _Paths.ACCOUNT_ALLOCATION,
       page: () => AccountAllocationView(),
       binding: AccountAllocationBinding(),
@@ -133,10 +146,7 @@ class AppPages {
       page: () => EditAccountAllocationView(),
       binding: EditAccountAllocationBinding(),
     ),
-    GetPage(
-      name: _Paths.ADD_ACCOUNT_ALLOCATION,
-      page: () => AddAccountAllocationView(),
-      binding: AddAccountAllocationBinding(),
-    ),
+
+
   ];
 }

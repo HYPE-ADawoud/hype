@@ -50,19 +50,21 @@ class AddAccountAllocationView extends StatelessWidget {
               _buildNumberOfPosts(),
               _buildVFX(),
               _buildStories(),
+              _buildModeration(),
               _buildPhotography(),
               _buildVideography(),
+              _buildMediaBuying(),
               _buildTextFormBrief(),
-              _buildVFX(),
-              _buildVFX(),
-              _buildVFX(),
-              _buildVFX(),
-              _buildVFX(),
-              _buildVFX(),
-              _buildVFX(),
-              _buildVFX(),
-              _buildVFX(),
-              _buildVFX(),
+              _buildAssignedToAssistantManager(),
+              _buildAssignedToPhotography(),
+              _buildAssignedToMotionGraphicsVFX(),
+              _buildAssignedToCreativeCopyright(),
+              _buildAssignedToPhotoEditing(),
+              _buildAssignedToVideoEditting(),
+              _buildAssignedToAssignedArtDepartment(),
+              _buildAssignedToMediaBuying(),
+              _buildAssignedToDevelopmentTeam(),
+              _buildAssignedToMarketing(),
               _buildAssignedToModerator(),
               _buildSubmitButton(),
               _buildLine(),
@@ -100,9 +102,6 @@ class AddAccountAllocationView extends StatelessWidget {
       ),
     );
   }
-
-
-
   Widget _buildNumberOfPosts() {
     return Obx(
           () => Padding(
@@ -146,7 +145,6 @@ class AddAccountAllocationView extends StatelessWidget {
       ),
     );
   }
-
   Widget _buildVFX() {
     return Obx(
       () => Padding(
@@ -190,7 +188,6 @@ class AddAccountAllocationView extends StatelessWidget {
       ),
     );
   }
-
   Widget _buildStories() {
     return Obx(
           () => Padding(
@@ -234,7 +231,57 @@ class AddAccountAllocationView extends StatelessWidget {
       ),
     );
   }
+  Widget _buildModeration(){
+    return  Obx((){
+      return Padding(
+        padding: EdgeInsets.symmetric(
+          vertical: 8.h,
+          horizontal: 25.h,),
+        child: Row(
+          children: [
+            Text('Moderation',style: TextStyle(
+                fontSize: AppDims.fontSizeMediumX,
+                color: AppColors.current.text
+            ),
+            ),
+            Radio(value: 1,
+                hoverColor: AppColors.current.neutral,
+                focusColor: AppColors.current.neutral,
+                activeColor: AppColors.current.neutral,
+                groupValue:controller.id.value,
+                onChanged: (value){
+                  controller.radioButtonItem.value = 'yes';
+                  controller.id.value=1;
+                }),
+            Text('Yes',
+              style: TextStyle(
+                  fontSize: AppDims.fontSizeMediumX,
+                  color: AppColors.current.text
+              ),
+            ),
+            Empty(width: 16,),
+            Radio(value: 2,
 
+                hoverColor: AppColors.current.neutral,
+                focusColor: AppColors.current.neutral,
+                activeColor: AppColors.current.neutral,
+                groupValue:controller.id.value,
+                onChanged: (value){
+                  controller.radioButtonItem.value = 'No';
+                  controller.id.value=2;
+
+                }),
+            Text('No',
+              style: TextStyle(
+                  fontSize: AppDims.fontSizeMediumX,
+                  color: AppColors.current.text
+              ),
+            ),
+          ],
+        ),
+      );
+    });
+  }
   Widget _buildPhotography() {
     return Obx(
           () => Padding(
@@ -278,7 +325,6 @@ class AddAccountAllocationView extends StatelessWidget {
       ),
     );
   }
-
   Widget _buildVideography() {
     return Obx(
           () => Padding(
@@ -322,6 +368,57 @@ class AddAccountAllocationView extends StatelessWidget {
       ),
     );
   }
+  Widget _buildMediaBuying(){
+    return  Obx((){
+      return Padding(
+          padding: EdgeInsets.symmetric(
+          vertical: 8.h,
+          horizontal: 25.h,),
+        child: Row(
+          children: [
+            Text('MediaBuying',style: TextStyle(
+              fontSize: AppDims.fontSizeMediumX,
+              color: AppColors.current.text
+            ),
+            ),
+            Radio(value: 1,
+                hoverColor: AppColors.current.neutral,
+                focusColor: AppColors.current.neutral,
+                activeColor: AppColors.current.neutral,
+                groupValue:controller.id.value,
+                onChanged: (value){
+              controller.radioButtonItem.value = 'yes';
+              controller.id.value=1;
+                }),
+            Text('Yes',
+              style: TextStyle(
+                  fontSize: AppDims.fontSizeMediumX,
+                  color: AppColors.current.text
+              ),
+            ),
+            Empty(width: 16,),
+            Radio(value: 2,
+
+                hoverColor: AppColors.current.neutral,
+                focusColor: AppColors.current.neutral,
+                activeColor: AppColors.current.neutral,
+                groupValue:controller.id.value,
+                onChanged: (value){
+                  controller.radioButtonItem.value = 'No';
+                  controller.id.value=2;
+
+                }),
+            Text('No',
+              style: TextStyle(
+                  fontSize: AppDims.fontSizeMediumX,
+                  color: AppColors.current.text
+              ),
+            ),
+          ],
+        ),
+      );
+    });
+  }
 
   Widget _buildTextFormBrief() {
     return Padding(
@@ -349,7 +446,6 @@ class AddAccountAllocationView extends StatelessWidget {
       ),
     );
   }
-
   Widget _buildAssignedToAssistantManager() {
     return Obx(
           () => Padding(
@@ -365,14 +461,14 @@ class AddAccountAllocationView extends StatelessWidget {
               child: DropdownButton(
                 isExpanded: true,
                 // Initial status Value
-                value: controller.dropDownVideographyValue.value,
+                value: controller.dropDownAssignedToAssistantManagerValue.value,
                 icon: Icon(
                   Icons.keyboard_arrow_down,
                   color: AppColors.current.primary,
                   size: 30.h,
                 ),
                 // list of status items
-                items: controller.itemsVideography.map((String items) {
+                items: controller.itemsAssignedToAssistantManager.map((String items) {
                   return DropdownMenuItem(
                     alignment: Alignment.center,
                     value: items,
@@ -385,7 +481,7 @@ class AddAccountAllocationView extends StatelessWidget {
                     ),
                   );
                 }).toList(),
-                onChanged: (newValue) => controller.setSelectedVideography(newValue),
+                onChanged: (newValue) => controller.setSelectedAssignedToAssistantManager(newValue),
               ),
             ),
           ),
@@ -408,14 +504,14 @@ class AddAccountAllocationView extends StatelessWidget {
               child: DropdownButton(
                 isExpanded: true,
                 // Initial status Value
-                value: controller.dropDownVideographyValue.value,
+                value: controller.dropDownAssignedToPhotographyValue.value,
                 icon: Icon(
                   Icons.keyboard_arrow_down,
                   color: AppColors.current.primary,
                   size: 30.h,
                 ),
                 // list of status items
-                items: controller.itemsVideography.map((String items) {
+                items: controller.itemsAssignedToPhotography.map((String items) {
                   return DropdownMenuItem(
                     alignment: Alignment.center,
                     value: items,
@@ -428,7 +524,7 @@ class AddAccountAllocationView extends StatelessWidget {
                     ),
                   );
                 }).toList(),
-                onChanged: (newValue) => controller.setSelectedVideography(newValue),
+                onChanged: (newValue) => controller.setSelectedAssignedToPhotography(newValue),
               ),
             ),
           ),
@@ -451,14 +547,14 @@ class AddAccountAllocationView extends StatelessWidget {
               child: DropdownButton(
                 isExpanded: true,
                 // Initial status Value
-                value: controller.dropDownVideographyValue.value,
+                value: controller.dropDownPhAssignedToMotionGraphicsVFXValue.value,
                 icon: Icon(
                   Icons.keyboard_arrow_down,
                   color: AppColors.current.primary,
                   size: 30.h,
                 ),
                 // list of status items
-                items: controller.itemsVideography.map((String items) {
+                items: controller.itemsAssignedToMotionGraphicsVFX.map((String items) {
                   return DropdownMenuItem(
                     alignment: Alignment.center,
                     value: items,
@@ -471,7 +567,7 @@ class AddAccountAllocationView extends StatelessWidget {
                     ),
                   );
                 }).toList(),
-                onChanged: (newValue) => controller.setSelectedVideography(newValue),
+                onChanged: (newValue) => controller.setSelectedAssignedToMotionGraphicsVFX(newValue),
               ),
             ),
           ),
@@ -494,14 +590,14 @@ class AddAccountAllocationView extends StatelessWidget {
               child: DropdownButton(
                 isExpanded: true,
                 // Initial status Value
-                value: controller.dropDownVideographyValue.value,
+                value: controller.dropDownAssignedToCreativeCopyrightValue.value,
                 icon: Icon(
                   Icons.keyboard_arrow_down,
                   color: AppColors.current.primary,
                   size: 30.h,
                 ),
                 // list of status items
-                items: controller.itemsVideography.map((String items) {
+                items: controller.itemsAssignedToCreativeCopyright.map((String items) {
                   return DropdownMenuItem(
                     alignment: Alignment.center,
                     value: items,
@@ -514,7 +610,7 @@ class AddAccountAllocationView extends StatelessWidget {
                     ),
                   );
                 }).toList(),
-                onChanged: (newValue) => controller.setSelectedVideography(newValue),
+                onChanged: (newValue) => controller.setSelectedAssignedToCreativeCopyright(newValue),
               ),
             ),
           ),
@@ -537,14 +633,14 @@ class AddAccountAllocationView extends StatelessWidget {
               child: DropdownButton(
                 isExpanded: true,
                 // Initial status Value
-                value: controller.dropDownVideographyValue.value,
+                value: controller.dropDownAssignedToPhotoEditingValue.value,
                 icon: Icon(
                   Icons.keyboard_arrow_down,
                   color: AppColors.current.primary,
                   size: 30.h,
                 ),
                 // list of status items
-                items: controller.itemsVideography.map((String items) {
+                items: controller.itemsAssignedToPhotoEditing.map((String items) {
                   return DropdownMenuItem(
                     alignment: Alignment.center,
                     value: items,
@@ -557,7 +653,7 @@ class AddAccountAllocationView extends StatelessWidget {
                     ),
                   );
                 }).toList(),
-                onChanged: (newValue) => controller.setSelectedVideography(newValue),
+                onChanged: (newValue) => controller.setSelectedAssignedToPhotoEditing(newValue),
               ),
             ),
           ),
@@ -580,14 +676,14 @@ class AddAccountAllocationView extends StatelessWidget {
               child: DropdownButton(
                 isExpanded: true,
                 // Initial status Value
-                value: controller.dropDownVideographyValue.value,
+                value: controller.dropDownAssignedToVideoEdittingValue.value,
                 icon: Icon(
                   Icons.keyboard_arrow_down,
                   color: AppColors.current.primary,
                   size: 30.h,
                 ),
                 // list of status items
-                items: controller.itemsVideography.map((String items) {
+                items: controller.itemsAssignedToVideoEditting.map((String items) {
                   return DropdownMenuItem(
                     alignment: Alignment.center,
                     value: items,
@@ -600,7 +696,7 @@ class AddAccountAllocationView extends StatelessWidget {
                     ),
                   );
                 }).toList(),
-                onChanged: (newValue) => controller.setSelectedVideography(newValue),
+                onChanged: (newValue) => controller.setSelectedAssignedToVideoEditting(newValue),
               ),
             ),
           ),
@@ -623,14 +719,14 @@ class AddAccountAllocationView extends StatelessWidget {
               child: DropdownButton(
                 isExpanded: true,
                 // Initial status Value
-                value: controller.dropDownVideographyValue.value,
+                value: controller.dropDownAssignedToArtDepartmentValue.value,
                 icon: Icon(
                   Icons.keyboard_arrow_down,
                   color: AppColors.current.primary,
                   size: 30.h,
                 ),
                 // list of status items
-                items: controller.itemsVideography.map((String items) {
+                items: controller.itemsAssignedToArtDepartment.map((String items) {
                   return DropdownMenuItem(
                     alignment: Alignment.center,
                     value: items,
@@ -643,7 +739,7 @@ class AddAccountAllocationView extends StatelessWidget {
                     ),
                   );
                 }).toList(),
-                onChanged: (newValue) => controller.setSelectedVideography(newValue),
+                onChanged: (newValue) => controller.setSelectedAssignedToArtDepartment(newValue),
               ),
             ),
           ),
@@ -666,14 +762,14 @@ class AddAccountAllocationView extends StatelessWidget {
               child: DropdownButton(
                 isExpanded: true,
                 // Initial status Value
-                value: controller.dropDownVideographyValue.value,
+                value: controller.dropDownAssignedToMediaBuyingValue.value,
                 icon: Icon(
                   Icons.keyboard_arrow_down,
                   color: AppColors.current.primary,
                   size: 30.h,
                 ),
                 // list of status items
-                items: controller.itemsVideography.map((String items) {
+                items: controller.itemsAssignedToMediaBuying.map((String items) {
                   return DropdownMenuItem(
                     alignment: Alignment.center,
                     value: items,
@@ -686,7 +782,7 @@ class AddAccountAllocationView extends StatelessWidget {
                     ),
                   );
                 }).toList(),
-                onChanged: (newValue) => controller.setSelectedVideography(newValue),
+                onChanged: (newValue) => controller.setSelectedAssignedToMediaBuying(newValue),
               ),
             ),
           ),
@@ -709,14 +805,14 @@ class AddAccountAllocationView extends StatelessWidget {
               child: DropdownButton(
                 isExpanded: true,
                 // Initial status Value
-                value: controller.dropDownVideographyValue.value,
+                value: controller.dropDownAssignedToDevelopmentTeam.value,
                 icon: Icon(
                   Icons.keyboard_arrow_down,
                   color: AppColors.current.primary,
                   size: 30.h,
                 ),
                 // list of status items
-                items: controller.itemsVideography.map((String items) {
+                items: controller.itemsAssignedToDevelopmentTeam.map((String items) {
                   return DropdownMenuItem(
                     alignment: Alignment.center,
                     value: items,
@@ -729,7 +825,7 @@ class AddAccountAllocationView extends StatelessWidget {
                     ),
                   );
                 }).toList(),
-                onChanged: (newValue) => controller.setSelectedVideography(newValue),
+                onChanged: (newValue) => controller.setSelectedAssignedToDevelopmentTeam(newValue),
               ),
             ),
           ),
@@ -752,14 +848,14 @@ class AddAccountAllocationView extends StatelessWidget {
               child: DropdownButton(
                 isExpanded: true,
                 // Initial status Value
-                value: controller.dropDownVideographyValue.value,
+                value: controller.dropDownAssignedToMarketing.value,
                 icon: Icon(
                   Icons.keyboard_arrow_down,
                   color: AppColors.current.primary,
                   size: 30.h,
                 ),
                 // list of status items
-                items: controller.itemsVideography.map((String items) {
+                items: controller.itemsAssignedToMarketing.map((String items) {
                   return DropdownMenuItem(
                     alignment: Alignment.center,
                     value: items,
@@ -772,7 +868,7 @@ class AddAccountAllocationView extends StatelessWidget {
                     ),
                   );
                 }).toList(),
-                onChanged: (newValue) => controller.setSelectedVideography(newValue),
+                onChanged: (newValue) => controller.setSelectedAssignedToMarketing(newValue),
               ),
             ),
           ),
