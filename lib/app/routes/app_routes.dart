@@ -34,6 +34,7 @@ abstract class Routes {
   static const EDIT_ADMIN_BRIEF = _Paths.EDIT_ADMIN_BRIEF;
   static const ACCOUNT_ALLOCATION = _Paths.ACCOUNT_ALLOCATION;
   static const EDIT_ACCOUNT_ALLOCATION = _Paths.EDIT_ACCOUNT_ALLOCATION;
+  static const ADD_ACCOUNT_ALLOCATION = _Paths.ADD_ACCOUNT_ALLOCATION;
 
 }
 
@@ -68,6 +69,7 @@ abstract class _Paths {
   static const EDIT_ADMIN_BRIEF = '/edit_admin_brief';
   static const ACCOUNT_ALLOCATION = '/account_allocation';
   static const EDIT_ACCOUNT_ALLOCATION = '/edit_account_allocation';
+  static const ADD_ACCOUNT_ALLOCATION = '/add_account_allocation';
 
 
 }

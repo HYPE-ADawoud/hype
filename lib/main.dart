@@ -22,7 +22,7 @@ void main() async{
         // Use this line to prevent extra rebuilds
         useInheritedMediaQuery: true,
         title: "HYPE",
-        initialBinding: EditAccountAllocationBinding(),
+        initialBinding: AccountAllocationBinding(),
         getPages: AppPages.routes,
         initialRoute: AppPages.INITIAL,
         enableLog: BUILD_TYPE == BuildType.debug,

@@ -469,9 +469,12 @@ Widget _buildAddAccountAllocation(){
             ),
           ],
         ),
-        child: SvgPicture.asset(
-          AppAssets.addIcon,
-          fit: BoxFit.scaleDown,
+        child: InkWell(
+          onTap: ()=>Get.toNamed(Routes.ADD_ACCOUNT_ALLOCATION),
+          child: SvgPicture.asset(
+            AppAssets.addIcon,
+            fit: BoxFit.scaleDown,
+          ),
         ),
       ),
       alignment: Alignment.centerRight,
