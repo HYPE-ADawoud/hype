@@ -21,6 +21,8 @@ import 'package:hype/app/pages/auth/new_password/new_password_binding.dart';
 import 'package:hype/app/pages/auth/new_password/new_password_view.dart';
 import 'package:hype/app/pages/auth/verify_mobile_number/verify_mobile_number_binding.dart';
 import 'package:hype/app/pages/auth/verify_mobile_number/verify_mobile_number_view.dart';
+import 'package:hype/app/pages/client/client_binding.dart';
+import 'package:hype/app/pages/client/client_view.dart';
 import 'package:hype/app/pages/create_task/create_task_binding.dart';
 import 'package:hype/app/pages/create_task/create_task_view.dart';
 import 'package:hype/app/pages/department/department_binding.dart';
@@ -44,7 +46,7 @@ const _transitionDuration = Duration(milliseconds: 700);
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.MAIN_ACCOUNT_ALLOCATION;
+  static const INITIAL = Routes.Client;
 
   static final routes = [
     GetPage(
@@ -146,7 +148,11 @@ class AppPages {
       page: () => EditAccountAllocationView(),
       binding: EditAccountAllocationBinding(),
     ),
-
+    GetPage(
+      name: _Paths.Client,
+      page: () => ClientView(),
+      binding: ClientBinding(),
+    ),
 
   ];
 }

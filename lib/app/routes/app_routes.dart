@@ -36,6 +36,7 @@ abstract class Routes {
   static const ACCOUNT_ALLOCATION = _Paths.ACCOUNT_ALLOCATION;
   static const EDIT_ACCOUNT_ALLOCATION = _Paths.EDIT_ACCOUNT_ALLOCATION;
   static const ADD_ACCOUNT_ALLOCATION = _Paths.ADD_ACCOUNT_ALLOCATION;
+  static const Client = _Paths.Client;
 
 }
 
@@ -72,6 +73,7 @@ abstract class _Paths {
   static const ACCOUNT_ALLOCATION = '/account_allocation';
   static const EDIT_ACCOUNT_ALLOCATION = '/edit_account_allocation';
   static const ADD_ACCOUNT_ALLOCATION = '/add_account_allocation';
+  static const Client = '/client';
 
 
 }
