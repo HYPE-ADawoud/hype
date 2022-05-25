@@ -12,8 +12,8 @@ dependencies:
   dio: ^4.0.6
   connectivity_plus: ^2.2.1
   rxdart: ^0.27.3
-  get: ^4.6.1
-  get_it: ^7.2.0
+  get: 4.6.1
+  get_it: 7.2.0
   shared_preferences: ^2.0.13
   flutter_svg: ^1.0.3
   form_field_validator: ^1.1.0
@@ -39,6 +39,7 @@ dependencies:
   rive: 0.8.4
   flutter_html: ^3.0.0-alpha.3
   flutter_screenutil: ^5.4.0+1
+  align_positioned: ^3.0.0
 
 dev_dependencies:
   flutter_test:
