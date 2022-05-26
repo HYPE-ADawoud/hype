@@ -9,7 +9,6 @@ import 'package:hype/setup.dart';
 class HomeController extends GetxController {
   final _cacheManager = DI.find<ICacheManager>();
   final _apiManager = DI.find<IHomeApiManager>();
-
   late Stopwatch stopwatch;
 
   String formatTime(int milliseconds) {

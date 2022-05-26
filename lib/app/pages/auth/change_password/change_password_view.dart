@@ -29,7 +29,7 @@ class ChangePasswordView extends GetView<ChangePasswordController> {
           boxShadow: [BoxShadow(color: AppColors.current.dimmed.withOpacity(0.3), blurRadius: 10)]
       ),
       child: Padding(
-        padding: AppDims.pagePadding,
+        padding: AppDimens.pagePadding,
         child: Form(
           key: _keyForm,
           child: SingleChildScrollView(

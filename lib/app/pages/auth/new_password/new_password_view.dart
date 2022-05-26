@@ -23,7 +23,7 @@ class NewPasswordView extends  GetView<NewPasswordController> {
 
   Widget _buildBodyView() {
     return Padding(
-      padding: AppDims.pagePadding,
+      padding: AppDimens.pagePadding,
       child: Form(
         key: _keyForm,
         child: SingleChildScrollView(

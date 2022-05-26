@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:form_field_validator/form_field_validator.dart';
 import 'package:get/get.dart';
@@ -7,7 +8,7 @@ import 'package:hype/app/common/themes/app_colors.dart';
 import 'package:hype/app/common/themes/app_dims.dart';
 import 'package:hype/app/common/widgets/big_btn.dart';
 import 'package:hype/utils/ui/empty.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'login_controller.dart';
 
 class LoginView extends GetView<LoginController> {
@@ -25,33 +26,33 @@ class LoginView extends GetView<LoginController> {
     return Form(
       key: controller.keyForm,
       child: SingleChildScrollView(
-        padding: AppDims.pagePadding,
+        padding: AppDimens.pagePadding,
         child: SafeArea(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
 
-              Empty(height: AppDims.paddingSize20,),
+              Empty(height: AppDimens.paddingSize20,),
 
               /// logo
               _buildToolbar,
 
-              Empty(height: AppDims.paddingSize20,),
+              Empty(height: AppDimens.paddingSize20,),
 
               /// mobile no
               _buildUsernameTextField(),
 
-              Empty(height: AppDims.paddingSize10,),
+              Empty(height: AppDimens.paddingSize10,),
 
               /// password
               _buildPasswordTextField(),
 
-              Empty(height: AppDims.paddingSize10,),
+              Empty(height: AppDimens.paddingSize10,),
 
               /// forgot password
               _buildForgotPassword(),
 
-              Empty(height: AppDims.paddingSize20,),
+              Empty(height: AppDimens.paddingSize20,),
 
               /// login
               _buildLoginButton()

@@ -9,6 +9,7 @@ abstract class AppAssets{
   // svg
   static const String hypeLogo = 'assets/svg/hype_logo.svg';
   static const String accountIcon = 'assets/svg/account_icon.svg';
+  static const String dashboardIcon = 'assets/svg/dashboard_icon.svg';
   static const String adminIcon = 'assets/svg/admin_icon.svg';
   static const String clientIcon = 'assets/svg/client_icon.svg';
   static const String completeIcon = 'assets/svg/complete_icon.svg';
@@ -25,4 +26,8 @@ abstract class AppAssets{
   static const String playIcon = 'assets/svg/play_icon.svg';
   static const String sideMenuIcon = 'assets/svg/side_menu.svg';
   static const String searchIcon = 'assets/svg/search.svg';
+
+  static const String homeIcon = 'assets/svg/home_icon.svg';
+  static const String profileIcon = 'assets/svg/profile_icon.svg';
+  static const String notificationIcon = 'assets/svg/notification_icon.svg';
 }

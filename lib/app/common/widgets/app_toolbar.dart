@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:get/get.dart';
 import 'package:hype/app/common/themes/app_assets.dart';
 import 'package:hype/app/common/themes/app_colors.dart';
 import 'package:hype/app/common/themes/app_dims.dart';
 
 class AppToolbar extends StatelessWidget {
   final String? title;
-  Function? backCallBack;
-  Function? drawerCallBack;
-  Widget? actions;
+  final Function? backCallBack;
+  final Function? drawerCallBack;
+  final Widget? actions;
 
-  AppToolbar({Key? key, this.title, this.backCallBack, this.drawerCallBack, this.actions}) : super(key: key);
+  const AppToolbar({Key? key, this.title, this.backCallBack, this.drawerCallBack, this.actions}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +23,7 @@ class AppToolbar extends StatelessWidget {
             BoxShadow(color: AppColors.current.dimmed.withOpacity(0.15), blurRadius: 3, offset: const Offset(0, 6))
           ]),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: AppDims.paddingSize8),
+        padding: const EdgeInsets.symmetric(horizontal: AppDimens.paddingSize8),
         child: Row(
           children: [
             /// back button
@@ -38,7 +37,7 @@ class AppToolbar extends StatelessWidget {
                   ))
             else if (drawerCallBack != null)
               IconButton(
-                  padding: const EdgeInsets.symmetric(horizontal: AppDims.paddingSize8),
+                  padding: const EdgeInsets.symmetric(horizontal: AppDimens.paddingSize8),
                   onPressed: () => drawerCallBack!(),
                   icon: SvgPicture.asset(AppAssets.sideMenuIcon, width: 30.w))
             else
@@ -51,7 +50,7 @@ class AppToolbar extends StatelessWidget {
                   ? Container(
                       width: 120.w,
                       height: 60.h,
-                      padding: const EdgeInsets.all(AppDims.paddingSize10),
+                      padding: const EdgeInsets.all(AppDimens.paddingSize10),
                       child: SvgPicture.asset(AppAssets.hypeLogo, color: AppColors.current.primary,),
                     )
                   : Text(
@@ -59,7 +58,7 @@ class AppToolbar extends StatelessWidget {
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
                       style: TextStyle(
-                          fontSize: AppDims.fontSizeLarge,
+                          fontSize: AppDimens.fontSizeLarge,
                           color: AppColors.current.primary,
                           fontWeight: FontWeight.bold),
                     ),

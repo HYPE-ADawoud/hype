@@ -27,7 +27,7 @@ class AdminFiltrationPage extends StatelessWidget {
   Widget _buildListView() {
     return Expanded(
       child: ListView.separated(
-          padding: AppDims.pagePadding,
+          padding: AppDimens.pagePadding,
           itemCount: list.length,
           separatorBuilder: (_, __) => const SizedBox(
                 height: 10,

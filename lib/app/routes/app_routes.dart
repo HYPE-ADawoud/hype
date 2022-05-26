@@ -16,10 +16,8 @@ abstract class Routes {
   static const TOP_COMPANIES = _Paths.TOP_COMPANIES;
   static const SIDE_MENU = _Paths.SIDE_MENU;
   static const DIGITAL_POINTER = _Paths.DIGITAL_POINTER;
-  static const PROFILE = _Paths.PROFILE;
   static const NEW_POST = _Paths.NEW_POST;
   static const COMMENTS = _Paths.COMMENT_VIEW;
-  static const NOTIFICATION = _Paths.NOTIFICATION_VIEW;
   static const MY_VILLAGE = _Paths.MY_VILLAGE;
   static const CHANGE_PASSWORD = _Paths.CHANGE_PASSWORD;
   static const TRAINING_COURSE = _Paths.TRAINING_COURSE;
@@ -27,6 +25,9 @@ abstract class Routes {
   static const BIRTH_PLACE = _Paths.BIRTH_PLACE;
   static const PRIZES = _Paths.PRIZES;
   static const CREATE_TASK = _Paths.CREATE_TASK;
+  static const MAIN = _Paths.MAIN;
+  static const PROFILE =  _Paths.PROFILE;
+  static const NOTIFICATION = _Paths.NOTIFICATION;
 }
 
 abstract class _Paths {
@@ -42,9 +43,7 @@ abstract class _Paths {
   static const TOP_COMPANIES = '/top-companies';
   static const SIDE_MENU = '/side-menu';
   static const DIGITAL_POINTER = '/digital-pointer';
-  static const PROFILE = '/profile';
   static const NEW_POST = '/new-post';
-  static const NOTIFICATION_VIEW = '/notification';
   static const COMMENT_VIEW = '/comment';
   static const MY_VILLAGE = '/my-village';
   static const CHANGE_PASSWORD = '/change-password';
@@ -53,4 +52,7 @@ abstract class _Paths {
   static const DETAILS_COURSE = '/details_course';
   static const PRIZES = '/prizes';
   static const CREATE_TASK = '/create-task';
+  static const MAIN = '/main';
+  static const PROFILE = '/profile';
+  static const NOTIFICATION = '/notification';
 }

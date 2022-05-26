@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class AppDims{
+class AppDimens{
 
-  AppDims._();
+  AppDimens._();
 
   /// elevations
   static const double elevation = 5;
@@ -44,5 +44,6 @@ class AppDims{
   static const double paddingSize16 = 16;
   static const double paddingSize18 = 18;
   static const double paddingSize20 = 20;
+  static const double paddingSize56 = 56;
 
 }

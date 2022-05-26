@@ -20,7 +20,7 @@ class TaskItem extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 18.w, vertical: 8.h),
       child: Container(
           decoration: BoxDecoration(
-              color: AppColors.current.text, borderRadius: BorderRadius.circular(AppDims.borderRadiusOuter)),
+              color: AppColors.current.text, borderRadius: BorderRadius.circular(AppDimens.borderRadiusOuter)),
           child: Column(
             children: [
               _buildTaskHeader(),
@@ -40,7 +40,7 @@ class TaskItem extends StatelessWidget {
         child: Column(
           children: [
             _buildTaskNameAndStatus(),
-            Empty(height: AppDims.paddingSize5,),
+            Empty(height: AppDimens.paddingSize5,),
             _buildTaskDesc(),
           ],
         ),
@@ -51,7 +51,7 @@ class TaskItem extends StatelessWidget {
   Container _buildTaskNameAndStatus() {
     return Container(
         height: 37.h,
-        padding: const EdgeInsets.symmetric(horizontal: AppDims.paddingSize16),
+        padding: const EdgeInsets.symmetric(horizontal: AppDimens.paddingSize16),
         color: taskModel.color,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [_buildTaskName(), _buildTaskStatus()],));
@@ -105,9 +105,9 @@ class TaskItem extends StatelessWidget {
 
   Widget _buildTaskDesc() {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: AppDims.paddingSize5),
+      padding: const EdgeInsets.symmetric(vertical: AppDimens.paddingSize5),
       child: Text(
-          taskModel.taskDesc, style: TextStyle(fontSize: AppDims.fontSizeMedium, color: AppColors.current.dimmedX)),
+          taskModel.taskDesc, style: TextStyle(fontSize: AppDimens.fontSizeMedium, color: AppColors.current.dimmedX)),
     );
   }
 
@@ -122,14 +122,14 @@ class TaskItem extends StatelessWidget {
 
   Widget _buildTaskAssignedPersons() {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: AppDims.paddingSize8),
+      padding: const EdgeInsets.symmetric(vertical: AppDimens.paddingSize8),
       child: FittedBox(
         child: Text(
           '${taskModel.assignedFor} / Assigned by ${taskModel.assignedBy}',
           textAlign: TextAlign.center,
           maxLines: 1,
           style: TextStyle(
-              color: AppColors.current.dimmedXX, fontSize: AppDims.fontSizeMediumX, fontWeight: FontWeight.w700),
+              color: AppColors.current.dimmedXX, fontSize: AppDimens.fontSizeMediumX, fontWeight: FontWeight.w700),
         ),
       ),
     );
@@ -139,13 +139,13 @@ class TaskItem extends StatelessWidget {
     return InkWell(
       onTap: () {},
       child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: AppDims.paddingSize8),
+        padding: const EdgeInsets.symmetric(vertical: AppDimens.paddingSize8),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text('00:00:06:45',
                 style: TextStyle(
-                    fontWeight: FontWeight.w700, color: AppColors.current.dimmedXXX, fontSize: AppDims.fontSizeLarge)),
+                    fontWeight: FontWeight.w700, color: AppColors.current.dimmedXXX, fontSize: AppDimens.fontSizeLarge)),
 
             Empty(width: 8.w,),
 
@@ -158,7 +158,7 @@ class TaskItem extends StatelessWidget {
 
   Widget _buildTaskDates() {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: AppDims.paddingSize15, vertical: AppDims.paddingSize8),
+      padding: const EdgeInsets.symmetric(horizontal: AppDimens.paddingSize15, vertical: AppDimens.paddingSize8),
       child: Row(
         children: [
           _buildRequestAndDeadlineDate(
@@ -185,10 +185,10 @@ class TaskItem extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            text, style: TextStyle(fontSize: AppDims.fontSizeMediumX, fontWeight: FontWeight.w900, color: colorText,),),
-          Empty(height: AppDims.paddingSize5),
+            text, style: TextStyle(fontSize: AppDimens.fontSizeMediumX, fontWeight: FontWeight.w900, color: colorText,),),
+          Empty(height: AppDimens.paddingSize5),
           Text(date),
-          Empty(height: AppDims.paddingSize5),
+          Empty(height: AppDimens.paddingSize5),
           Text(hour),
         ],
       ),
