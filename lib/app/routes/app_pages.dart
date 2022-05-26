@@ -25,6 +25,8 @@ import 'package:hype/app/pages/client/client_binding.dart';
 import 'package:hype/app/pages/client/client_view.dart';
 import 'package:hype/app/pages/create_task/create_task_binding.dart';
 import 'package:hype/app/pages/create_task/create_task_view.dart';
+import 'package:hype/app/pages/dashboard/dashboad_view.dart';
+import 'package:hype/app/pages/dashboard/dashboard_binding.dart';
 import 'package:hype/app/pages/department/department_binding.dart';
 import 'package:hype/app/pages/department/department_view.dart';
 import 'package:hype/app/pages/edit_admin_brief/edit_admin_brief_binding.dart';
@@ -46,7 +48,7 @@ const _transitionDuration = Duration(milliseconds: 700);
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.Client;
+  static const INITIAL = Routes.DASHBOARD;
 
   static final routes = [
     GetPage(
@@ -149,10 +151,14 @@ class AppPages {
       binding: EditAccountAllocationBinding(),
     ),
     GetPage(
-      name: _Paths.Client,
+      name: _Paths.CLIENT,
       page: () => ClientView(),
       binding: ClientBinding(),
     ),
-
+    GetPage(
+      name: _Paths.DASHBOARD,
+      page: () => DashboardView(),
+      binding: DashboardBinding(),
+    ),
   ];
 }
