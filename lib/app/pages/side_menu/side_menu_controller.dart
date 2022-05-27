@@ -20,7 +20,7 @@ class SideMenuController extends GetxController {
   Future<void> onInit() async {
     super.onInit();
     //
-    await _getUserData();
+       await _getUserData();
     //
     initMenuItems();
   }

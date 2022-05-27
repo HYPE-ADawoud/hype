@@ -6,9 +6,9 @@ import 'package:hype/app/common/themes/app_colors.dart';
 
 import 'side_menu_controller.dart';
 
-class SideMenuView extends GetView<SideMenuController> {
-  const SideMenuView({Key? key}) : super(key: key);
+class SideMenuView extends StatelessWidget {
 
+  final controller = Get.put(SideMenuController());
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -16,7 +16,7 @@ class SideMenuView extends GetView<SideMenuController> {
       child: SafeArea(
         child: Column(
           children: [
-            _buildUserData(),
+           // _buildUserData(),
 
             Divider(color: AppColors.current.accentLight,),
 

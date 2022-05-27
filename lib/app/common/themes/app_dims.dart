@@ -11,6 +11,7 @@ class AppDims{
   /// borders
   static const double borderRadius = 5;
   static const double borderRadiusOuter = 10;
+  static const double borderRadiusLine = 100;
 
   /// content paddings
   static const EdgeInsets contentPadding = EdgeInsets.symmetric(vertical: 12, horizontal: 20);
@@ -44,5 +45,7 @@ class AppDims{
   static const double paddingSize16 = 16;
   static const double paddingSize18 = 18;
   static const double paddingSize20 = 20;
+  static const double paddingSize24 = 24;
+
 
 }
