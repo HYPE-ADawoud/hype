@@ -10,14 +10,7 @@ class HomeController extends GetxController {
   final _cacheManager = DI.find<ICacheManager>();
   final _apiManager = DI.find<IHomeApiManager>();
 
-  late Stopwatch stopwatch;
 
-
-  var isVisible = true.obs;
-  void showVisible() {
-    isVisible.value = !isVisible.value;
-
-  }
   List<TaskModel> list=[
     TaskModel(
       name: 'Hype',
@@ -106,21 +99,15 @@ class HomeController extends GetxController {
   void onInit() {
     super.onInit();
     _onLoad();
-    stopwatch = Stopwatch();
+
   }
-  void handleStartStop() {
-    if (stopwatch.isRunning) {
-      stopwatch.stop();
-    } else {
-      stopwatch.start();
-    }
 
   }
   void _onLoad() async {
 
   }
 
-}
+
 
 class TaskModel {
   String name;

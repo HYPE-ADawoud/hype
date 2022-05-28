@@ -19,6 +19,7 @@ abstract class Routes {
   static const ADMIN_DEPARTMENT = _Paths.ADMIN_DEPARTMENT;
   static const ADD_ADMIN_DEPARTMENT = _Paths.ADD_ADMIN_DEPARTMENT;
   static const ADMIN = _Paths.ADMIN;
+  static const ADD_ADMIN_USER = _Paths.ADD_ADMIN_USER;
   static const EDIT_ADMIN_USER = _Paths.EDIT_ADMIN_USER;
   static const EDIT_ADMIN_BRIEF = _Paths.EDIT_ADMIN_BRIEF;
   static const MAIN_ACCOUNT_ALLOCATION = _Paths.MAIN_ACCOUNT_ALLOCATION;
@@ -26,8 +27,12 @@ abstract class Routes {
   static const EDIT_ACCOUNT_ALLOCATION = _Paths.EDIT_ACCOUNT_ALLOCATION;
   static const ADD_ACCOUNT_ALLOCATION = _Paths.ADD_ACCOUNT_ALLOCATION;
   static const CLIENT = _Paths.CLIENT;
+  static const EDIT_CLIENT = _Paths.EDIT_CLIENT;
   static const DASHBOARD = _Paths.DASHBOARD;
   static const NOTIFICATION = _Paths.NOTIFICATION;
+  static const TASK = _Paths.TASK;
+  static const EDIT_TASK = _Paths.EDIT_TASK;
+
 }
 
 abstract class _Paths {
@@ -47,13 +52,17 @@ abstract class _Paths {
   static const ADD_ADMIN_DEPARTMENT = '/add_admin_department';
   static const ADMIN = '/admin';
   static const EDIT_ADMIN_USER = '/edit_admin_user';
-  static const EDIT_ADMIN_BRIEF = '/edit_admin_brief';
+  static const ADD_ADMIN_USER = '/add_admin_user';
+  static const EDIT_ADMIN_BRIEF = '/edit_brief_type';
   static const MAIN_ACCOUNT_ALLOCATION = '/main_account_allocation';
   static const ACCOUNT_ALLOCATION = '/account_allocation';
   static const EDIT_ACCOUNT_ALLOCATION = '/edit_account_allocation';
   static const ADD_ACCOUNT_ALLOCATION = '/add_account_allocation';
   static const CLIENT = '/client';
+  static const EDIT_CLIENT = '/edit_client';
   static const DASHBOARD = '/dashboard';
   static const NOTIFICATION = '/notification';
+  static const TASK = '/task';
+  static const EDIT_TASK = '/edit_task';
 
 }

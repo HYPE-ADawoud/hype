@@ -38,7 +38,7 @@ class AppColors {
     required this.brown,
     required this.peach,
     required this.orange,
-
+    required this.orangeX,
   });
 
   Color primary;
@@ -69,6 +69,7 @@ class AppColors {
   Color brown;
   Color peach;
   Color orange;
+  Color orangeX;
 }
 
 var _defaultLightColors = AppColors(
@@ -102,4 +103,5 @@ var _defaultLightColors = AppColors(
   brown: Colors.brown,
   peach: const Color(0xffDEBAB1),
   orange: const Color(0xffEF9D39),
+  orangeX: const Color(0xffD28B58),
 );

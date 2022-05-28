@@ -7,6 +7,10 @@ import 'package:hype/app/pages/account_allocation_edit/edit_acount_allocation_bi
 import 'package:hype/app/pages/account_allocation_edit/edit_acount_allocation_view.dart';
 import 'package:hype/app/pages/account_allocation_home/acount_allocation_view.dart';
 import 'package:hype/app/pages/account_allocation_home/main_acount_allocation_binding.dart';
+import 'package:hype/app/pages/add_admin_user/add_admin_user_binding.dart';
+import 'package:hype/app/pages/add_admin_user/add_admin_user_view.dart';
+import 'package:hype/app/pages/add_brief_type/add_brief_type_binding.dart';
+import 'package:hype/app/pages/add_brief_type/add_brief_type_view.dart';
 import 'package:hype/app/pages/admin/admin_binding.dart';
 import 'package:hype/app/pages/admin/admin_view.dart';
 import 'package:hype/app/pages/admin_department/admin_department_binding.dart';
@@ -25,16 +29,16 @@ import 'package:hype/app/pages/auth/verify_mobile_number/verify_mobile_number_bi
 import 'package:hype/app/pages/auth/verify_mobile_number/verify_mobile_number_view.dart';
 import 'package:hype/app/pages/client/client_binding.dart';
 import 'package:hype/app/pages/client/client_view.dart';
+import 'package:hype/app/pages/client_edit/edit_client_binding.dart';
+import 'package:hype/app/pages/client_edit/edit_client_view.dart';
 import 'package:hype/app/pages/create_task/create_task_binding.dart';
 import 'package:hype/app/pages/create_task/create_task_view.dart';
 import 'package:hype/app/pages/dashboard/dashboad_view.dart';
 import 'package:hype/app/pages/dashboard/dashboard_binding.dart';
 import 'package:hype/app/pages/department/department_binding.dart';
 import 'package:hype/app/pages/department/department_view.dart';
-import 'package:hype/app/pages/edit_admin_brief/edit_admin_brief_binding.dart';
-import 'package:hype/app/pages/edit_admin_brief/edit_admin_brief_view.dart';
-import 'package:hype/app/pages/edit_admin_usert_view/edit_admin_user_binding.dart';
-import 'package:hype/app/pages/edit_admin_usert_view/edit_admin_user_view.dart';
+import 'package:hype/app/pages/edit_admin_user/edit_admin_user_binding.dart';
+import 'package:hype/app/pages/edit_admin_user/edit_admin_user_view.dart';
 import 'package:hype/app/pages/home/home_binding.dart';
 import 'package:hype/app/pages/home/home_view.dart';
 import 'package:hype/app/pages/notification/notification_binding.dart';
@@ -43,6 +47,10 @@ import 'package:hype/app/pages/side_menu/side_menu_binding.dart';
 import 'package:hype/app/pages/side_menu/side_menu_view.dart';
 import 'package:hype/app/pages/splash/splash_binding.dart';
 import 'package:hype/app/pages/splash/splash_view.dart';
+import 'package:hype/app/pages/task/task_binding.dart';
+import 'package:hype/app/pages/task/task_view.dart';
+import 'package:hype/app/pages/task_edit/edit_task_binding.dart';
+import 'package:hype/app/pages/task_edit/edit_task_view.dart';
 
 part 'app_routes.dart';
 
@@ -52,7 +60,7 @@ const _transitionDuration = Duration(milliseconds: 700);
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.MAIN_ACCOUNT_ALLOCATION;
+  static const INITIAL = Routes.HOME;
 
   static final routes = [
     GetPage(
@@ -130,14 +138,19 @@ class AppPages {
       binding: AdminBinding(),
     ),
     GetPage(
+      name: _Paths.ADD_ADMIN_USER,
+      page: () => AddAdminUserView(),
+      binding: AddAdminUserBinding(),
+    ),
+    GetPage(
       name: _Paths.EDIT_ADMIN_USER,
       page: () => EditAdminUserView(),
       binding: EditAdminUserBinding(),
     ),
     GetPage(
       name: _Paths.EDIT_ADMIN_BRIEF,
-      page: () => EditAdminBriefView(),
-      binding: EditAdminBriefBinding(),
+      page: () => AddBriefTypeView(),
+      binding: AddBriefTypeBinding(),
     ),
     GetPage(
       name: _Paths.MAIN_ACCOUNT_ALLOCATION,
@@ -166,6 +179,11 @@ class AppPages {
       binding: ClientBinding(),
     ),
     GetPage(
+      name: _Paths.EDIT_CLIENT,
+      page: () => EditClientView(),
+      binding: EditClientBinding(),
+    ),
+    GetPage(
       name: _Paths.DASHBOARD,
       page: () => DashboardView(),
       binding: DashboardBinding(),
@@ -174,6 +192,16 @@ class AppPages {
       name: _Paths.NOTIFICATION,
       page: () => NotificationView(),
       binding: NotificationBinding(),
+    ),
+    GetPage(
+      name: _Paths.TASK,
+      page: () => TaskView(),
+      binding: TaskBinding(),
+    ),
+    GetPage(
+      name: _Paths.EDIT_TASK,
+      page: () => EditTaskView(),
+      binding: EditTaskBinding(),
     ),
   ];
 }
