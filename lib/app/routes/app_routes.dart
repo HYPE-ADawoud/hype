@@ -40,7 +40,6 @@ abstract class Routes {
   static const CLIENT = _Paths.CLIENT;
   static const EDIT_CLIENT = _Paths.EDIT_CLIENT;
   static const DASHBOARD = _Paths.DASHBOARD;
-  static const NOTIFICATION = _Paths.NOTIFICATION;
   static const TASK = _Paths.TASK;
   static const EDIT_TASK = _Paths.EDIT_TASK;
 
@@ -83,7 +82,6 @@ abstract class _Paths {
   static const CLIENT = '/client';
   static const EDIT_CLIENT = '/edit_client';
   static const DASHBOARD = '/dashboard';
-  static const NOTIFICATION = '/notification';
   static const TASK = '/task';
   static const EDIT_TASK = '/edit_task';
 
