@@ -1,49 +1,22 @@
 import 'package:get/get.dart';
-import 'package:hype/app/pages/account_allocation/acount_allocation_binding.dart';
-import 'package:hype/app/pages/account_allocation/acount_allocation_view.dart';
-import 'package:hype/app/pages/account_allocation_add/add_acount_allocation_binding.dart';
-import 'package:hype/app/pages/account_allocation_add/add_acount_allocation_view.dart';
-import 'package:hype/app/pages/account_allocation_edit/edit_acount_allocation_binding.dart';
-import 'package:hype/app/pages/account_allocation_edit/edit_acount_allocation_view.dart';
-import 'package:hype/app/pages/account_allocation_home/acount_allocation_view.dart';
-import 'package:hype/app/pages/account_allocation_home/main_acount_allocation_binding.dart';
-import 'package:hype/app/pages/admin/admin_binding.dart';
-import 'package:hype/app/pages/admin/admin_view.dart';
-import 'package:hype/app/pages/admin_department/admin_department_binding.dart';
-import 'package:hype/app/pages/admin_department/admin_department_view.dart';
-import 'package:hype/app/pages/admin_department_add/add_admin_department_binding.dart';
-import 'package:hype/app/pages/admin_department_add/add_admin_department_view.dart';
-import 'package:hype/app/pages/auth/change_password/change_password_binding.dart';
-import 'package:hype/app/pages/auth/change_password/change_password_view.dart';
+import 'package:hype/app/pages/auth/email_reset_password/email_reset_password_binding.dart';
+import 'package:hype/app/pages/auth/email_reset_password/email_reset_password_view.dart';
 import 'package:hype/app/pages/auth/forgot_password/forgot_password_binding.dart';
 import 'package:hype/app/pages/auth/forgot_password/forgot_password_view.dart';
 import 'package:hype/app/pages/auth/login/login_binding.dart';
 import 'package:hype/app/pages/auth/login/login_view.dart';
 import 'package:hype/app/pages/auth/new_password/new_password_binding.dart';
 import 'package:hype/app/pages/auth/new_password/new_password_view.dart';
-import 'package:hype/app/pages/auth/verify_mobile_number/verify_mobile_number_binding.dart';
-import 'package:hype/app/pages/auth/verify_mobile_number/verify_mobile_number_view.dart';
-import 'package:hype/app/pages/client/client_binding.dart';
-import 'package:hype/app/pages/client/client_view.dart';
-import 'package:hype/app/pages/create_task/create_task_binding.dart';
-import 'package:hype/app/pages/create_task/create_task_view.dart';
-import 'package:hype/app/pages/dashboard/dashboad_view.dart';
-import 'package:hype/app/pages/dashboard/dashboard_binding.dart';
-import 'package:hype/app/pages/department/department_binding.dart';
-import 'package:hype/app/pages/department/department_view.dart';
-import 'package:hype/app/pages/edit_admin_brief/edit_admin_brief_binding.dart';
-import 'package:hype/app/pages/edit_admin_brief/edit_admin_brief_view.dart';
-import 'package:hype/app/pages/edit_admin_usert_view/edit_admin_user_binding.dart';
-import 'package:hype/app/pages/edit_admin_usert_view/edit_admin_user_view.dart';
+import 'package:hype/app/pages/auth/verify_email/verify_email_binding.dart';
+import 'package:hype/app/pages/auth/verify_email/verify_email_view.dart';
 import 'package:hype/app/pages/home/home_binding.dart';
 import 'package:hype/app/pages/home/home_view.dart';
+import 'package:hype/app/pages/main/main_binding.dart';
+import 'package:hype/app/pages/main/main_view.dart';
 import 'package:hype/app/pages/notification/notification_binding.dart';
 import 'package:hype/app/pages/notification/notification_view.dart';
-import 'package:hype/app/pages/side_menu/side_menu_binding.dart';
-import 'package:hype/app/pages/side_menu/side_menu_view.dart';
 import 'package:hype/app/pages/splash/splash_binding.dart';
 import 'package:hype/app/pages/splash/splash_view.dart';
-
 part 'app_routes.dart';
 
 const _pageTransition = Transition.circularReveal;
@@ -92,93 +65,19 @@ class AppPages {
         transition: _pageTransition,
         transitionDuration: _transitionDuration),
     GetPage(
-        name: _Paths.RESET_PASSWORD,
-        page: () => ResetPasswordView(),
-        binding: ResetPasswordBinding(),
-        transition: _pageTransition,
-        transitionDuration: _transitionDuration),
-    GetPage(
-        name: _Paths.SIDE_MENU,
-        page: () => const DrawerView(),
-        binding: DrawerBinding(),
-        transition: _pageTransition,
-        transitionDuration: _transitionDuration),
-    GetPage(
-      name: _Paths.CREATE_TASK,
-      page: () => CreateTaskView(),
-      binding: CreateTaskBinding(),
-    ),
-    GetPage(
-      name: _Paths.DEPARTMENT,
-      page: () => DepartmentView(),
-      binding: DepartmentBinding(),
-    ),
-    GetPage(
-      name: _Paths.ADMIN_DEPARTMENT,
-      page: () => AdminDepartmentView(),
-      binding: AdminDepartmentBinding(),
-    ),
-
-    GetPage(
-      name: _Paths.ADD_ADMIN_DEPARTMENT,
-      page: () => AddAdminDepartmentView(),
-      binding: AddAdminDepartmentBinding(),
-    ),
-    GetPage(
-      name: _Paths.ADMIN,
-      page: () => AdminView(),
-      binding: AdminBinding(),
-    ),
-    GetPage(
-      name: _Paths.EDIT_ADMIN_USER,
-      page: () => EditAdminUserView(),
-      binding: EditAdminUserBinding(),
-    ),
-    GetPage(
-      name: _Paths.EDIT_ADMIN_BRIEF,
-      page: () => EditAdminBriefView(),
-      binding: EditAdminBriefBinding(),
-    ),
-    GetPage(
-      name: _Paths.MAIN_ACCOUNT_ALLOCATION,
-      page: () => MainAccountAllocationView(),
-      binding: MainAccountAllocationBinding(),
-    ),
-
-    GetPage(
-      name: _Paths.ADD_ACCOUNT_ALLOCATION,
-      page: () => AddAccountAllocationView(),
-      binding: AddAccountAllocationBinding(),
-    ),
-    GetPage(
-      name: _Paths.ACCOUNT_ALLOCATION,
-      page: () => AccountAllocationView(),
-      binding: AccountAllocationBinding(),
-    ),
-    GetPage(
-      name: _Paths.EDIT_ACCOUNT_ALLOCATION,
-      page: () => EditAccountAllocationView(),
-      binding: EditAccountAllocationBinding(),
-    ),
-    GetPage(
-      name: _Paths.CLIENT,
-      page: () => ClientView(),
-      binding: ClientBinding(),
-    ),
-    GetPage(
-      name: _Paths.DASHBOARD,
-      page: () => DashboardView(),
-      binding: DashboardBinding(),
-    ),
-    GetPage(
       name: _Paths.NOTIFICATION,
-      page: () => NotificationView(),
+      page: () => const NotificationView(),
       binding: NotificationBinding(),
     ),
     GetPage(
       name: _Paths.EMAIL_RESET_PASSWORD,
       page: () => EmailResetPasswordView(),
       binding: EmailResetPasswordBinding(),
+    ),
+    GetPage(
+      name: _Paths.MAIN,
+      page: () => const MainView(),
+      binding: MainBinding(),
     ),
   ];
 }

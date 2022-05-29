@@ -10,11 +10,11 @@ class NotificationContentItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: AppDims.paddingSize16, vertical: AppDims.paddingSize8),
+      padding:  const EdgeInsets.symmetric(horizontal: AppDimens.paddingSize16, vertical: AppDimens.paddingSize8),
       child: Container(
-        padding: const EdgeInsets.all(AppDims.paddingSize16),
+        padding: const EdgeInsets.all(AppDimens.paddingSize16),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(AppDims.borderRadiusOuter),
+          borderRadius: BorderRadius.circular(AppDimens.borderRadiusOuter),
           color: AppColors.current.primaryXX,
         ),
         child: Column(
@@ -34,7 +34,7 @@ class NotificationContentItem extends StatelessWidget {
     return Text(
       'Mohamed issa assigned you Design adress resize',
       style: TextStyle(
-        fontSize: AppDims.fontSizeMediumX,
+        fontSize: AppDimens.fontSizeMediumX,
         fontWeight: FontWeight.w400,
         color: AppColors.current.text,
       ),
@@ -45,7 +45,7 @@ class NotificationContentItem extends StatelessWidget {
     return  Text(
       'April 20, 2022  12:00:00 AM',
       style: TextStyle(
-        fontSize: AppDims.fontSizeSmallXX,
+        fontSize: AppDimens.fontSizeSmallXX,
         fontWeight: FontWeight.w400,
         color: AppColors.current.text,
       ),
