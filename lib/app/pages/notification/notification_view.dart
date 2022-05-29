@@ -7,7 +7,6 @@ import 'package:hype/app/common/themes/app_colors.dart';
 import 'package:hype/app/common/themes/app_dims.dart';
 import 'package:hype/app/pages/notification/_widgets/notification_content_items.dart';
 import 'package:hype/app/pages/notification/notification_controller.dart';
-import 'package:hype/utils/ui/empty.dart';
 
 class NotificationView extends GetView<NotificationController> {
   const NotificationView({Key? key}) : super(key: key);

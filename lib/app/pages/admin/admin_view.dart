@@ -10,9 +10,6 @@ import 'package:hype/app/pages/admin/_widgets/build_content_item_brief.dart';
 import 'package:hype/app/pages/admin/_widgets/build_content_item_user.dart';
 import 'package:hype/app/pages/admin/admin_controller.dart';
 import 'package:hype/app/pages/drawer/drawer_view.dart';
-import 'package:hype/app/routes/app_pages.dart';
-
-import '../../../utils/ui/empty.dart';
 
 class AdminView extends StatelessWidget {
   AdminController controller = Get.find();

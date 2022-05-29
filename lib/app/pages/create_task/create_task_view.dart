@@ -9,7 +9,6 @@ import 'package:hype/app/common/themes/app_dims.dart';
 import 'package:hype/app/common/widgets/app_toolbar.dart';
 import 'package:hype/app/pages/create_task/create_task_controller.dart';
 import 'package:hype/app/pages/drawer/drawer_view.dart';
-
 import 'package:hype/utils/ui/empty.dart';
 
 class CreateTaskView extends GetView<CreateTaskController> {

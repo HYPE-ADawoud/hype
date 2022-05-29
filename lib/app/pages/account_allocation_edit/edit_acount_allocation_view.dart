@@ -1,14 +1,10 @@
-import 'package:align_positioned/align_positioned.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:hype/app/common/themes/app_assets.dart';
 import 'package:hype/app/common/themes/app_colors.dart';
 import 'package:hype/app/common/themes/app_dims.dart';
 import 'package:hype/app/common/widgets/app_toolbar.dart';
 import 'package:hype/app/pages/account_allocation_edit/edit_acount_allocation_controller.dart';
-import 'package:hype/utils/ui/empty.dart';
 
 class EditAccountAllocationView extends StatelessWidget {
   final EditAccountAllocationController controller = Get.find();
