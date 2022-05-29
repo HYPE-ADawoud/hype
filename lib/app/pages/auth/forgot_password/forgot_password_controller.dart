@@ -1,23 +1,22 @@
 import 'package:get/get.dart';
 import 'package:hype/app/common/action_center/action_center.dart';
-import 'package:hype/app/pages/splash/splash_controller.dart';
+import 'package:hype/app/routes/app_pages.dart';
 
 class ForgotPasswordController extends GetxController {
 
-  String? mobileNo;
+  String? email;
   var loginLoading = false.obs;
 
   final _action = ActionCenter();
-  final _splashController = Get.find<SplashController>();
 
 
-  void onSendCodeClick() {
+  void onNextClick() {
 
-    navigateToVerifyMobileNo();
+    navigateToEmailVerificationCode();
   }
 
-  void navigateToVerifyMobileNo() {
-
+  void navigateToEmailVerificationCode() {
+    Get.toNamed(Routes.VERIFY_AUTH);
   }
 
   void navigateToLoginPage() {

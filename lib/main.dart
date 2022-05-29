@@ -16,7 +16,7 @@ void main() async{
       designSize: const Size(375, 812),
       minTextAdapt: true,
       splitScreenMode: true,
-      builder:(_)=> GetMaterialApp(
+      builder:(cxt, child)=> GetMaterialApp(
         // Use this line to prevent extra rebuilds
         useInheritedMediaQuery: true,
         title: "HYPE",

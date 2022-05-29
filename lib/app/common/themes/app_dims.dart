@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class AppDims{
+class AppDimens{
 
-  AppDims._();
+  AppDimens._();
 
   /// elevations
-  static const double elevation = 5;
+  static const double elevation = 2;
 
   /// borders
   static const double borderRadius = 5;
   static const double borderRadiusOuter = 10;
+  static const double borderRadiusLine = 100;
 
   /// content paddings
   static const EdgeInsets contentPadding = EdgeInsets.symmetric(vertical: 12, horizontal: 20);
@@ -44,5 +45,14 @@ class AppDims{
   static const double paddingSize16 = 16;
   static const double paddingSize18 = 18;
   static const double paddingSize20 = 20;
+  static const double paddingSize24 = 24;
+
+  static const double paddingSize30 = 30;
+  static const double paddingSize40 = 40;
+  static const double paddingSize50 = 50;
+  static const double paddingSize56 = 56;
+  static const double paddingSize60 = 60;
+  static const double paddingSize80 = 80;
+  static const double paddingSize100 = 100;
 
 }
