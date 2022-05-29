@@ -30,6 +30,10 @@ abstract class AppAssets{
   static const String subIcon = 'assets/svg/sub_icon.svg';
   static const String completeRedIcon = 'assets/svg/complete_red_icon.svg';
   static const String addIcon = 'assets/svg/add_icon.svg';
+  static const String createClientIcon = 'assets/svg/create_client.svg';
+  static const String confirmPasswordIcon = 'assets/svg/confirm_password_icon.svg';
+  static const String eclipseIcon = 'assets/svg/eclipse_icon.svg';
+  static const String pauseIcon = 'assets/svg/pause_icon.svg';
 
 
   static const String homeIcon = 'assets/svg/home_icon.svg';

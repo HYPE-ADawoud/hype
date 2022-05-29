@@ -113,21 +113,15 @@ class HomeController extends GetxController {
   void onInit() {
     super.onInit();
     _onLoad();
-    stopwatch = Stopwatch();
+
   }
-  void handleStartStop() {
-    if (stopwatch.isRunning) {
-      stopwatch.stop();
-    } else {
-      stopwatch.start();
-    }
 
   }
   void _onLoad() async {
 
   }
 
-}
+
 
 class TaskModel {
   String name;
