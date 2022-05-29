@@ -11,14 +11,6 @@ class HomeController extends GetxController {
   final _apiManager = DI.find<IHomeApiManager>();
   late Stopwatch stopwatch;
 
-  String formatTime(int milliseconds) {
-    var secs = milliseconds ~/ 1000;
-    var hours = (secs ~/ 3600).toString().padLeft(2, '0');
-    var minutes = ((secs % 3600) ~/ 60).toString().padLeft(2, '0');
-    var seconds = (secs % 60).toString().padLeft(2, '0');
-    return "$hours:$minutes:$seconds";
-
-  }
 
   var isVisible = true.obs;
   void showVisible() {
@@ -37,7 +29,7 @@ class HomeController extends GetxController {
         deadlineTime: '12:00 PM',
         assignedFor: 'Amera Ayman',
         assignedBy: 'Ahmed Dawoud',
-      isExpanded: false.obs
+        isExpanded: false.obs
     ),
     TaskModel(
         name: 'Hugo Boss',

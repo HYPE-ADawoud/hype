@@ -1,6 +1,5 @@
 import 'package:get/get.dart';
-
-import '../controllers/create_task_controller.dart';
+import 'package:hype/app/pages/create_task/create_task_controller.dart';
 
 class CreateTaskBinding extends Bindings {
   @override

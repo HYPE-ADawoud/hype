@@ -57,13 +57,13 @@ class AppToolbar extends StatelessWidget {
                       title!,
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
+                      textAlign: TextAlign.center,
                       style: TextStyle(
                           fontSize: AppDimens.fontSizeLarge,
                           color: AppColors.current.primary,
                           fontWeight: FontWeight.bold),
                     ),
             ),
-
             actions ?? SizedBox(width: 30.w)
           ],
         ),
