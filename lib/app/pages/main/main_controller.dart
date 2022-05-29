@@ -12,7 +12,7 @@ class MainController extends GetxController {
 
   onBottomNavBarChanged({required int index}) {
     selectedBottomNavBarIndex.value = index;
-    _pageViewController.animateToPage(index, duration: Duration(microseconds: 500), curve: Curves.easeOut);
+    _pageViewController.animateToPage(index, duration: const Duration(microseconds: 500), curve: Curves.easeOut);
   }
 
 }

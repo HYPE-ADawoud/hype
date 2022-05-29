@@ -26,7 +26,7 @@ dependencies:
   dotted_border: ^2.0.0+2
   firebase_core: ^1.13.1
   firebase_auth: ^3.3.8
-  pin_code_fields: ^7.3.0
+  pin_code_fields: ^7.4.0
   sleek_circular_slider: ^2.0.1
   image_picker: ^0.8.4+11
   carousel_slider: ^4.0.0

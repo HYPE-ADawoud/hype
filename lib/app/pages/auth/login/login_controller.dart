@@ -26,18 +26,20 @@ class LoginController extends GetxController {
   final _cacheManager = DI.find<ICacheManager>();
 
   onLoginClick() {
-    keyForm.currentState?.save();
-    if (keyForm.currentState!.validate()) {
-      callLoginApi();
-    }
+
+    _navigateToMainPage();
+    // keyForm.currentState?.save();
+    // if (keyForm.currentState!.validate()) {
+      // callLoginApi();
+    // }
   }
 
   void navigateToForgotPassword() {
-
+    Get.toNamed(Routes.FORGOT_PASSWORD);
   }
 
-  void navigateToHomePage() {
-    Get.offAllNamed(Routes.HOME);
+  void _navigateToMainPage() {
+    Get.offAllNamed(Routes.MAIN);
   }
 
   // region ===== api

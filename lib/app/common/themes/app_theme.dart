@@ -54,13 +54,13 @@ abstract class AppTheme {
       //> elevated buttons
       elevatedButtonTheme: ElevatedButtonThemeData(
           style: ButtonStyle(
-        elevation: MaterialStateProperty.all<double>(AppDimens.elevation),
+        elevation: MaterialStateProperty.all<double>(0),
         shape: MaterialStateProperty.all(_roundedRecShapeOuter),
-        backgroundColor: MaterialStateProperty.all(colors.neutral),
+        backgroundColor: MaterialStateProperty.all(Colors.black.withOpacity(0.2)),
         overlayColor: MaterialStateProperty.all(colors.primaryLight),
         padding: MaterialStateProperty.all(AppDimens.buttonPadding),
         shadowColor: MaterialStateProperty.all(colors.text.withOpacity(0.5)),
-        textStyle: MaterialStateProperty.all(TextStyle(fontSize: AppDimens.fontSizeMediumX, fontWeight: FontWeight.bold, color: colors.primary)),
+        textStyle: MaterialStateProperty.all(TextStyle(fontSize: AppDimens.fontSizeLarge, fontWeight: FontWeight.w500, color: colors.primary)),
       )),
 
       //> toggle buttons

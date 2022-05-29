@@ -9,17 +9,16 @@ import 'package:hype/app/common/widgets/big_btn.dart';
 import 'package:hype/app/pages/auth/base_auth_page_screen.dart';
 import 'package:hype/utils/ui/empty.dart';
 
-import 'new_password_controller.dart';
+import 'reset_password_controller.dart';
 
-class NewPasswordView extends GetView<NewPasswordController> {
-  NewPasswordView({Key? key}) : super(key: key);
+class ResetPasswordView extends GetView<ResetPasswordController> {
+  ResetPasswordView({Key? key}) : super(key: key);
+
   final _keyForm = GlobalKey<FormState>();
-
   @override
   Widget build(BuildContext context) {
     return BaseAuthPageScreen(
-      pageTitle: 'Forgot password',
-      pageSubTitle: 'A verification code has been sent.\nPlease enter it to verify your account',
+      pageTitle: 'Reset password',
       child: _buildBodyView(),
     );
   }
@@ -84,7 +83,7 @@ class NewPasswordView extends GetView<NewPasswordController> {
   _buildConfirmPasswordButton() {
     return BigBtn(
       state: controller.loginLoading.value ? BtnState.loading : BtnState.active,
-      text: 'Login',
+      text: 'Done',
       onPressed: () => _onConfirm(),
     );
   }

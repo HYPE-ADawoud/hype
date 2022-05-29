@@ -1,20 +1,10 @@
 import 'package:get/get.dart';
+import 'package:hype/app/routes/app_pages.dart';
 
 class ProfileController extends GetxController {
-  //TODO: Implement ProfileController
+  var loginLoading = false.obs;
 
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
+  void navigateToResetPasswordView() {
+    Get.toNamed(Routes.EMAIL_RESET_PASSWORD);
   }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {}
-  void increment() => count.value++;
 }

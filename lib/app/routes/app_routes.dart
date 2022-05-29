@@ -19,15 +19,16 @@ abstract class Routes {
   static const NEW_POST = _Paths.NEW_POST;
   static const COMMENTS = _Paths.COMMENT_VIEW;
   static const MY_VILLAGE = _Paths.MY_VILLAGE;
-  static const CHANGE_PASSWORD = _Paths.CHANGE_PASSWORD;
+  static const RESET_PASSWORD = _Paths.RESET_PASSWORD;
   static const TRAINING_COURSE = _Paths.TRAINING_COURSE;
   static const DETAILS_COURSE = _Paths.DETAILS_COURSE;
   static const BIRTH_PLACE = _Paths.BIRTH_PLACE;
   static const PRIZES = _Paths.PRIZES;
   static const CREATE_TASK = _Paths.CREATE_TASK;
   static const MAIN = _Paths.MAIN;
-  static const PROFILE =  _Paths.PROFILE;
+  static const PROFILE = _Paths.PROFILE;
   static const NOTIFICATION = _Paths.NOTIFICATION;
+  static const EMAIL_RESET_PASSWORD = _Paths.EMAIL_RESET_PASSWORD;
 }
 
 abstract class _Paths {
@@ -46,7 +47,7 @@ abstract class _Paths {
   static const NEW_POST = '/new-post';
   static const COMMENT_VIEW = '/comment';
   static const MY_VILLAGE = '/my-village';
-  static const CHANGE_PASSWORD = '/change-password';
+  static const RESET_PASSWORD = '/change-password';
   static const BIRTH_PLACE = '/birth_place';
   static const TRAINING_COURSE = '/training_course';
   static const DETAILS_COURSE = '/details_course';
@@ -55,4 +56,5 @@ abstract class _Paths {
   static const MAIN = '/main';
   static const PROFILE = '/profile';
   static const NOTIFICATION = '/notification';
+  static const EMAIL_RESET_PASSWORD = '/email-reset-password';
 }

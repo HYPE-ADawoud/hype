@@ -30,4 +30,5 @@ abstract class AppAssets{
   static const String homeIcon = 'assets/svg/home_icon.svg';
   static const String profileIcon = 'assets/svg/profile_icon.svg';
   static const String notificationIcon = 'assets/svg/notification_icon.svg';
+  static const String userIcon = 'assets/image/icon_user.png';
 }

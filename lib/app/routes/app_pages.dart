@@ -1,15 +1,17 @@
 import 'package:get/get.dart';
 
-import '../pages/auth/change_password/change_password_binding.dart';
-import '../pages/auth/change_password/change_password_view.dart';
+import '../pages/auth/email_reset_password/email_reset_password_binding.dart';
+import '../pages/auth/email_reset_password/email_reset_password_view.dart';
 import '../pages/auth/forgot_password/forgot_password_binding.dart';
 import '../pages/auth/forgot_password/forgot_password_view.dart';
 import '../pages/auth/login/login_binding.dart';
 import '../pages/auth/login/login_view.dart';
 import '../pages/auth/new_password/new_password_binding.dart';
 import '../pages/auth/new_password/new_password_view.dart';
-import '../pages/auth/verify_mobile_number/verify_mobile_number_binding.dart';
-import '../pages/auth/verify_mobile_number/verify_mobile_number_view.dart';
+import '../pages/auth/reset_password/reset_password_binding.dart';
+import '../pages/auth/reset_password/reset_password_view.dart';
+import '../pages/auth/verify_email/verify_email_binding.dart';
+import '../pages/auth/verify_email/verify_email_view.dart';
 import '../pages/create_task/bindings/create_task_binding.dart';
 import '../pages/create_task/views/create_task_view.dart';
 import '../pages/drawer/drawer_binding.dart';
@@ -33,7 +35,7 @@ const _transitionDuration = Duration(milliseconds: 700);
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.MAIN;
+  static const INITIAL = Routes.SPLASH_VIEW;
 
   static final routes = [
     GetPage(
@@ -56,8 +58,8 @@ class AppPages {
         transitionDuration: _transitionDuration),
     GetPage(
         name: _Paths.VERIFY_AUTH,
-        page: () => VerifyMobileNoView(),
-        binding: VerifyMobileNoBinding(),
+        page: () => VerifyEmailView(),
+        binding: VerifyEmailBinding(),
         transition: _pageTransition,
         transitionDuration: _transitionDuration),
     GetPage(
@@ -73,9 +75,9 @@ class AppPages {
         transition: _pageTransition,
         transitionDuration: _transitionDuration),
     GetPage(
-        name: _Paths.CHANGE_PASSWORD,
-        page: () => ChangePasswordView(),
-        binding: ChangePasswordBinding(),
+        name: _Paths.RESET_PASSWORD,
+        page: () => ResetPasswordView(),
+        binding: ResetPasswordBinding(),
         transition: _pageTransition,
         transitionDuration: _transitionDuration),
     GetPage(
@@ -91,7 +93,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.MAIN,
-      page: () => MainView(),
+      page: () => const MainView(),
       binding: MainBinding(),
     ),
     GetPage(
@@ -103,6 +105,11 @@ class AppPages {
       name: _Paths.NOTIFICATION,
       page: () => NotificationView(),
       binding: NotificationBinding(),
+    ),
+    GetPage(
+      name: _Paths.EMAIL_RESET_PASSWORD,
+      page: () => EmailResetPasswordView(),
+      binding: EmailResetPasswordBinding(),
     ),
   ];
 }
