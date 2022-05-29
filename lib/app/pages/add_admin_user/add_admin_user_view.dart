@@ -10,15 +10,12 @@ import 'package:hype/app/common/themes/app_dims.dart';
 import 'package:hype/app/common/widgets/app_toolbar.dart';
 import 'package:hype/app/pages/add_admin_user/add_admin_user_controller.dart';
 
-class AddAdminUserView extends StatelessWidget {
-  AddAdminUserView({Key? key}) : super(key: key);
-  AddAdminUserController controller = Get.find();
-  final scaffoldKey = GlobalKey<ScaffoldState>();
+class AddAdminUserView extends GetView<AddAdminUserController> {
+  const AddAdminUserView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      key: scaffoldKey,
       backgroundColor: AppColors.current.neutral,
       body: _buildBody(),
     );
@@ -41,7 +38,7 @@ class AddAdminUserView extends StatelessWidget {
   Widget _buildBodyView() {
     return Expanded(
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: AppDims.paddingSize24.w),
+        padding: EdgeInsets.symmetric(horizontal: AppDimens.paddingSize24.w),
         color: AppColors.current.primary,
         child: _buildFormAdmin(),
       ),
@@ -75,7 +72,7 @@ class AddAdminUserView extends StatelessWidget {
         height: 44.h,
         decoration: BoxDecoration(
           color: AppColors.current.text,
-          borderRadius: BorderRadius.circular(AppDims.borderRadius),
+          borderRadius: BorderRadius.circular(AppDimens.borderRadius),
         ),
         child: TextFormField(
           decoration: InputDecoration(
@@ -87,7 +84,7 @@ class AddAdminUserView extends StatelessWidget {
             hintText: 'Email',
             hintStyle: TextStyle(
               fontWeight: FontWeight.normal,
-              fontSize: AppDims.fontSizeMediumX,
+              fontSize: AppDimens.fontSizeMediumX,
               color: AppColors.current.dimmedX,
             ),
           ),
@@ -103,7 +100,7 @@ class AddAdminUserView extends StatelessWidget {
         height: 44.h,
         decoration: BoxDecoration(
           color: AppColors.current.text,
-          borderRadius: BorderRadius.circular(AppDims.borderRadius),
+          borderRadius: BorderRadius.circular(AppDimens.borderRadius),
         ),
         child: TextFormField(
           decoration: InputDecoration(
@@ -115,7 +112,7 @@ class AddAdminUserView extends StatelessWidget {
             hintText: 'User Name',
             hintStyle: TextStyle(
               fontWeight: FontWeight.normal,
-              fontSize: AppDims.fontSizeMediumX,
+              fontSize: AppDimens.fontSizeMediumX,
               color: AppColors.current.dimmedX,
             ),
           ),
@@ -131,7 +128,7 @@ class AddAdminUserView extends StatelessWidget {
         height: 44.h,
         decoration: BoxDecoration(
           color: AppColors.current.text,
-          borderRadius: BorderRadius.circular(AppDims.borderRadius),
+          borderRadius: BorderRadius.circular(AppDimens.borderRadius),
         ),
         child: TextFormField(
           decoration: InputDecoration(
@@ -144,7 +141,7 @@ class AddAdminUserView extends StatelessWidget {
             suffixIcon: SvgPicture.asset(AppAssets.confirmPasswordIcon,fit: BoxFit.scaleDown,),
             hintStyle: TextStyle(
               fontWeight: FontWeight.normal,
-              fontSize: AppDims.fontSizeMediumX,
+              fontSize: AppDimens.fontSizeMediumX,
               color: AppColors.current.dimmedX,
             ),
           ),
@@ -160,7 +157,7 @@ class AddAdminUserView extends StatelessWidget {
         height: 44.h,
         decoration: BoxDecoration(
           color: AppColors.current.text,
-          borderRadius: BorderRadius.circular(AppDims.borderRadius),
+          borderRadius: BorderRadius.circular(AppDimens.borderRadius),
         ),
         child: TextFormField(
           decoration: InputDecoration(
@@ -173,7 +170,7 @@ class AddAdminUserView extends StatelessWidget {
             suffixIcon: SvgPicture.asset(AppAssets.confirmPasswordIcon,fit: BoxFit.scaleDown,),
             hintStyle: TextStyle(
               fontWeight: FontWeight.normal,
-              fontSize: AppDims.fontSizeMediumX,
+              fontSize: AppDimens.fontSizeMediumX,
               color: AppColors.current.dimmedX,
             ),
           ),
@@ -190,7 +187,7 @@ class AddAdminUserView extends StatelessWidget {
           width: 339.w,
           height: 44.h,
           decoration:
-          BoxDecoration(color: AppColors.current.text, borderRadius: BorderRadius.circular(AppDims.borderRadius)),
+          BoxDecoration(color: AppColors.current.text, borderRadius: BorderRadius.circular(AppDimens.borderRadius)),
           child: Center(
             child: DropdownButtonHideUnderline(
               child: DropdownButton(
@@ -212,7 +209,7 @@ class AddAdminUserView extends StatelessWidget {
                       style: TextStyle(
                           color: AppColors.current.dimmedXXXX,
                           fontWeight: FontWeight.w600,
-                          fontSize: AppDims.fontSizeMedium.sp),
+                          fontSize: AppDimens.fontSizeMedium.sp),
                     ),
                   );
                 }).toList(),
@@ -232,7 +229,7 @@ class AddAdminUserView extends StatelessWidget {
           width: 339.w,
           height: 44.h,
           decoration:
-              BoxDecoration(color: AppColors.current.text, borderRadius: BorderRadius.circular(AppDims.borderRadius)),
+              BoxDecoration(color: AppColors.current.text, borderRadius: BorderRadius.circular(AppDimens.borderRadius)),
           child: Center(
             child: DropdownButtonHideUnderline(
               child: DropdownButton(
@@ -254,7 +251,7 @@ class AddAdminUserView extends StatelessWidget {
                       style: TextStyle(
                           color: AppColors.current.dimmedXXXX,
                           fontWeight: FontWeight.w600,
-                          fontSize: AppDims.fontSizeMedium.sp),
+                          fontSize: AppDimens.fontSizeMedium.sp),
                     ),
                   );
                 }).toList(),
@@ -274,7 +271,7 @@ class AddAdminUserView extends StatelessWidget {
         height: 44.h,
         decoration: BoxDecoration(
           color: AppColors.current.text,
-          borderRadius: BorderRadius.circular(AppDims.borderRadius),
+          borderRadius: BorderRadius.circular(AppDimens.borderRadius),
         ),
         child: TextFormField(
           decoration: InputDecoration(
@@ -286,7 +283,7 @@ class AddAdminUserView extends StatelessWidget {
             hintText: 'First Name',
             hintStyle: TextStyle(
               fontWeight: FontWeight.normal,
-              fontSize: AppDims.fontSizeMediumX,
+              fontSize: AppDimens.fontSizeMediumX,
               color: AppColors.current.dimmedX,
             ),
           ),
@@ -302,7 +299,7 @@ class AddAdminUserView extends StatelessWidget {
         height: 44.h,
         decoration: BoxDecoration(
           color: AppColors.current.text,
-          borderRadius: BorderRadius.circular(AppDims.borderRadius),
+          borderRadius: BorderRadius.circular(AppDimens.borderRadius),
         ),
         child: TextFormField(
           decoration: InputDecoration(
@@ -314,7 +311,7 @@ class AddAdminUserView extends StatelessWidget {
             hintText: 'Last Name',
             hintStyle: TextStyle(
               fontWeight: FontWeight.normal,
-              fontSize: AppDims.fontSizeMediumX,
+              fontSize: AppDimens.fontSizeMediumX,
               color: AppColors.current.dimmedX,
             ),
           ),
@@ -330,7 +327,7 @@ class AddAdminUserView extends StatelessWidget {
         height: 44.h,
         decoration: BoxDecoration(
           color: AppColors.current.text,
-          borderRadius: BorderRadius.circular(AppDims.borderRadius),
+          borderRadius: BorderRadius.circular(AppDimens.borderRadius),
         ),
         child: TextFormField(
           decoration: InputDecoration(
@@ -342,7 +339,7 @@ class AddAdminUserView extends StatelessWidget {
             hintText: 'Phone',
             hintStyle: TextStyle(
               fontWeight: FontWeight.normal,
-              fontSize: AppDims.fontSizeMediumX,
+              fontSize: AppDimens.fontSizeMediumX,
               color: AppColors.current.dimmedX,
             ),
           ),
@@ -359,7 +356,7 @@ class AddAdminUserView extends StatelessWidget {
       ),
       child: Container(
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(AppDims.borderRadiusOuter),
+          borderRadius: BorderRadius.circular(AppDimens.borderRadiusOuter),
         ),
         width: 324.w,
         height: 60.h,
@@ -371,7 +368,7 @@ class AddAdminUserView extends StatelessWidget {
           child: Text(
             'Register',
             style: TextStyle(
-                fontSize: AppDims.fontSizeMediumX, color: AppColors.current.neutral, fontWeight: FontWeight.w500),
+                fontSize: AppDimens.fontSizeMediumX, color: AppColors.current.neutral, fontWeight: FontWeight.w500),
           ),
         ),
       ),
@@ -392,7 +389,7 @@ class AddAdminUserView extends StatelessWidget {
         width: 135.w,
         decoration: BoxDecoration(
           color: AppColors.current.text,
-          borderRadius: BorderRadius.circular(AppDims.borderRadiusLine),
+          borderRadius: BorderRadius.circular(AppDimens.borderRadiusLine),
         ),
       ),
     );

@@ -59,12 +59,12 @@ class TaskView extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 40,horizontal: 16),
       child: Container(
-        padding: const EdgeInsets.all(AppDims.paddingSize16),
+        padding: const EdgeInsets.all(AppDimens.paddingSize16),
         width: 340,
         height: 500,
         decoration: BoxDecoration(
           color: AppColors.current.neutral,
-          borderRadius: BorderRadius.circular(AppDims.borderRadiusOuter),
+          borderRadius: BorderRadius.circular(AppDimens.borderRadiusOuter),
         ),
         child: Stack(
           children: [
@@ -96,11 +96,11 @@ class TaskView extends StatelessWidget {
    }
    Widget _buildTaskName(){
     return    Padding(
-      padding: const EdgeInsets.only(top:AppDims.paddingSize16),
+      padding: const EdgeInsets.only(top:AppDimens.paddingSize16),
       child: Text('Hype',
         style: TextStyle(
             fontWeight: FontWeight.w700,
-            fontSize: AppDims.fontSizeLargeXX,
+            fontSize: AppDimens.fontSizeLargeXX,
             color: AppColors.current.dimmedXXXXX
         ),
       ),
@@ -108,11 +108,11 @@ class TaskView extends StatelessWidget {
    }
    Widget _buildTaskStatus(){
     return    Padding(
-      padding: const EdgeInsets.symmetric(vertical:AppDims.paddingSize16),
+      padding: const EdgeInsets.symmetric(vertical:AppDimens.paddingSize16),
       child: Text('On hold',
         style: TextStyle(
             fontWeight: FontWeight.w800,
-            fontSize: AppDims.fontSizeMediumX,
+            fontSize: AppDimens.fontSizeMediumX,
             color: AppColors.current.orangeX
         ),
       ),
@@ -121,11 +121,11 @@ class TaskView extends StatelessWidget {
 
    Widget _buildTaskDesc(){
     return  Padding(
-      padding: const EdgeInsets.symmetric(vertical:AppDims.paddingSize16),
+      padding: const EdgeInsets.symmetric(vertical:AppDimens.paddingSize16),
       child: Text('Hiring Post Account director',
         style: TextStyle(
             fontWeight: FontWeight.w400,
-            fontSize: AppDims.fontSizeMediumX,
+            fontSize: AppDimens.fontSizeMediumX,
             color: AppColors.current.dimmedXXXXX
         ),
       ),
@@ -134,11 +134,11 @@ class TaskView extends StatelessWidget {
 
    Widget _buildTaskAssignedPersons(){
     return  Padding(
-      padding: const EdgeInsets.symmetric(vertical:AppDims.paddingSize16),
+      padding: const EdgeInsets.symmetric(vertical:AppDimens.paddingSize16),
       child: Text('Amera Ayman / Assigned by Amera Ayman',
         style: TextStyle(
             fontWeight: FontWeight.w500,
-            fontSize: AppDims.fontSizeSmallXX,
+            fontSize: AppDimens.fontSizeSmallXX,
             color: AppColors.current.primary
         ),
       ),
@@ -152,13 +152,13 @@ class TaskView extends StatelessWidget {
    }
    Widget _buildTimer() {
      return Padding(
-       padding: const EdgeInsets.symmetric(vertical: AppDims.paddingSize16),
+       padding: const EdgeInsets.symmetric(vertical: AppDimens.paddingSize16),
        child: Column(
          mainAxisAlignment: MainAxisAlignment.center,
          children: [
            Text('00:00:06:45',
                style: TextStyle(
-                   fontWeight: FontWeight.w700, color: AppColors.current.dimmedXXX, fontSize: AppDims.fontSizeLarge)),
+                   fontWeight: FontWeight.w700, color: AppColors.current.dimmedXXX, fontSize: AppDimens.fontSizeLarge)),
 
            Empty(height: 16.w,),
 
@@ -178,7 +178,7 @@ class TaskView extends StatelessWidget {
 
    Widget _buildTaskDates() {
      return Padding(
-       padding: const EdgeInsets.symmetric(horizontal: AppDims.paddingSize15, vertical: AppDims.paddingSize8),
+       padding: const EdgeInsets.symmetric(horizontal: AppDimens.paddingSize15, vertical: AppDimens.paddingSize8),
        child: Row(
          children: [
            _buildRequestAndDeadlineDate(
@@ -205,10 +205,10 @@ class TaskView extends StatelessWidget {
          mainAxisAlignment: MainAxisAlignment.center,
          children: [
            Text(
-             text, style: TextStyle(fontSize: AppDims.fontSizeMedium, fontWeight: FontWeight.w900, color: colorText,),),
-           Empty(height: AppDims.paddingSize5),
+             text, style: TextStyle(fontSize: AppDimens.fontSizeMedium, fontWeight: FontWeight.w900, color: colorText,),),
+           Empty(height: AppDimens.paddingSize5),
            Text(date),
-           Empty(height: AppDims.paddingSize5),
+           Empty(height: AppDimens.paddingSize5),
            Text(hour),
          ],
        ),
@@ -249,13 +249,13 @@ class TaskView extends StatelessWidget {
     Widget _buildDeleteButton() {
       return Padding(
         padding: const EdgeInsets.only(
-          top: AppDims.paddingSize16,
-          bottom: AppDims.paddingSize12,
+          top: AppDimens.paddingSize16,
+          bottom: AppDimens.paddingSize12,
         ),
         child: Container(
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(
-                  AppDims.borderRadiusOuter
+                  AppDimens.borderRadiusOuter
               ),
 
           ),
@@ -269,7 +269,7 @@ class TaskView extends StatelessWidget {
             child: Text(
               'Delete',
               style: TextStyle(
-                  fontSize: AppDims.fontSizeMediumX,
+                  fontSize: AppDimens.fontSizeMediumX,
                   color: AppColors.current.neutral,
                   fontWeight: FontWeight.w500),
             ),
@@ -280,13 +280,13 @@ class TaskView extends StatelessWidget {
     Widget _buildArchiveButton() {
       return Padding(
         padding: const EdgeInsets.only(
-          top: AppDims.paddingSize8,
+          top: AppDimens.paddingSize8,
           bottom: 100,
         ),
         child: Container(
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(
-                  AppDims.borderRadiusOuter
+                  AppDimens.borderRadiusOuter
               ),
 
           ),
@@ -300,7 +300,7 @@ class TaskView extends StatelessWidget {
             child: Text(
               'Archive',
               style: TextStyle(
-                  fontSize: AppDims.fontSizeMediumX,
+                  fontSize: AppDimens.fontSizeMediumX,
                   color: AppColors.current.primary,
                   fontWeight: FontWeight.w500),
             ),

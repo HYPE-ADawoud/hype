@@ -6,15 +6,12 @@ import 'package:hype/app/common/themes/app_dims.dart';
 import 'package:hype/app/common/widgets/app_toolbar.dart';
 import 'package:hype/app/pages/add_brief_type/add_brief_type_controller.dart';
 
-class AddBriefTypeView extends StatelessWidget {
-  final AddBriefTypeController controller = Get.find();
-  final scaffoldKey = GlobalKey<ScaffoldState>();
-  AddBriefTypeView({Key? key}) : super(key: key);
+class AddBriefTypeView extends GetView<AddBriefTypeController> {
+  const AddBriefTypeView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      key: scaffoldKey,
       backgroundColor: AppColors.current.neutral,
       body: _buildBody(),
     );
@@ -37,7 +34,7 @@ class AddBriefTypeView extends StatelessWidget {
   Widget _buildBodyView() {
     return Expanded(
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: AppDims.paddingSize24.w),
+        padding: EdgeInsets.symmetric(horizontal: AppDimens.paddingSize24.w),
         color: AppColors.current.primary,
         child: _buildForm(),
       ),
@@ -90,7 +87,7 @@ class AddBriefTypeView extends StatelessWidget {
           hintText: 'Name',
           hintStyle: TextStyle(
             fontWeight: FontWeight.normal,
-            fontSize: AppDims.fontSizeMediumX,
+            fontSize: AppDimens.fontSizeMediumX,
             color: AppColors.current.dimmedX,
           ),
         ),
@@ -105,7 +102,7 @@ class AddBriefTypeView extends StatelessWidget {
         child: Container(
           decoration:
               BoxDecoration(color: AppColors.current.text,
-                  borderRadius: BorderRadius.circular(AppDims.borderRadiusOuter)),
+                  borderRadius: BorderRadius.circular(AppDimens.borderRadiusOuter)),
           child: Center(
             child: DropdownButtonHideUnderline(
               child: DropdownButton(
@@ -127,7 +124,7 @@ class AddBriefTypeView extends StatelessWidget {
                       style: TextStyle(
                           color: AppColors.current.dimmedXXXX,
                           fontWeight: FontWeight.w600,
-                          fontSize: AppDims.fontSizeMedium.sp),
+                          fontSize: AppDimens.fontSizeMedium.sp),
                     ),
                   );
                 }).toList(),
@@ -161,7 +158,7 @@ class AddBriefTypeView extends StatelessWidget {
           hintText: 'Description',
           hintStyle: TextStyle(
             fontWeight: FontWeight.normal,
-            fontSize: AppDims.fontSizeMediumX,
+            fontSize: AppDimens.fontSizeMediumX,
             color: AppColors.current.dimmedX,
           ),
         ),
@@ -175,7 +172,7 @@ class AddBriefTypeView extends StatelessWidget {
       padding: const EdgeInsets.only(top:16.0),
       child: Text('Sub-Tasks',
       style: TextStyle(
-        fontSize: AppDims.fontSizeMedium,
+        fontSize: AppDimens.fontSizeMedium,
         fontWeight: FontWeight.w600,
         color: AppColors.current.text
       ),
@@ -189,7 +186,7 @@ class AddBriefTypeView extends StatelessWidget {
         child: Container(
           decoration: BoxDecoration(
               color: AppColors.current.primary,
-              borderRadius: BorderRadius.circular(AppDims.borderRadiusOuter),
+              borderRadius: BorderRadius.circular(AppDimens.borderRadiusOuter),
               border: Border.all(
                 color: AppColors.current.neutral,
                 width: 1,
@@ -204,7 +201,7 @@ class AddBriefTypeView extends StatelessWidget {
             child: Text(
               'Add subtask',
               style: TextStyle(
-                  fontSize: AppDims.fontSizeMediumX, color: AppColors.current.neutral, fontWeight: FontWeight.w500),
+                  fontSize: AppDimens.fontSizeMediumX, color: AppColors.current.neutral, fontWeight: FontWeight.w500),
             ),
           ),
         ),
@@ -225,12 +222,12 @@ class AddBriefTypeView extends StatelessWidget {
   Widget _buildDoneButton() {
     return Padding(
       padding: const EdgeInsets.only(
-        top: AppDims.paddingSize24,
-        bottom: AppDims.paddingSize12,
+        top: AppDimens.paddingSize24,
+        bottom: AppDimens.paddingSize12,
       ),
       child: Container(
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(AppDims.borderRadiusOuter),
+          borderRadius: BorderRadius.circular(AppDimens.borderRadiusOuter),
         ),
         width: 324.w,
         height: 60.h,
@@ -242,7 +239,7 @@ class AddBriefTypeView extends StatelessWidget {
           child: Text(
             'Done',
             style: TextStyle(
-                fontSize: AppDims.fontSizeMediumX, color: AppColors.current.neutral, fontWeight: FontWeight.w500),
+                fontSize: AppDimens.fontSizeMediumX, color: AppColors.current.neutral, fontWeight: FontWeight.w500),
           ),
         ),
       ),
@@ -262,7 +259,7 @@ class AddBriefTypeView extends StatelessWidget {
         width: 135.w,
         decoration: BoxDecoration(
           color: AppColors.current.text,
-          borderRadius: BorderRadius.circular(AppDims.borderRadiusLine),
+          borderRadius: BorderRadius.circular(AppDimens.borderRadiusLine),
         ),
       ),
     );
