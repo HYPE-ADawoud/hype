@@ -10,6 +10,8 @@ import 'package:hype/app/pages/admin/_widgets/build_content_item_brief.dart';
 import 'package:hype/app/pages/admin/_widgets/build_content_item_user.dart';
 import 'package:hype/app/pages/admin/admin_controller.dart';
 import 'package:hype/app/pages/drawer/drawer_view.dart';
+import 'package:hype/app/routes/app_pages.dart';
+import 'package:hype/utils/ui/empty.dart';
 
 class AdminView extends StatelessWidget {
   AdminController controller = Get.find();
@@ -24,7 +26,7 @@ class AdminView extends StatelessWidget {
         child: Scaffold(
           key: scaffoldKey,
           backgroundColor: AppColors.current.neutral,
-          drawer: const DrawerView(),
+          drawer: DrawerView(),
           body: _buildBody(),
         ),
       );
@@ -38,7 +40,7 @@ class AdminView extends StatelessWidget {
           AppToolbar(
             title: 'Admin',
             drawerCallBack: () => scaffoldKey.currentState?.openDrawer(),
-            actions: IconButton(onPressed: () {}, icon: SvgPicture.asset(AppAssets.searchIcon)),
+            //actions: IconButton(onPressed: () {}, icon: SvgPicture.asset(AppAssets.searchIcon)),
           ),
           _buildViewBody(),
         ],
@@ -68,7 +70,7 @@ class AdminView extends StatelessWidget {
         width: 320.w,
         height: 30.h,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(AppDimens.borderRadius,),
+          borderRadius: BorderRadius.circular( AppDimens.borderRadius,),
           color: AppColors.current.neutral,
         ),
         padding: const EdgeInsets.all(2),
@@ -77,7 +79,7 @@ class AdminView extends StatelessWidget {
           onTap: (index) => controller.onTabClick(index),
           indicator: BoxDecoration(
             borderRadius: BorderRadius.circular(
-              AppDimens.borderRadius,
+               AppDimens.borderRadius,
             ),
             color: AppColors.current.primary,
           ),
@@ -97,7 +99,7 @@ class AdminView extends StatelessWidget {
       child: Text(
         'Users',
         style: TextStyle(
-          fontSize: AppDimens.fontSizeMedium,
+          fontSize:  AppDimens.fontSizeMedium,
           fontWeight: FontWeight.w400,
         ),
       ),
@@ -109,7 +111,7 @@ class AdminView extends StatelessWidget {
       child: Text(
         'Brief Types',
         style: TextStyle(
-          fontSize: AppDimens.fontSizeMedium,
+          fontSize:  AppDimens.fontSizeMedium,
           fontWeight: FontWeight.w400,
         ),
       ),
@@ -128,20 +130,137 @@ class AdminView extends StatelessWidget {
   }
 
   Widget _buildContentUser(){
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          _buildSearch(),
+          _buildCreateNewUser(),
+          _buildContentItemsUser(),
+        ],
+      ),
+    );
+  }
+Widget _buildContentItemsUser(){
     return ListView.builder(
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
       itemCount: controller.users.length,
       itemBuilder: (context, index) {
         return ContentItemUser(user: controller.users[index],);
       },
     );
+}
+  Widget _buildContentBrief(){
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          _buildSearch(),
+          _buildCreateNewBrief(),
+          _buildContentItemBrief(),
+        ],
+      ),
+    );
   }
 
-  Widget _buildContentBrief(){
+  Widget _buildContentItemBrief(){
     return ListView.builder(
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
       itemCount: controller.briefs.length,
       itemBuilder: (context, index) {
         return ContentItemBrief(brief: controller.briefs[index],);
       },
+    );
+  }
+  Widget _buildSearch() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(
+        horizontal:  AppDimens.paddingSize24,
+        vertical:  AppDimens.paddingSize16,
+      ),
+      child: TextFormField(
+        decoration: InputDecoration(
+          suffixIcon:SvgPicture.asset(AppAssets.searchIcon,color: AppColors.current.neutral,
+            fit: BoxFit.scaleDown,),
+          hintText: 'Search here',
+          hintStyle: TextStyle(
+            color: AppColors.current.text.withOpacity(0.5),
+          ),
+          filled: true,
+          fillColor: AppColors.current.primary,
+          focusColor: AppColors.current.primary,
+        ),
+      ),
+    );
+  }
+  Widget _buildCreateNewUser(){
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 8.0),
+      child: InkWell(
+        onTap: ()=>Get.toNamed(Routes.ADD_ADMIN_USER),
+        child: Container(
+          width: 260.w,
+          height: 48.h,
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular( AppDimens.borderRadiusOuter),
+              border: Border.all(
+                width: 1,
+                color: AppColors.current.neutral,
+              )
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text('create a new ',
+                style: TextStyle(
+                  fontSize: 16.sp,
+                  fontWeight: FontWeight.w500,
+                  color: AppColors.current.text,
+                ),
+              ),
+              Empty(
+                width: 8,
+              ),
+              SvgPicture.asset(AppAssets.createClientIcon),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+  Widget _buildCreateNewBrief(){
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 8.0),
+      child: InkWell(
+        onTap: ()=>Get.toNamed(Routes.ADD_ADMIN_BRIEF),
+        child: Container(
+          width: 260.w,
+          height: 48.h,
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular( AppDimens.borderRadiusOuter),
+              border: Border.all(
+                width: 1,
+                color: AppColors.current.neutral,
+              )
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text('create a new ',
+                style: TextStyle(
+                  fontSize: 16.sp,
+                  fontWeight: FontWeight.w500,
+                  color: AppColors.current.text,
+                ),
+              ),
+              Empty(
+                width: 8,
+              ),
+              SvgPicture.asset(AppAssets.createClientIcon),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }

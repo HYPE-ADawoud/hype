@@ -19,9 +19,7 @@ class DrawerView extends GetView<DrawerViewController> {
         child: Column(
           children: [
            _buildUserData(),
-
             SizedBox(height: AppDimens.paddingSize56.h,),
-
             _buildMenuList(context),
           ],
         ),

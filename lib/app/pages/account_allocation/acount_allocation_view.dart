@@ -28,7 +28,7 @@ class AccountAllocationView extends StatelessWidget {
         children: [
           AppToolbar(
             title: 'Account Allocation',
-            drawerCallBack: () {},
+            backCallBack: ()=>Get.back(),
           ),
           _buildBodyView(),
         ],
@@ -44,7 +44,6 @@ class AccountAllocationView extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              _buildSearch(),
               _buildItemAccountAllocation(),
               _buildDeleteButton(),
               _buildArchiveButton(),
@@ -56,32 +55,32 @@ class AccountAllocationView extends StatelessWidget {
     );
   }
 
-  Widget _buildSearch() {
-    return Padding(
-      padding: const EdgeInsets.only(
-          left: AppDimens.paddingSize24,
-          right: AppDimens.paddingSize24,
-          top: AppDimens.paddingSize16,
-          bottom: AppDimens.paddingSize24),
-      child: TextFormField(
-        decoration: InputDecoration(
-          hintText: 'Client Name',
-            hintStyle: TextStyle(
-              color: AppColors.current.dimmedX
-            ),
-            filled: true,
-            fillColor: AppColors.current.dimmedLightX,
-          focusColor: AppColors.current.dimmedLightX,
-        ),
-      ),
-    );
-  }
+  // Widget _buildSearch() {
+  //   return Padding(
+  //     padding: const EdgeInsets.only(
+  //         left:  AppDimens.paddingSize24,
+  //         right:  AppDimens.paddingSize24,
+  //         top:  AppDimens.paddingSize16,
+  //         bottom:  AppDimens.paddingSize24),
+  //     child: TextFormField(
+  //       decoration: InputDecoration(
+  //         hintText: 'Client name',
+  //           hintStyle: TextStyle(
+  //             color: AppColors.current.dimmedX
+  //           ),
+  //           filled: true,
+  //           fillColor: AppColors.current.dimmedLightX,
+  //         focusColor: AppColors.current.dimmedLightX,
+  //       ),
+  //     ),
+  //   );
+  // }
 
   Widget _buildItemAccountAllocation() {
     return Padding(
       padding: const EdgeInsets.symmetric(
-          horizontal: AppDimens.paddingSize18,
-          vertical: AppDimens.paddingSize24),
+          horizontal:  AppDimens.paddingSize18,
+          vertical:  AppDimens.paddingSize24),
       child: Container(
         width: 339.w,
         height: 700.h,
@@ -128,11 +127,14 @@ class AccountAllocationView extends StatelessWidget {
                       title: 'Video Edititing',
                       value: 'Menna Shousha'
                   ),
-                  _buildStatus(),
+                  _buildStatus(
+                    title: 'Status',
+                    value: 'Completed'
+                  ),
                 ],
               ),
             _buildEditAccountAllocation(),
-            _buildAddAccountAllocation(),
+            // _buildAddAccountAllocation(),
 
           ],
         ),
@@ -143,18 +145,18 @@ class AccountAllocationView extends StatelessWidget {
   Widget _buildClient({required String title,required String value}){
     return Padding(
       padding: const EdgeInsets.symmetric(
-          horizontal:AppDimens.paddingSize24,
-      vertical:AppDimens.paddingSize5),
+          horizontal: AppDimens.paddingSize24,
+      vertical: AppDimens.paddingSize5),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: const EdgeInsets.only(top:AppDimens.paddingSize10),
+            padding: const EdgeInsets.only(top: AppDimens.paddingSize10),
             child: Text(title,
             style: TextStyle(
               color: AppColors.current.primary,
-              fontSize: AppDimens.fontSizeMediumX,
+              fontSize:  AppDimens.fontSizeMediumX,
               fontWeight: FontWeight.bold,
             ),
             ),
@@ -163,7 +165,7 @@ class AccountAllocationView extends StatelessWidget {
           Text(value,
             style: TextStyle(
               color: AppColors.current.dimmedXXXX,
-              fontSize: AppDimens.fontSizeLarge,
+              fontSize:  AppDimens.fontSizeMediumX,
               fontWeight: FontWeight.w400,
             ),
           ),
@@ -179,8 +181,8 @@ class AccountAllocationView extends StatelessWidget {
   Widget _buildMarketingDepartment({required String title,required String value}){
     return Padding(
       padding: const EdgeInsets.symmetric(
-          horizontal:AppDimens.paddingSize24,
-          vertical:AppDimens.paddingSize5),
+          horizontal: AppDimens.paddingSize24,
+          vertical: AppDimens.paddingSize5),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -188,7 +190,7 @@ class AccountAllocationView extends StatelessWidget {
           Text(title,
             style: TextStyle(
               color: AppColors.current.primary,
-              fontSize: AppDimens.fontSizeMediumX,
+              fontSize:  AppDimens.fontSizeMediumX,
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -196,7 +198,7 @@ class AccountAllocationView extends StatelessWidget {
           Text(value,
             style: TextStyle(
               color: AppColors.current.dimmedXXXX,
-              fontSize: AppDimens.fontSizeLarge,
+              fontSize:  AppDimens.fontSizeMediumX,
               fontWeight: FontWeight.w400,
             ),
           ),
@@ -212,8 +214,8 @@ class AccountAllocationView extends StatelessWidget {
   Widget _buildSecondary({required String title,required String value}){
     return Padding(
       padding: const EdgeInsets.symmetric(
-          horizontal:AppDimens.paddingSize24,
-          vertical:AppDimens.paddingSize5),
+          horizontal: AppDimens.paddingSize24,
+          vertical: AppDimens.paddingSize5),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -221,7 +223,7 @@ class AccountAllocationView extends StatelessWidget {
           Text(title,
             style: TextStyle(
               color: AppColors.current.primary,
-              fontSize: AppDimens.fontSizeMediumX,
+              fontSize:  AppDimens.fontSizeMediumX,
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -229,7 +231,7 @@ class AccountAllocationView extends StatelessWidget {
           Text(value,
             style: TextStyle(
               color: AppColors.current.dimmedXXXX,
-              fontSize: AppDimens.fontSizeLarge,
+              fontSize:  AppDimens.fontSizeMediumX,
               fontWeight: FontWeight.w400,
             ),
           ),
@@ -245,8 +247,8 @@ class AccountAllocationView extends StatelessWidget {
   Widget _buildContent({required String title,required String value}){
     return Padding(
       padding: const EdgeInsets.symmetric(
-          horizontal:AppDimens.paddingSize24,
-          vertical:AppDimens.paddingSize5),
+          horizontal: AppDimens.paddingSize24,
+          vertical: AppDimens.paddingSize5),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -254,7 +256,7 @@ class AccountAllocationView extends StatelessWidget {
           Text(title,
             style: TextStyle(
               color: AppColors.current.primary,
-              fontSize: AppDimens.fontSizeMediumX,
+              fontSize:  AppDimens.fontSizeMediumX,
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -262,7 +264,7 @@ class AccountAllocationView extends StatelessWidget {
           Text(value,
             style: TextStyle(
               color: AppColors.current.dimmedXXXX,
-              fontSize: AppDimens.fontSizeLarge,
+              fontSize:  AppDimens.fontSizeMediumX,
               fontWeight: FontWeight.w400,
             ),
           ),
@@ -278,8 +280,8 @@ class AccountAllocationView extends StatelessWidget {
   Widget _buildModerator({required String title,required String value}){
     return Padding(
       padding: const EdgeInsets.symmetric(
-          horizontal:AppDimens.paddingSize24,
-          vertical:AppDimens.paddingSize5),
+          horizontal: AppDimens.paddingSize24,
+          vertical: AppDimens.paddingSize5),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -287,7 +289,7 @@ class AccountAllocationView extends StatelessWidget {
           Text(title,
             style: TextStyle(
               color: AppColors.current.primary,
-              fontSize: AppDimens.fontSizeMediumX,
+              fontSize:  AppDimens.fontSizeMediumX,
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -295,7 +297,7 @@ class AccountAllocationView extends StatelessWidget {
           Text(value,
             style: TextStyle(
               color: AppColors.current.dimmedXXXX,
-              fontSize: AppDimens.fontSizeLarge,
+              fontSize:  AppDimens.fontSizeMediumX,
               fontWeight: FontWeight.w400,
             ),
           ),
@@ -311,8 +313,8 @@ class AccountAllocationView extends StatelessWidget {
   Widget _buildArtsTeam({required String title,required String value}){
     return Padding(
       padding: const EdgeInsets.symmetric(
-          horizontal:AppDimens.paddingSize24,
-          vertical:AppDimens.paddingSize5),
+          horizontal: AppDimens.paddingSize24,
+          vertical: AppDimens.paddingSize5),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -320,7 +322,7 @@ class AccountAllocationView extends StatelessWidget {
           Text(title,
             style: TextStyle(
               color: AppColors.current.primary,
-              fontSize: AppDimens.fontSizeMediumX,
+              fontSize:  AppDimens.fontSizeMediumX,
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -328,7 +330,7 @@ class AccountAllocationView extends StatelessWidget {
           Text(value,
             style: TextStyle(
               color: AppColors.current.dimmedXXXX,
-              fontSize: AppDimens.fontSizeLarge,
+              fontSize:  AppDimens.fontSizeMediumX,
               fontWeight: FontWeight.w400,
             ),
           ),
@@ -344,8 +346,8 @@ class AccountAllocationView extends StatelessWidget {
   Widget _buildMotion({required String title,required String value}){
     return Padding(
       padding: const EdgeInsets.symmetric(
-          horizontal:AppDimens.paddingSize24,
-          vertical:AppDimens.paddingSize5),
+          horizontal: AppDimens.paddingSize24,
+          vertical: AppDimens.paddingSize5),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -353,7 +355,7 @@ class AccountAllocationView extends StatelessWidget {
           Text(title,
             style: TextStyle(
               color: AppColors.current.primary,
-              fontSize: AppDimens.fontSizeMediumX,
+              fontSize:  AppDimens.fontSizeMediumX,
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -361,7 +363,7 @@ class AccountAllocationView extends StatelessWidget {
           Text(value,
             style: TextStyle(
               color: AppColors.current.dimmedXXXX,
-              fontSize: AppDimens.fontSizeLarge,
+              fontSize:  AppDimens.fontSizeMediumX,
               fontWeight: FontWeight.w400,
             ),
           ),
@@ -377,8 +379,8 @@ class AccountAllocationView extends StatelessWidget {
   Widget _buildVideoEditing({required String title,required String value}){
     return Padding(
       padding: const EdgeInsets.symmetric(
-          horizontal:AppDimens.paddingSize24,
-          vertical:AppDimens.paddingSize5),
+          horizontal: AppDimens.paddingSize24,
+          vertical: AppDimens.paddingSize5),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -386,7 +388,7 @@ class AccountAllocationView extends StatelessWidget {
           Text(title,
             style: TextStyle(
               color: AppColors.current.primary,
-              fontSize: AppDimens.fontSizeMediumX,
+              fontSize:  AppDimens.fontSizeMediumX,
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -394,7 +396,7 @@ class AccountAllocationView extends StatelessWidget {
           Text(value,
             style: TextStyle(
               color: AppColors.current.dimmedXXXX,
-              fontSize: AppDimens.fontSizeLarge,
+              fontSize:  AppDimens.fontSizeMediumX,
               fontWeight: FontWeight.w400,
             ),
           ),
@@ -407,19 +409,34 @@ class AccountAllocationView extends StatelessWidget {
       ),
     );
   }
-  Widget _buildStatus(){
+  Widget _buildStatus({required String title,required String value}){
     return Padding(
       padding: const EdgeInsets.symmetric(
-          horizontal:AppDimens.paddingSize24,
-          vertical:AppDimens.paddingSize5),
-      child: Text('Status',
-        style: TextStyle(
-          color: AppColors.current.primary,
-          fontSize: AppDimens.fontSizeMediumX,
-          fontWeight: FontWeight.bold,
-        ),
+          horizontal: AppDimens.paddingSize24,
+          vertical: AppDimens.paddingSize5),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(title,
+            style: TextStyle(
+              color: AppColors.current.primary,
+              fontSize:  AppDimens.fontSizeMediumX,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          Empty(height: 6.h,),
+          Text(value,
+            style: TextStyle(
+              color: AppColors.current.dimmedXXXX,
+              fontSize:  AppDimens.fontSizeMediumX,
+              fontWeight: FontWeight.w400,
+            ),
+          ),
+        ],
       ),
     );
+
   }
 Widget _buildEditAccountAllocation(){
     return AlignPositioned(
@@ -453,47 +470,47 @@ Widget _buildEditAccountAllocation(){
     );
 }
 
-Widget _buildAddAccountAllocation(){
-    return   AlignPositioned(
-      child: Container(
-        width: 36.w,
-        height: 36.h,
-        decoration: BoxDecoration(
-          color: AppColors.current.neutral,
-          shape: BoxShape.circle,
-          boxShadow: [
-            BoxShadow(
-              color: AppColors.current.dimmedX,
-              offset: const Offset(0.0, 1.0), //(x,y)
-              blurRadius: 6.0,
-            ),
-          ],
-        ),
-        child: InkWell(
-          onTap: ()=>Get.toNamed(Routes.ADD_ACCOUNT_ALLOCATION),
-          child: SvgPicture.asset(
-            AppAssets.plusIcon,
-            fit: BoxFit.scaleDown,
-          ),
-        ),
-      ),
-      alignment: Alignment.centerRight,
-      touch: Touch.inside,
-      dx: 16.0, // Move 4 pixels to the right.
-      moveByChildWidth: 0, // Move half child width to the left.
-      moveByChildHeight: 3.5,
-    );
-}
+// Widget _buildAddAccountAllocation(){
+//     return   AlignPositioned(
+//       child: Container(
+//         width: 36.w,
+//         height: 36.h,
+//         decoration: BoxDecoration(
+//           color: AppColors.current.neutral,
+//           shape: BoxShape.circle,
+//           boxShadow: [
+//             BoxShadow(
+//               color: AppColors.current.dimmedX,
+//               offset: const Offset(0.0, 1.0), //(x,y)
+//               blurRadius: 6.0,
+//             ),
+//           ],
+//         ),
+//         child: InkWell(
+//           onTap: ()=>Get.toNamed(Routes.ADD_ACCOUNT_ALLOCATION),
+//           child: SvgPicture.asset(
+//             AppAssets.plusIcon,
+//             fit: BoxFit.scaleDown,
+//           ),
+//         ),
+//       ),
+//       alignment: Alignment.centerRight,
+//       touch: Touch.inside,
+//       dx: 16.0, // Move 4 pixels to the right.
+//       moveByChildWidth: 0, // Move half child width to the left.
+//       moveByChildHeight: 3.5,
+//     );
+// }
   Widget _buildDeleteButton() {
     return Padding(
       padding: const EdgeInsets.only(
-          top: AppDimens.paddingSize16,
-      bottom: AppDimens.paddingSize12,
+          top:  AppDimens.paddingSize16,
+      bottom:  AppDimens.paddingSize12,
       ),
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(
-            AppDimens.borderRadiusOuter
+             AppDimens.borderRadiusOuter
           ),
           border: Border.all(
             width: 1,
@@ -510,7 +527,7 @@ Widget _buildAddAccountAllocation(){
           child: Text(
             'Delete',
             style: TextStyle(
-                fontSize: AppDimens.fontSizeMediumX,
+                fontSize:  AppDimens.fontSizeMediumX,
                 color: AppColors.current.neutral,
                 fontWeight: FontWeight.w500),
           ),
@@ -521,13 +538,13 @@ Widget _buildAddAccountAllocation(){
   Widget _buildArchiveButton() {
     return Padding(
       padding: const EdgeInsets.only(
-        top: AppDimens.paddingSize8,
+        top:  AppDimens.paddingSize8,
         bottom: 100,
       ),
       child: Container(
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(
-                AppDimens.borderRadiusOuter
+                 AppDimens.borderRadiusOuter
             ),
             border: Border.all(
                 width: 1,
@@ -544,7 +561,7 @@ Widget _buildAddAccountAllocation(){
           child: Text(
             'Archive',
             style: TextStyle(
-                fontSize: AppDimens.fontSizeMediumX,
+                fontSize:  AppDimens.fontSizeMediumX,
                 color: AppColors.current.neutral,
                 fontWeight: FontWeight.w500),
           ),
@@ -560,7 +577,7 @@ Widget _buildAddAccountAllocation(){
         width: 135.w,
         decoration: BoxDecoration(
           color: AppColors.current.text,
-          borderRadius: BorderRadius.circular(AppDimens.borderRadiusLine),
+          borderRadius: BorderRadius.circular( AppDimens.borderRadiusLine),
         ),
       ),
     );

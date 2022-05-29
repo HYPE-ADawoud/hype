@@ -7,6 +7,7 @@ import 'package:hype/app/common/themes/app_assets.dart';
 import 'package:hype/app/common/themes/app_colors.dart';
 import 'package:hype/app/common/themes/app_dims.dart';
 import 'package:hype/app/pages/home/home_controller.dart';
+import 'package:hype/app/routes/app_pages.dart';
 import 'package:hype/utils/ui/empty.dart';
 
 class TaskItem extends StatelessWidget {
@@ -61,17 +62,20 @@ class TaskItem extends StatelessWidget {
     return Obx(() {
       return Visibility(
           visible: taskModel.isExpanded.value,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              _buildDivider(),
-              _buildTaskAssignedPersons(),
-              _buildDivider(),
-              _buildTimer(),
-              _buildDivider(),
-              _buildTaskDates(),
-            ],
+          child: InkWell(
+            onTap: ()=>Get.toNamed(Routes.TASK),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                _buildDivider(),
+                _buildTaskAssignedPersons(),
+                _buildDivider(),
+                _buildTimer(),
+                _buildDivider(),
+                _buildTaskDates(),
+              ],
+            ),
           ));
     });
   }

@@ -36,32 +36,44 @@ class DrawerViewController extends GetxController {
     menuItems.add(DrawerItemModel(
         name: "Create new  task",
         iconPath: AppAssets.createIcon,
-        onTap: () {}));
+        onTap: () {
+          Get.toNamed(Routes.CREATE_TASK);
+        }));
 
     menuItems.add(DrawerItemModel(
         name: "Account allocation",
         iconPath: AppAssets.accountIcon,
-        onTap: () {}));
+        onTap: () {
+          Get.toNamed(Routes.MAIN_ACCOUNT_ALLOCATION);
+        }));
 
     menuItems.add(DrawerItemModel(
         name: "Dashboard",
         iconPath: AppAssets.dashboardIcon,
-        onTap: () {}));
+        onTap: () {
+          Get.toNamed(Routes.DASHBOARD);
+        }));
 
     menuItems.add(DrawerItemModel(
         name: "Admin",
         iconPath: AppAssets.adminIcon,
-        onTap: () {}));
+        onTap: () {
+          Get.toNamed(Routes.ADMIN);
+        }));
 
     menuItems.add(DrawerItemModel(
         name: "Clients",
         iconPath: AppAssets.clientIcon,
-        onTap: () {}));
+        onTap: () {
+          Get.toNamed(Routes.CLIENT);
+        }));
 
     menuItems.add(DrawerItemModel(
         name: "Departments",
         iconPath: AppAssets.departmentIcon,
-        onTap: () {}));
+        onTap: () {
+          Get.toNamed(Routes.DEPARTMENT);
+        }));
 
     /// == Logout
     menuItems.add(DrawerItemModel(

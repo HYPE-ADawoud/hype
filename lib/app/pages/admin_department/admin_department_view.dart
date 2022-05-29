@@ -26,7 +26,7 @@ class AdminDepartmentView extends StatelessWidget {
       child: Column(
         children: [
           AppToolbar(
-            backCallBack: () {},
+            backCallBack: ()=>Get.back(),
             title: 'Admin',
           ),
           _buildBodyView(),
@@ -38,7 +38,7 @@ class AdminDepartmentView extends StatelessWidget {
   Widget _buildBodyView() {
     return Expanded(
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: AppDimens.paddingSize24.w),
+        padding: EdgeInsets.symmetric(horizontal:  AppDimens.paddingSize24.w),
         color: AppColors.current.primary,
         child: _buildFormAdmin(),
       ),
@@ -50,8 +50,9 @@ class AdminDepartmentView extends StatelessWidget {
       children: [
         _buildName(),
         _buildJobTitle(),
-        _buildDescription(),
+        //_buildDescription(),
         _buildDoneButton(),
+        _buildDeleteButton(),
         _buildSpacer(),
         _buildLine(),
       ],
@@ -66,7 +67,7 @@ class AdminDepartmentView extends StatelessWidget {
         height: 44.h,
         decoration: BoxDecoration(
           color: AppColors.current.text,
-          borderRadius: BorderRadius.circular(AppDimens.borderRadius),
+          borderRadius: BorderRadius.circular( AppDimens.borderRadius),
         ),
         child: TextFormField(
           decoration: InputDecoration(
@@ -78,7 +79,7 @@ class AdminDepartmentView extends StatelessWidget {
             hintText: 'Name',
             hintStyle: TextStyle(
               fontWeight: FontWeight.normal,
-              fontSize: AppDimens.fontSizeMediumX,
+              fontSize:  AppDimens.fontSizeMediumX,
               color: AppColors.current.dimmedX,
             ),
           ),
@@ -95,7 +96,7 @@ class AdminDepartmentView extends StatelessWidget {
           width: 339.w,
           height: 44.h,
           decoration:
-              BoxDecoration(color: AppColors.current.text, borderRadius: BorderRadius.circular(AppDimens.borderRadius)),
+              BoxDecoration(color: AppColors.current.text, borderRadius: BorderRadius.circular( AppDimens.borderRadius)),
           child: Center(
             child: DropdownButtonHideUnderline(
               child: DropdownButton(
@@ -117,7 +118,7 @@ class AdminDepartmentView extends StatelessWidget {
                       style: TextStyle(
                           color: AppColors.current.dimmedXXXX,
                           fontWeight: FontWeight.w600,
-                          fontSize: AppDimens.fontSizeMedium.sp),
+                          fontSize:  AppDimens.fontSizeMedium.sp),
                     ),
                   );
                 }).toList(),
@@ -138,7 +139,7 @@ class AdminDepartmentView extends StatelessWidget {
         height: 143.h,
         decoration: BoxDecoration(
           color: AppColors.current.text,
-          borderRadius: BorderRadius.circular(AppDimens.borderRadius),
+          borderRadius: BorderRadius.circular( AppDimens.borderRadius),
         ),
         child: TextField(
           decoration: InputDecoration(
@@ -150,7 +151,7 @@ class AdminDepartmentView extends StatelessWidget {
             hintText: 'Description',
             hintStyle: TextStyle(
               fontWeight: FontWeight.normal,
-              fontSize: AppDimens.fontSizeMediumX,
+              fontSize:  AppDimens.fontSizeMediumX,
               color: AppColors.current.dimmedX,
             ),
           ),
@@ -160,20 +161,69 @@ class AdminDepartmentView extends StatelessWidget {
   }
 
   Widget _buildDoneButton() {
-    return SizedBox(
-      width: 324.w,
-      height: 60.h,
-      child: ElevatedButton(
-        onPressed: () {},
-        child: Text(
-          'Done',
-          style: TextStyle(
-              fontSize: AppDimens.fontSizeMediumX, color: AppColors.current.primary, fontWeight: FontWeight.w500),
+    return Padding(
+      padding:  EdgeInsets.only(
+        top: 236.h,
+        bottom:12.h,
+      ),
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular( AppDimens.borderRadiusOuter),
+        ),
+        width: 324.w,
+        height: 60.h,
+        child: ElevatedButton(
+          onPressed: () {
+            Get.back();
+          },
+          style: ElevatedButton.styleFrom(
+            primary: AppColors.current.primaryX,
+          ),
+          child: Text(
+            'Done',
+            style: TextStyle(
+                fontSize:  AppDimens.fontSizeMediumX, color: AppColors.current.neutral, fontWeight: FontWeight.w500),
+          ),
         ),
       ),
     );
   }
-
+  Widget _buildDeleteButton() {
+    return Padding(
+      padding: const EdgeInsets.only(
+        top:  AppDimens.paddingSize8,
+        bottom: 100,
+      ),
+      child: Container(
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(
+                 AppDimens.borderRadiusOuter
+            ),
+            border: Border.all(
+                width: 1,
+                color: AppColors.current.neutral
+            )
+        ),
+        width: 324.w,
+        height: 60.h,
+        child: ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            primary: AppColors.current.dimmedXX,
+          ),
+          onPressed: () {
+            Get.back();
+          },
+          child: Text(
+            'Delete',
+            style: TextStyle(
+                fontSize:  AppDimens.fontSizeMediumX,
+                color: AppColors.current.neutral,
+                fontWeight: FontWeight.w500),
+          ),
+        ),
+      ),
+    );
+  }
   Widget _buildSpacer() {
     return const Spacer(
       flex: 1,
@@ -188,7 +238,7 @@ class AdminDepartmentView extends StatelessWidget {
         width: 135.w,
         decoration: BoxDecoration(
           color: AppColors.current.text,
-          borderRadius: BorderRadius.circular(AppDimens.borderRadiusLine),
+          borderRadius: BorderRadius.circular( AppDimens.borderRadiusLine),
         ),
       ),
     );

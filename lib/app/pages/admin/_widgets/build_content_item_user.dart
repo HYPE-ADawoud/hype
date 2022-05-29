@@ -15,13 +15,13 @@ class ContentItemUser extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(AppDimens.paddingSize16),
+      padding: const EdgeInsets.all( AppDimens.paddingSize16),
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: AppDimens.paddingSize16.w, vertical: AppDimens.paddingSize16.h),
+        padding: EdgeInsets.symmetric(horizontal:  AppDimens.paddingSize16.w, vertical:  AppDimens.paddingSize16.h),
         width: 339.w,
         height: 155.h,
         decoration: BoxDecoration(
-            color: AppColors.current.neutral, borderRadius: BorderRadius.circular(AppDimens.borderRadiusOuter)),
+            color: AppColors.current.neutral, borderRadius: BorderRadius.circular( AppDimens.borderRadiusOuter)),
         child: _buildContentItemsUsers(),
       ),
     );
@@ -61,7 +61,7 @@ class ContentItemUser extends StatelessWidget {
   }
   Widget _buildDivider() {
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: AppDimens.paddingSize10.h),
+      padding: EdgeInsets.symmetric(vertical:  AppDimens.paddingSize10.h),
       child: Divider(
         color: AppColors.current.dimmedXXXX,
         height: 0.5,

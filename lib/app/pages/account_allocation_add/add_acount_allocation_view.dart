@@ -1,7 +1,10 @@
+import 'package:align_positioned/align_positioned.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:hype/app/common/themes/app_assets.dart';
 import 'package:hype/app/common/themes/app_colors.dart';
 import 'package:hype/app/common/themes/app_dims.dart';
 import 'package:hype/app/common/widgets/app_toolbar.dart';
@@ -26,7 +29,7 @@ class AddAccountAllocationView extends StatelessWidget {
         children: [
           AppToolbar(
             title: 'Add Account',
-            drawerCallBack: () {},
+           backCallBack: ()=>Get.back(),
           ),
           _buildBodyView(),
         ],
@@ -91,7 +94,7 @@ class AddAccountAllocationView extends StatelessWidget {
           hintText: 'Client Name',
           hintStyle: TextStyle(
             fontWeight: FontWeight.normal,
-            fontSize: AppDimens.fontSizeMediumX,
+            fontSize:  AppDimens.fontSizeMediumX,
             color: AppColors.current.dimmedX,
           ),
         ),
@@ -107,7 +110,7 @@ class AddAccountAllocationView extends StatelessWidget {
         ),
         child: Container(
           decoration: BoxDecoration(
-              color: AppColors.current.dimmedLightX, borderRadius: BorderRadius.circular(AppDimens.borderRadiusOuter)),
+              color: AppColors.current.dimmedLightX, borderRadius: BorderRadius.circular( AppDimens.borderRadiusOuter)),
           child: Center(
             child: DropdownButtonHideUnderline(
               child: DropdownButton(
@@ -129,7 +132,7 @@ class AddAccountAllocationView extends StatelessWidget {
                       style: TextStyle(
                           color: AppColors.current.dimmedXXXX,
                           fontWeight: FontWeight.w600,
-                          fontSize: AppDimens.fontSizeMedium.sp),
+                          fontSize:  AppDimens.fontSizeMedium.sp),
                     ),
                   );
                 }).toList(),
@@ -150,7 +153,7 @@ class AddAccountAllocationView extends StatelessWidget {
         ),
         child: Container(
           decoration: BoxDecoration(
-              color: AppColors.current.dimmedLightX, borderRadius: BorderRadius.circular(AppDimens.borderRadiusOuter)),
+              color: AppColors.current.dimmedLightX, borderRadius: BorderRadius.circular( AppDimens.borderRadiusOuter)),
           child: Center(
             child: DropdownButtonHideUnderline(
               child: DropdownButton(
@@ -172,7 +175,7 @@ class AddAccountAllocationView extends StatelessWidget {
                       style: TextStyle(
                           color: AppColors.current.dimmedXXXX,
                           fontWeight: FontWeight.w600,
-                          fontSize: AppDimens.fontSizeMedium.sp),
+                          fontSize:  AppDimens.fontSizeMedium.sp),
                     ),
                   );
                 }).toList(),
@@ -193,7 +196,7 @@ class AddAccountAllocationView extends StatelessWidget {
         ),
         child: Container(
           decoration: BoxDecoration(
-              color: AppColors.current.dimmedLightX, borderRadius: BorderRadius.circular(AppDimens.borderRadiusOuter)),
+              color: AppColors.current.dimmedLightX, borderRadius: BorderRadius.circular( AppDimens.borderRadiusOuter)),
           child: Center(
             child: DropdownButtonHideUnderline(
               child: DropdownButton(
@@ -215,7 +218,7 @@ class AddAccountAllocationView extends StatelessWidget {
                       style: TextStyle(
                           color: AppColors.current.dimmedXXXX,
                           fontWeight: FontWeight.w600,
-                          fontSize: AppDimens.fontSizeMedium.sp),
+                          fontSize:  AppDimens.fontSizeMedium.sp),
                     ),
                   );
                 }).toList(),
@@ -236,7 +239,7 @@ class AddAccountAllocationView extends StatelessWidget {
         child: Row(
           children: [
             Text('Moderation',style: TextStyle(
-                fontSize: AppDimens.fontSizeMediumX,
+                fontSize:  AppDimens.fontSizeMediumX,
                 color: AppColors.current.text
             ),
             ),
@@ -251,7 +254,7 @@ class AddAccountAllocationView extends StatelessWidget {
                 }),
             Text('Yes',
               style: TextStyle(
-                  fontSize: AppDimens.fontSizeMediumX,
+                  fontSize:  AppDimens.fontSizeMediumX,
                   color: AppColors.current.text
               ),
             ),
@@ -269,7 +272,7 @@ class AddAccountAllocationView extends StatelessWidget {
                 }),
             Text('No',
               style: TextStyle(
-                  fontSize: AppDimens.fontSizeMediumX,
+                  fontSize:  AppDimens.fontSizeMediumX,
                   color: AppColors.current.text
               ),
             ),
@@ -287,7 +290,7 @@ class AddAccountAllocationView extends StatelessWidget {
         ),
         child: Container(
           decoration: BoxDecoration(
-              color: AppColors.current.dimmedLightX, borderRadius: BorderRadius.circular(AppDimens.borderRadiusOuter)),
+              color: AppColors.current.dimmedLightX, borderRadius: BorderRadius.circular( AppDimens.borderRadiusOuter)),
           child: Center(
             child: DropdownButtonHideUnderline(
               child: DropdownButton(
@@ -309,7 +312,7 @@ class AddAccountAllocationView extends StatelessWidget {
                       style: TextStyle(
                           color: AppColors.current.dimmedXXXX,
                           fontWeight: FontWeight.w600,
-                          fontSize: AppDimens.fontSizeMedium.sp),
+                          fontSize:  AppDimens.fontSizeMedium.sp),
                     ),
                   );
                 }).toList(),
@@ -330,7 +333,7 @@ class AddAccountAllocationView extends StatelessWidget {
         ),
         child: Container(
           decoration: BoxDecoration(
-              color: AppColors.current.dimmedLightX, borderRadius: BorderRadius.circular(AppDimens.borderRadiusOuter)),
+              color: AppColors.current.dimmedLightX, borderRadius: BorderRadius.circular( AppDimens.borderRadiusOuter)),
           child: Center(
             child: DropdownButtonHideUnderline(
               child: DropdownButton(
@@ -352,7 +355,7 @@ class AddAccountAllocationView extends StatelessWidget {
                       style: TextStyle(
                           color: AppColors.current.dimmedXXXX,
                           fontWeight: FontWeight.w600,
-                          fontSize: AppDimens.fontSizeMedium.sp),
+                          fontSize:  AppDimens.fontSizeMedium.sp),
                     ),
                   );
                 }).toList(),
@@ -373,7 +376,7 @@ class AddAccountAllocationView extends StatelessWidget {
         child: Row(
           children: [
             Text('MediaBuying',style: TextStyle(
-              fontSize: AppDimens.fontSizeMediumX,
+              fontSize:  AppDimens.fontSizeMediumX,
               color: AppColors.current.text
             ),
             ),
@@ -388,7 +391,7 @@ class AddAccountAllocationView extends StatelessWidget {
                 }),
             Text('Yes',
               style: TextStyle(
-                  fontSize: AppDimens.fontSizeMediumX,
+                  fontSize:  AppDimens.fontSizeMediumX,
                   color: AppColors.current.text
               ),
             ),
@@ -406,7 +409,7 @@ class AddAccountAllocationView extends StatelessWidget {
                 }),
             Text('No',
               style: TextStyle(
-                  fontSize: AppDimens.fontSizeMediumX,
+                  fontSize:  AppDimens.fontSizeMediumX,
                   color: AppColors.current.text
               ),
             ),
@@ -434,7 +437,7 @@ class AddAccountAllocationView extends StatelessWidget {
           hintText: 'Brief',
           hintStyle: TextStyle(
             fontWeight: FontWeight.normal,
-            fontSize: AppDimens.fontSizeMediumX,
+            fontSize:  AppDimens.fontSizeMediumX,
             color: AppColors.current.dimmedX,
           ),
         ),
@@ -451,7 +454,7 @@ class AddAccountAllocationView extends StatelessWidget {
         ),
         child: Container(
           decoration: BoxDecoration(
-              color: AppColors.current.dimmedLightX, borderRadius: BorderRadius.circular(AppDimens.borderRadiusOuter)),
+              color: AppColors.current.dimmedLightX, borderRadius: BorderRadius.circular( AppDimens.borderRadiusOuter)),
           child: Center(
             child: DropdownButtonHideUnderline(
               child: DropdownButton(
@@ -473,7 +476,7 @@ class AddAccountAllocationView extends StatelessWidget {
                       style: TextStyle(
                           color: AppColors.current.dimmedXXXX,
                           fontWeight: FontWeight.w600,
-                          fontSize: AppDimens.fontSizeMedium.sp),
+                          fontSize:  AppDimens.fontSizeMedium.sp),
                     ),
                   );
                 }).toList(),
@@ -494,7 +497,7 @@ class AddAccountAllocationView extends StatelessWidget {
         ),
         child: Container(
           decoration: BoxDecoration(
-              color: AppColors.current.dimmedLightX, borderRadius: BorderRadius.circular(AppDimens.borderRadiusOuter)),
+              color: AppColors.current.dimmedLightX, borderRadius: BorderRadius.circular( AppDimens.borderRadiusOuter)),
           child: Center(
             child: DropdownButtonHideUnderline(
               child: DropdownButton(
@@ -516,7 +519,7 @@ class AddAccountAllocationView extends StatelessWidget {
                       style: TextStyle(
                           color: AppColors.current.dimmedXXXX,
                           fontWeight: FontWeight.w600,
-                          fontSize: AppDimens.fontSizeMedium.sp),
+                          fontSize:  AppDimens.fontSizeMedium.sp),
                     ),
                   );
                 }).toList(),
@@ -537,7 +540,7 @@ class AddAccountAllocationView extends StatelessWidget {
         ),
         child: Container(
           decoration: BoxDecoration(
-              color: AppColors.current.dimmedLightX, borderRadius: BorderRadius.circular(AppDimens.borderRadiusOuter)),
+              color: AppColors.current.dimmedLightX, borderRadius: BorderRadius.circular( AppDimens.borderRadiusOuter)),
           child: Center(
             child: DropdownButtonHideUnderline(
               child: DropdownButton(
@@ -559,7 +562,7 @@ class AddAccountAllocationView extends StatelessWidget {
                       style: TextStyle(
                           color: AppColors.current.dimmedXXXX,
                           fontWeight: FontWeight.w600,
-                          fontSize: AppDimens.fontSizeMedium.sp),
+                          fontSize:  AppDimens.fontSizeMedium.sp),
                     ),
                   );
                 }).toList(),
@@ -580,7 +583,7 @@ class AddAccountAllocationView extends StatelessWidget {
         ),
         child: Container(
           decoration: BoxDecoration(
-              color: AppColors.current.dimmedLightX, borderRadius: BorderRadius.circular(AppDimens.borderRadiusOuter)),
+              color: AppColors.current.dimmedLightX, borderRadius: BorderRadius.circular( AppDimens.borderRadiusOuter)),
           child: Center(
             child: DropdownButtonHideUnderline(
               child: DropdownButton(
@@ -602,7 +605,7 @@ class AddAccountAllocationView extends StatelessWidget {
                       style: TextStyle(
                           color: AppColors.current.dimmedXXXX,
                           fontWeight: FontWeight.w600,
-                          fontSize: AppDimens.fontSizeMedium.sp),
+                          fontSize:  AppDimens.fontSizeMedium.sp),
                     ),
                   );
                 }).toList(),
@@ -623,7 +626,7 @@ class AddAccountAllocationView extends StatelessWidget {
         ),
         child: Container(
           decoration: BoxDecoration(
-              color: AppColors.current.dimmedLightX, borderRadius: BorderRadius.circular(AppDimens.borderRadiusOuter)),
+              color: AppColors.current.dimmedLightX, borderRadius: BorderRadius.circular( AppDimens.borderRadiusOuter)),
           child: Center(
             child: DropdownButtonHideUnderline(
               child: DropdownButton(
@@ -645,7 +648,7 @@ class AddAccountAllocationView extends StatelessWidget {
                       style: TextStyle(
                           color: AppColors.current.dimmedXXXX,
                           fontWeight: FontWeight.w600,
-                          fontSize: AppDimens.fontSizeMedium.sp),
+                          fontSize:  AppDimens.fontSizeMedium.sp),
                     ),
                   );
                 }).toList(),
@@ -666,7 +669,7 @@ class AddAccountAllocationView extends StatelessWidget {
         ),
         child: Container(
           decoration: BoxDecoration(
-              color: AppColors.current.dimmedLightX, borderRadius: BorderRadius.circular(AppDimens.borderRadiusOuter)),
+              color: AppColors.current.dimmedLightX, borderRadius: BorderRadius.circular( AppDimens.borderRadiusOuter)),
           child: Center(
             child: DropdownButtonHideUnderline(
               child: DropdownButton(
@@ -688,7 +691,7 @@ class AddAccountAllocationView extends StatelessWidget {
                       style: TextStyle(
                           color: AppColors.current.dimmedXXXX,
                           fontWeight: FontWeight.w600,
-                          fontSize: AppDimens.fontSizeMedium.sp),
+                          fontSize:  AppDimens.fontSizeMedium.sp),
                     ),
                   );
                 }).toList(),
@@ -709,7 +712,7 @@ class AddAccountAllocationView extends StatelessWidget {
         ),
         child: Container(
           decoration: BoxDecoration(
-              color: AppColors.current.dimmedLightX, borderRadius: BorderRadius.circular(AppDimens.borderRadiusOuter)),
+              color: AppColors.current.dimmedLightX, borderRadius: BorderRadius.circular( AppDimens.borderRadiusOuter)),
           child: Center(
             child: DropdownButtonHideUnderline(
               child: DropdownButton(
@@ -731,7 +734,7 @@ class AddAccountAllocationView extends StatelessWidget {
                       style: TextStyle(
                           color: AppColors.current.dimmedXXXX,
                           fontWeight: FontWeight.w600,
-                          fontSize: AppDimens.fontSizeMedium.sp),
+                          fontSize:  AppDimens.fontSizeMedium.sp),
                     ),
                   );
                 }).toList(),
@@ -752,7 +755,7 @@ class AddAccountAllocationView extends StatelessWidget {
         ),
         child: Container(
           decoration: BoxDecoration(
-              color: AppColors.current.dimmedLightX, borderRadius: BorderRadius.circular(AppDimens.borderRadiusOuter)),
+              color: AppColors.current.dimmedLightX, borderRadius: BorderRadius.circular( AppDimens.borderRadiusOuter)),
           child: Center(
             child: DropdownButtonHideUnderline(
               child: DropdownButton(
@@ -774,7 +777,7 @@ class AddAccountAllocationView extends StatelessWidget {
                       style: TextStyle(
                           color: AppColors.current.dimmedXXXX,
                           fontWeight: FontWeight.w600,
-                          fontSize: AppDimens.fontSizeMedium.sp),
+                          fontSize:  AppDimens.fontSizeMedium.sp),
                     ),
                   );
                 }).toList(),
@@ -795,7 +798,7 @@ class AddAccountAllocationView extends StatelessWidget {
         ),
         child: Container(
           decoration: BoxDecoration(
-              color: AppColors.current.dimmedLightX, borderRadius: BorderRadius.circular(AppDimens.borderRadiusOuter)),
+              color: AppColors.current.dimmedLightX, borderRadius: BorderRadius.circular( AppDimens.borderRadiusOuter)),
           child: Center(
             child: DropdownButtonHideUnderline(
               child: DropdownButton(
@@ -817,7 +820,7 @@ class AddAccountAllocationView extends StatelessWidget {
                       style: TextStyle(
                           color: AppColors.current.dimmedXXXX,
                           fontWeight: FontWeight.w600,
-                          fontSize: AppDimens.fontSizeMedium.sp),
+                          fontSize:  AppDimens.fontSizeMedium.sp),
                     ),
                   );
                 }).toList(),
@@ -838,7 +841,7 @@ class AddAccountAllocationView extends StatelessWidget {
         ),
         child: Container(
           decoration: BoxDecoration(
-              color: AppColors.current.dimmedLightX, borderRadius: BorderRadius.circular(AppDimens.borderRadiusOuter)),
+              color: AppColors.current.dimmedLightX, borderRadius: BorderRadius.circular( AppDimens.borderRadiusOuter)),
           child: Center(
             child: DropdownButtonHideUnderline(
               child: DropdownButton(
@@ -860,7 +863,7 @@ class AddAccountAllocationView extends StatelessWidget {
                       style: TextStyle(
                           color: AppColors.current.dimmedXXXX,
                           fontWeight: FontWeight.w600,
-                          fontSize: AppDimens.fontSizeMedium.sp),
+                          fontSize:  AppDimens.fontSizeMedium.sp),
                     ),
                   );
                 }).toList(),
@@ -881,7 +884,7 @@ class AddAccountAllocationView extends StatelessWidget {
         ),
         child: Container(
           decoration: BoxDecoration(
-              color: AppColors.current.dimmedLightX, borderRadius: BorderRadius.circular(AppDimens.borderRadiusOuter)),
+              color: AppColors.current.dimmedLightX, borderRadius: BorderRadius.circular( AppDimens.borderRadiusOuter)),
           child: Center(
             child: DropdownButtonHideUnderline(
               child: DropdownButton(
@@ -903,7 +906,7 @@ class AddAccountAllocationView extends StatelessWidget {
                       style: TextStyle(
                           color: AppColors.current.dimmedXXXX,
                           fontWeight: FontWeight.w600,
-                          fontSize: AppDimens.fontSizeMedium.sp),
+                          fontSize:  AppDimens.fontSizeMedium.sp),
                     ),
                   );
                 }).toList(),
@@ -922,24 +925,26 @@ class AddAccountAllocationView extends StatelessWidget {
   Widget _buildSubmitButton() {
     return Padding(
       padding: const EdgeInsets.only(
-        top: AppDimens.paddingSize24,
-        bottom: AppDimens.paddingSize12,
+        top:  AppDimens.paddingSize24,
+        bottom:  AppDimens.paddingSize12,
       ),
       child: Container(
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(AppDimens.borderRadiusOuter),
+            borderRadius: BorderRadius.circular( AppDimens.borderRadiusOuter),
         ),
         width: 324.w,
         height: 60.h,
         child: ElevatedButton(
-          onPressed: () {},
+          onPressed: () {
+            Get.back();
+          },
           style: ElevatedButton.styleFrom(
             primary: AppColors.current.primaryX,
           ),
           child: Text(
             'Submit',
             style: TextStyle(
-                fontSize: AppDimens.fontSizeMediumX, color: AppColors.current.neutral, fontWeight: FontWeight.w500),
+                fontSize:  AppDimens.fontSizeMediumX, color: AppColors.current.neutral, fontWeight: FontWeight.w500),
           ),
         ),
       ),
@@ -954,7 +959,7 @@ class AddAccountAllocationView extends StatelessWidget {
         width: 135.w,
         decoration: BoxDecoration(
           color: AppColors.current.text,
-          borderRadius: BorderRadius.circular(AppDimens.borderRadiusLine),
+          borderRadius: BorderRadius.circular( AppDimens.borderRadiusLine),
         ),
       ),
     );

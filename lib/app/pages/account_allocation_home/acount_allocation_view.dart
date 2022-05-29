@@ -9,28 +9,32 @@ import 'package:hype/app/common/themes/app_dims.dart';
 import 'package:hype/app/common/widgets/app_toolbar.dart';
 import 'package:hype/app/pages/account_allocation_home/_widgets/account_allocation_items.dart';
 import 'package:hype/app/pages/account_allocation_home/main_acount_allocation_controller.dart';
+import 'package:hype/app/pages/drawer/drawer_view.dart';
 import 'package:hype/app/routes/app_pages.dart';
 
-class MainAccountAllocationView extends StatelessWidget {
 
+class MainAccountAllocationView extends StatelessWidget {
+  final scaffoldKey = GlobalKey<ScaffoldState>();
   final MainAccountAllocationController controller = Get.find();
    MainAccountAllocationView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: scaffoldKey,
+      drawer: const DrawerView(),
       backgroundColor: AppColors.current.neutral,
-      body: _buildBody(),
+      body: _buildBody(context),
     );
   }
 
-  Widget _buildBody() {
+  Widget _buildBody(BuildContext context) {
     return SafeArea(
       child: Column(
         children: [
           AppToolbar(
             title: 'Account Allocation',
-            drawerCallBack: () {},
+            drawerCallBack: () => scaffoldKey.currentState?.openDrawer(),
             actions: _buildAddAccountAllocation(),
           ),
           _buildBodyView(),
@@ -79,15 +83,15 @@ class MainAccountAllocationView extends StatelessWidget {
   Widget _buildSearch() {
     return Padding(
       padding: const EdgeInsets.only(
-          left: AppDimens.paddingSize24,
-          right: AppDimens.paddingSize24,
-          top: AppDimens.paddingSize16,
-          bottom: AppDimens.paddingSize24),
+          left:  AppDimens.paddingSize24,
+          right:  AppDimens.paddingSize24,
+          top:  AppDimens.paddingSize16,
+          bottom:  AppDimens.paddingSize24),
       child: TextFormField(
         decoration: InputDecoration(
           suffixIcon: SvgPicture.asset(AppAssets.searchIcon,
           fit: BoxFit.scaleDown),
-          hintText: 'Client Name',
+          hintText: 'Client name',
             hintStyle: TextStyle(
               color: AppColors.current.dimmedX
             ),

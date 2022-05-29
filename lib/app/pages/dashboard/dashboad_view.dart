@@ -23,10 +23,10 @@ class DashboardView extends StatelessWidget {
       key: scaffoldKey,
       backgroundColor: AppColors.current.neutral,
       drawer: const DrawerView(),
-      body: _buildBody(),
+      body: _buildBody(context),
     );
   }
-  Widget _buildBody() {
+  Widget _buildBody(BuildContext context) {
     return SafeArea(
       child: Column(
         children: [

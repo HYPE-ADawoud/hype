@@ -15,25 +15,14 @@ class AccountAllocationItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(
-<<<<<<< HEAD
-          vertical: AppDims.paddingSize8,
-          horizontal:AppDims.paddingSize16),
+          vertical:  AppDimens.paddingSize8,
+          horizontal: AppDimens.paddingSize16),
       child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: AppDims.paddingSize8),
+        padding: const EdgeInsets.symmetric(horizontal:  AppDimens.paddingSize8),
         width: 339.w,
         height: 60.h,
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(AppDims.paddingSize10),
-=======
-          vertical: AppDimens.paddingSize8,
-          horizontal:AppDimens.paddingSize16),
-      child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: AppDimens.paddingSize8),
-        width: 339.w,
-        height: 60.h,
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(AppDimens.paddingSize10),
->>>>>>> a2ecfaca5ffb4beef10a2207191e4ef2840dd426
+            borderRadius: BorderRadius.circular( AppDimens.paddingSize10),
             color: AppColors.current.neutral
         ),
         child: Row(
@@ -52,13 +41,8 @@ class AccountAllocationItem extends StatelessWidget {
   Widget _buildTitle({required String title}){
     return Text(title,
       style: TextStyle(
-<<<<<<< HEAD
-          fontSize: AppDims.fontSizeMediumX,
+          fontSize:  AppDimens.fontSizeMediumX,
           fontWeight: FontWeight.w600,
-=======
-          fontSize: AppDimens.fontSizeMediumX,
-          fontWeight: FontWeight.w300,
->>>>>>> a2ecfaca5ffb4beef10a2207191e4ef2840dd426
           color: AppColors.current.dimmedXXXXX
       ),);
   }
@@ -72,11 +56,7 @@ class AccountAllocationItem extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 6.0),
       child: Text(status,
         style: TextStyle(
-<<<<<<< HEAD
-            fontSize: AppDims.fontSizeMedium,
-=======
-            fontSize: AppDimens.fontSizeMedium,
->>>>>>> a2ecfaca5ffb4beef10a2207191e4ef2840dd426
+            fontSize:  AppDimens.fontSizeMedium,
             fontWeight: FontWeight.w700,
             color: color
         ),),

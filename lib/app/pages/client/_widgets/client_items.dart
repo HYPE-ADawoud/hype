@@ -17,13 +17,13 @@ class ClientItems extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(
-        top: AppDimens.paddingSize24,
-        left: AppDimens.paddingSize18,
-        right: AppDimens.paddingSize18,
-        bottom: AppDimens.paddingSize10,
+        top:  AppDimens.paddingSize24,
+        left:  AppDimens.paddingSize18,
+        right:  AppDimens.paddingSize18,
+        bottom:  AppDimens.paddingSize10,
       ),
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: AppDimens.paddingSize15.w, vertical: AppDimens.paddingSize20.h),
+        padding: EdgeInsets.symmetric(horizontal:  AppDimens.paddingSize15.w, vertical:  AppDimens.paddingSize20.h),
         width: 339.w,
         decoration: BoxDecoration(
           color: AppColors.current.neutral,
@@ -42,17 +42,21 @@ class ClientItems extends StatelessWidget {
         _buildNameAndID(),
         _buildDivider(),
         _buildVfxStoriesMiderationResult(),
-        _buildDivider(),
+
+        _buildResult(
+          title: 'Mideration',
+          result: client.Mideration,
+        ),
         _buildResult(
           title: 'Photography',
           result: client.Photography,
         ),
-        _buildDivider(),
+
         _buildResult(
           title: 'Videography',
           result: client.Videography,
         ),
-        _buildDivider(),
+
         _buildResult(
           title: 'Media buying',
           result: client.MediaBuying,
@@ -104,7 +108,7 @@ class ClientItems extends StatelessWidget {
         right: 4
       ),
       child: InkWell(
-        onTap: () => Get.toNamed(Routes.ADD_ACCOUNT_ALLOCATION),
+        onTap: () => Get.toNamed(Routes.EDIT_CLIENT),
         child: SvgPicture.asset(
           AppAssets.editIcon,
           width: 16,
@@ -115,7 +119,7 @@ class ClientItems extends StatelessWidget {
   }
   Widget _buildDivider() {
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: AppDimens.paddingSize10.h),
+      padding: EdgeInsets.symmetric(vertical:  AppDimens.paddingSize10.h),
       child: Divider(
         color: AppColors.current.dimmedXXXX,
         height: 0.5,
@@ -124,31 +128,47 @@ class ClientItems extends StatelessWidget {
   }
 
   Widget _buildVfxStoriesMiderationResult(){
+
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         _buildResult(title: 'VFX', result: client.vfx.toString()),
-        const Text('-'),
         _buildResult(title: 'Stories', result: client.stories.toString()),
-        const Text('-'),
-        _buildResult(title: 'Mideration', result: client.Mideration),
-
       ],
     );
   }
   Widget _buildResult({required String title ,required String result}) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Text(title,
-          style: TextStyle(fontSize: 14.sp, color: AppColors.current.dimmedXXXXX, fontWeight: FontWeight.w600),
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 4.0),
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 16),
+        height: 48,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(12),
+          color: AppColors.current.neutral,
+          boxShadow: [
+            BoxShadow(
+              color:  AppColors.current.dimmed.withOpacity(0.3),
+              spreadRadius: 2,
+              blurRadius: 2,
+              offset: const Offset(0, 3), // changes position of shadow
+            ),
+          ],
         ),
-        Empty(width: 4,),
-        Text(
-          result,
-          style: TextStyle(fontSize: 16.sp, color: AppColors.current.primary, fontWeight: FontWeight.w300),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(title,
+              style: TextStyle(fontSize: 14.sp, color: AppColors.current.dimmedXXXXX, fontWeight: FontWeight.w600),
+            ),
+            Empty(width: 4,),
+            Text(
+              result,
+              style: TextStyle(fontSize: 16.sp, color: AppColors.current.primary, fontWeight: FontWeight.w300),
+            ),
+          ],
         ),
-      ],
+      ),
     );
   }
 

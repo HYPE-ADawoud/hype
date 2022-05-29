@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:hype/app/common/themes/app_assets.dart';
 import 'package:hype/app/common/themes/app_colors.dart';
 import 'package:hype/app/common/themes/app_dims.dart';
+import 'package:hype/app/pages/dashboard/dashboad_view.dart';
 import 'package:hype/app/pages/home/home_view.dart';
 import 'package:hype/app/pages/notification/notification_view.dart';
 import 'package:hype/app/pages/profile/profile_view.dart';
@@ -47,6 +48,7 @@ class MainView extends GetView<MainController> {
             _buildBottomNavBarItem('Home', AppAssets.homeIcon, selectedIndex == 0 ? selectedColor: unSelectedColor),
             _buildBottomNavBarItem('Profile', AppAssets.profileIcon, selectedIndex == 1 ? selectedColor: unSelectedColor),
             _buildBottomNavBarItem('Notifications', AppAssets.notificationIcon, selectedIndex == 2 ? selectedColor: unSelectedColor),
+
           ]);
     });
   }

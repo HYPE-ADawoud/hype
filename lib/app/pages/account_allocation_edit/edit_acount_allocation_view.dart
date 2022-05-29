@@ -1,10 +1,15 @@
+import 'package:align_positioned/align_positioned.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:hype/app/common/themes/app_assets.dart';
 import 'package:hype/app/common/themes/app_colors.dart';
 import 'package:hype/app/common/themes/app_dims.dart';
 import 'package:hype/app/common/widgets/app_toolbar.dart';
 import 'package:hype/app/pages/account_allocation_edit/edit_acount_allocation_controller.dart';
+import 'package:hype/app/routes/app_pages.dart';
+
 
 class EditAccountAllocationView extends StatelessWidget {
   final EditAccountAllocationController controller = Get.find();
@@ -23,8 +28,8 @@ class EditAccountAllocationView extends StatelessWidget {
       child: Column(
         children: [
           AppToolbar(
-            title: 'Account Allocation',
-            backCallBack: () {},
+            title: 'Edit',
+            backCallBack: () => Get.back(),
           ),
           _buildBodyView(),
         ],
@@ -84,7 +89,7 @@ class EditAccountAllocationView extends StatelessWidget {
   Widget _buildTitle({required String title}){
     return Padding(
       padding: const EdgeInsets.symmetric(
-        vertical: AppDimens.paddingSize8
+        vertical:  AppDimens.paddingSize8
       ),
       child: Text(title,style: TextStyle(
         fontWeight: FontWeight.w300,
@@ -100,7 +105,7 @@ class EditAccountAllocationView extends StatelessWidget {
       decoration:
       BoxDecoration(
           color: AppColors.current.dimmedLightXX,
-          borderRadius: BorderRadius.circular(AppDimens.borderRadius)),
+          borderRadius: BorderRadius.circular( AppDimens.borderRadius)),
       child: Center(
         child: DropdownButtonHideUnderline(
           child: DropdownButton(
@@ -122,7 +127,7 @@ class EditAccountAllocationView extends StatelessWidget {
                   style: TextStyle(
                       color: AppColors.current.dimmedXXXX,
                       fontWeight: FontWeight.w600,
-                      fontSize: AppDimens.fontSizeMedium.sp),
+                      fontSize:  AppDimens.fontSizeMedium.sp),
                 ),
               );
             }).toList(),
@@ -139,7 +144,7 @@ class EditAccountAllocationView extends StatelessWidget {
       decoration:
       BoxDecoration(
           color: AppColors.current.dimmedLightXX,
-          borderRadius: BorderRadius.circular(AppDimens.borderRadius)),
+          borderRadius: BorderRadius.circular( AppDimens.borderRadius)),
       child: Center(
         child: DropdownButtonHideUnderline(
           child: DropdownButton(
@@ -161,7 +166,7 @@ class EditAccountAllocationView extends StatelessWidget {
                   style: TextStyle(
                       color: AppColors.current.dimmedXXXX,
                       fontWeight: FontWeight.w600,
-                      fontSize: AppDimens.fontSizeMedium.sp),
+                      fontSize:  AppDimens.fontSizeMedium.sp),
                 ),
               );
             }).toList(),
@@ -178,7 +183,7 @@ class EditAccountAllocationView extends StatelessWidget {
       decoration:
       BoxDecoration(
           color: AppColors.current.dimmedLightXX,
-          borderRadius: BorderRadius.circular(AppDimens.borderRadius)),
+          borderRadius: BorderRadius.circular( AppDimens.borderRadius)),
       child: Center(
         child: DropdownButtonHideUnderline(
           child: DropdownButton(
@@ -200,7 +205,7 @@ class EditAccountAllocationView extends StatelessWidget {
                   style: TextStyle(
                       color: AppColors.current.dimmedXXXX,
                       fontWeight: FontWeight.w600,
-                      fontSize: AppDimens.fontSizeMedium.sp),
+                      fontSize:  AppDimens.fontSizeMedium.sp),
                 ),
               );
             }).toList(),
@@ -217,7 +222,7 @@ class EditAccountAllocationView extends StatelessWidget {
       decoration:
       BoxDecoration(
           color: AppColors.current.dimmedLightXX,
-          borderRadius: BorderRadius.circular(AppDimens.borderRadius)),
+          borderRadius: BorderRadius.circular( AppDimens.borderRadius)),
       child: Center(
         child: DropdownButtonHideUnderline(
           child: DropdownButton(
@@ -239,7 +244,7 @@ class EditAccountAllocationView extends StatelessWidget {
                   style: TextStyle(
                       color: AppColors.current.dimmedXXXX,
                       fontWeight: FontWeight.w600,
-                      fontSize: AppDimens.fontSizeMedium.sp),
+                      fontSize:  AppDimens.fontSizeMedium.sp),
                 ),
               );
             }).toList(),
@@ -256,7 +261,7 @@ class EditAccountAllocationView extends StatelessWidget {
       decoration:
       BoxDecoration(
           color: AppColors.current.dimmedLightXX,
-          borderRadius: BorderRadius.circular(AppDimens.borderRadius)),
+          borderRadius: BorderRadius.circular( AppDimens.borderRadius)),
       child: Center(
         child: DropdownButtonHideUnderline(
           child: DropdownButton(
@@ -278,7 +283,7 @@ class EditAccountAllocationView extends StatelessWidget {
                   style: TextStyle(
                       color: AppColors.current.dimmedXXXX,
                       fontWeight: FontWeight.w600,
-                      fontSize: AppDimens.fontSizeMedium.sp),
+                      fontSize:  AppDimens.fontSizeMedium.sp),
                 ),
               );
             }).toList(),
@@ -295,7 +300,7 @@ class EditAccountAllocationView extends StatelessWidget {
       decoration:
       BoxDecoration(
           color: AppColors.current.dimmedLightXX,
-          borderRadius: BorderRadius.circular(AppDimens.borderRadius)),
+          borderRadius: BorderRadius.circular( AppDimens.borderRadius)),
       child: Center(
         child: DropdownButtonHideUnderline(
           child: DropdownButton(
@@ -317,7 +322,7 @@ class EditAccountAllocationView extends StatelessWidget {
                   style: TextStyle(
                       color: AppColors.current.dimmedXXXX,
                       fontWeight: FontWeight.w600,
-                      fontSize: AppDimens.fontSizeMedium.sp),
+                      fontSize:  AppDimens.fontSizeMedium.sp),
                 ),
               );
             }).toList(),
@@ -334,7 +339,7 @@ class EditAccountAllocationView extends StatelessWidget {
       decoration:
       BoxDecoration(
           color: AppColors.current.dimmedLightXX,
-          borderRadius: BorderRadius.circular(AppDimens.borderRadius)),
+          borderRadius: BorderRadius.circular( AppDimens.borderRadius)),
       child: Center(
         child: DropdownButtonHideUnderline(
           child: DropdownButton(
@@ -356,7 +361,7 @@ class EditAccountAllocationView extends StatelessWidget {
                   style: TextStyle(
                       color: AppColors.current.dimmedXXXX,
                       fontWeight: FontWeight.w600,
-                      fontSize: AppDimens.fontSizeMedium.sp),
+                      fontSize:  AppDimens.fontSizeMedium.sp),
                 ),
               );
             }).toList(),
@@ -373,7 +378,7 @@ class EditAccountAllocationView extends StatelessWidget {
       decoration:
       BoxDecoration(
           color: AppColors.current.dimmedLightXX,
-          borderRadius: BorderRadius.circular(AppDimens.borderRadius)),
+          borderRadius: BorderRadius.circular( AppDimens.borderRadius)),
       child: Center(
         child: DropdownButtonHideUnderline(
           child: DropdownButton(
@@ -395,7 +400,7 @@ class EditAccountAllocationView extends StatelessWidget {
                   style: TextStyle(
                       color: AppColors.current.dimmedXXXX,
                       fontWeight: FontWeight.w600,
-                      fontSize: AppDimens.fontSizeMedium.sp),
+                      fontSize:  AppDimens.fontSizeMedium.sp),
                 ),
               );
             }).toList(),
@@ -412,7 +417,7 @@ class EditAccountAllocationView extends StatelessWidget {
       decoration:
       BoxDecoration(
           color: AppColors.current.dimmedLightXX,
-          borderRadius: BorderRadius.circular(AppDimens.borderRadius)),
+          borderRadius: BorderRadius.circular( AppDimens.borderRadius)),
       child: Center(
         child: DropdownButtonHideUnderline(
           child: DropdownButton(
@@ -434,7 +439,7 @@ class EditAccountAllocationView extends StatelessWidget {
                   style: TextStyle(
                       color: AppColors.current.dimmedXXXX,
                       fontWeight: FontWeight.w600,
-                      fontSize: AppDimens.fontSizeMedium.sp),
+                      fontSize:  AppDimens.fontSizeMedium.sp),
                 ),
               );
             }).toList(),
@@ -448,13 +453,13 @@ class EditAccountAllocationView extends StatelessWidget {
   Widget _buildSubmitButton() {
     return Padding(
       padding: const EdgeInsets.only(
-        top: AppDimens.paddingSize16,
-        bottom: AppDimens.paddingSize12,
+        top:  AppDimens.paddingSize16,
+        bottom:  AppDimens.paddingSize12,
       ),
       child: Container(
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(
-                AppDimens.borderRadiusOuter
+                 AppDimens.borderRadiusOuter
             ),
 
         ),
@@ -464,11 +469,13 @@ class EditAccountAllocationView extends StatelessWidget {
           style: ElevatedButton.styleFrom(
             primary: AppColors.current.primaryX,
           ),
-          onPressed: () {},
+          onPressed: () {
+
+          },
           child: Text(
             'Edit',
             style: TextStyle(
-                fontSize: AppDimens.fontSizeMediumX,
+                fontSize:  AppDimens.fontSizeMediumX,
                 color: AppColors.current.neutral,
                 fontWeight: FontWeight.w500),
           ),
@@ -484,7 +491,7 @@ class EditAccountAllocationView extends StatelessWidget {
         width: 135.w,
         decoration: BoxDecoration(
           color: AppColors.current.text,
-          borderRadius: BorderRadius.circular(AppDimens.borderRadiusLine),
+          borderRadius: BorderRadius.circular( AppDimens.borderRadiusLine),
         ),
       ),
     );

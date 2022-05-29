@@ -31,10 +31,16 @@ import 'package:hype/app/pages/client/client_binding.dart';
 import 'package:hype/app/pages/client/client_view.dart';
 import 'package:hype/app/pages/client_edit/edit_client_binding.dart';
 import 'package:hype/app/pages/client_edit/edit_client_view.dart';
+import 'package:hype/app/pages/create_task/create_task_binding.dart';
+import 'package:hype/app/pages/create_task/create_task_view.dart';
 import 'package:hype/app/pages/dashboard/dashboad_view.dart';
 import 'package:hype/app/pages/dashboard/dashboard_binding.dart';
-import 'package:hype/app/pages/edit_admin_brief/edit_admin_brief_binding.dart';
-import 'package:hype/app/pages/edit_admin_brief/edit_admin_brief_view.dart';
+import 'package:hype/app/pages/department/department_binding.dart';
+import 'package:hype/app/pages/department/department_view.dart';
+import 'package:hype/app/pages/edit_admin_user/edit_admin_user_binding.dart';
+import 'package:hype/app/pages/edit_admin_user/edit_admin_user_view.dart';
+import 'package:hype/app/pages/edit_brief_type/edit_brief_type_binding.dart';
+import 'package:hype/app/pages/edit_brief_type/edit_brief_type_view.dart';
 import 'package:hype/app/pages/home/home_binding.dart';
 import 'package:hype/app/pages/home/home_view.dart';
 import 'package:hype/app/pages/main/main_binding.dart';
@@ -96,6 +102,11 @@ class AppPages {
         transition: _pageTransition,
         transitionDuration: _transitionDuration),
     GetPage(
+      name: _Paths.CREATE_TASK,
+      page: () => CreateTaskView(),
+      binding:CreateTaskBinding(),
+    ),
+    GetPage(
       name: _Paths.NOTIFICATION,
       page: () => const NotificationView(),
       binding: NotificationBinding(),
@@ -107,13 +118,17 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.ADD_ADMIN_USER,
-      page: () => const AddAdminUserView(),
+      page: () =>  AddAdminUserView(),
       binding: AddAdminUserBinding(),
     ),
-
     GetPage(
-      name: _Paths.EDIT_ADMIN_BRIEF,
-      page: () => const AddBriefTypeView(),
+      name: _Paths.EDIT_ADMIN_USER,
+      page: () =>  EditAdminUserView(),
+      binding: EditAdminUserBinding(),
+    ),
+    GetPage(
+      name: _Paths.ADD_ADMIN_BRIEF,
+      page: () =>  AddBriefTypeView(),
       binding: AddBriefTypeBinding(),
     ),
     GetPage(
@@ -142,7 +157,11 @@ class AppPages {
         binding: EmailResetPasswordBinding(),
         transition: _pageTransition,
         transitionDuration: _transitionDuration),
-
+    GetPage(
+      name: _Paths.DEPARTMENT,
+      page: () => DepartmentView(),
+      binding:DepartmentBinding(),
+    ),
     GetPage(
       name: _Paths.ADMIN_DEPARTMENT,
       page: () => AdminDepartmentView(),
@@ -155,8 +174,8 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.EDIT_ADMIN_BRIEF,
-      page: () => EditAdminBriefView(),
-      binding: EditAdminBriefBinding(),
+      page: () => EditBriefTypeView(),
+      binding: EditBriefTypeBinding(),
     ),
     GetPage(
       name: _Paths.MAIN_ACCOUNT_ALLOCATION,

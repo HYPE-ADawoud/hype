@@ -62,7 +62,8 @@ class EditClientView extends StatelessWidget {
               _buildAssignedToDevelopmentTeam(),
               _buildAssignedToMarketing(),
               _buildAssignedToModerator(),
-              _buildSubmitButton(),
+              _buildEditButton(),
+              _buildDeleteButton(),
               _buildLine(),
             ],
           ),
@@ -91,7 +92,7 @@ class EditClientView extends StatelessWidget {
           hintText: 'Client Name',
           hintStyle: TextStyle(
             fontWeight: FontWeight.normal,
-            fontSize: AppDimens.fontSizeMediumX,
+            fontSize:  AppDimens.fontSizeMediumX,
             color: AppColors.current.dimmedX,
           ),
         ),
@@ -107,7 +108,7 @@ class EditClientView extends StatelessWidget {
         ),
         child: Container(
           decoration: BoxDecoration(
-              color: AppColors.current.dimmedLightX, borderRadius: BorderRadius.circular(AppDimens.borderRadiusOuter)),
+              color: AppColors.current.dimmedLightX, borderRadius: BorderRadius.circular( AppDimens.borderRadiusOuter)),
           child: Center(
             child: DropdownButtonHideUnderline(
               child: DropdownButton(
@@ -129,7 +130,7 @@ class EditClientView extends StatelessWidget {
                       style: TextStyle(
                           color: AppColors.current.dimmedXXXX,
                           fontWeight: FontWeight.w600,
-                          fontSize: AppDimens.fontSizeMedium.sp),
+                          fontSize:  AppDimens.fontSizeMedium.sp),
                     ),
                   );
                 }).toList(),
@@ -150,7 +151,7 @@ class EditClientView extends StatelessWidget {
         ),
         child: Container(
           decoration: BoxDecoration(
-              color: AppColors.current.dimmedLightX, borderRadius: BorderRadius.circular(AppDimens.borderRadiusOuter)),
+              color: AppColors.current.dimmedLightX, borderRadius: BorderRadius.circular( AppDimens.borderRadiusOuter)),
           child: Center(
             child: DropdownButtonHideUnderline(
               child: DropdownButton(
@@ -172,7 +173,7 @@ class EditClientView extends StatelessWidget {
                       style: TextStyle(
                           color: AppColors.current.dimmedXXXX,
                           fontWeight: FontWeight.w600,
-                          fontSize: AppDimens.fontSizeMedium.sp),
+                          fontSize:  AppDimens.fontSizeMedium.sp),
                     ),
                   );
                 }).toList(),
@@ -193,7 +194,7 @@ class EditClientView extends StatelessWidget {
         ),
         child: Container(
           decoration: BoxDecoration(
-              color: AppColors.current.dimmedLightX, borderRadius: BorderRadius.circular(AppDimens.borderRadiusOuter)),
+              color: AppColors.current.dimmedLightX, borderRadius: BorderRadius.circular( AppDimens.borderRadiusOuter)),
           child: Center(
             child: DropdownButtonHideUnderline(
               child: DropdownButton(
@@ -215,7 +216,7 @@ class EditClientView extends StatelessWidget {
                       style: TextStyle(
                           color: AppColors.current.dimmedXXXX,
                           fontWeight: FontWeight.w600,
-                          fontSize: AppDimens.fontSizeMedium.sp),
+                          fontSize:  AppDimens.fontSizeMedium.sp),
                     ),
                   );
                 }).toList(),
@@ -236,7 +237,7 @@ class EditClientView extends StatelessWidget {
         child: Row(
           children: [
             Text('Moderation',style: TextStyle(
-                fontSize: AppDimens.fontSizeMediumX,
+                fontSize:  AppDimens.fontSizeMediumX,
                 color: AppColors.current.text
             ),
             ),
@@ -251,7 +252,7 @@ class EditClientView extends StatelessWidget {
                 }),
             Text('Yes',
               style: TextStyle(
-                  fontSize: AppDimens.fontSizeMediumX,
+                  fontSize:  AppDimens.fontSizeMediumX,
                   color: AppColors.current.text
               ),
             ),
@@ -269,7 +270,7 @@ class EditClientView extends StatelessWidget {
                 }),
             Text('No',
               style: TextStyle(
-                  fontSize: AppDimens.fontSizeMediumX,
+                  fontSize:  AppDimens.fontSizeMediumX,
                   color: AppColors.current.text
               ),
             ),
@@ -287,7 +288,7 @@ class EditClientView extends StatelessWidget {
         ),
         child: Container(
           decoration: BoxDecoration(
-              color: AppColors.current.dimmedLightX, borderRadius: BorderRadius.circular(AppDimens.borderRadiusOuter)),
+              color: AppColors.current.dimmedLightX, borderRadius: BorderRadius.circular( AppDimens.borderRadiusOuter)),
           child: Center(
             child: DropdownButtonHideUnderline(
               child: DropdownButton(
@@ -309,7 +310,7 @@ class EditClientView extends StatelessWidget {
                       style: TextStyle(
                           color: AppColors.current.dimmedXXXX,
                           fontWeight: FontWeight.w600,
-                          fontSize: AppDimens.fontSizeMedium.sp),
+                          fontSize:  AppDimens.fontSizeMedium.sp),
                     ),
                   );
                 }).toList(),
@@ -330,7 +331,7 @@ class EditClientView extends StatelessWidget {
         ),
         child: Container(
           decoration: BoxDecoration(
-              color: AppColors.current.dimmedLightX, borderRadius: BorderRadius.circular(AppDimens.borderRadiusOuter)),
+              color: AppColors.current.dimmedLightX, borderRadius: BorderRadius.circular( AppDimens.borderRadiusOuter)),
           child: Center(
             child: DropdownButtonHideUnderline(
               child: DropdownButton(
@@ -352,7 +353,7 @@ class EditClientView extends StatelessWidget {
                       style: TextStyle(
                           color: AppColors.current.dimmedXXXX,
                           fontWeight: FontWeight.w600,
-                          fontSize: AppDimens.fontSizeMedium.sp),
+                          fontSize:  AppDimens.fontSizeMedium.sp),
                     ),
                   );
                 }).toList(),
@@ -373,7 +374,7 @@ class EditClientView extends StatelessWidget {
         child: Row(
           children: [
             Text('MediaBuying',style: TextStyle(
-              fontSize: AppDimens.fontSizeMediumX,
+              fontSize:  AppDimens.fontSizeMediumX,
               color: AppColors.current.text
             ),
             ),
@@ -388,7 +389,7 @@ class EditClientView extends StatelessWidget {
                 }),
             Text('Yes',
               style: TextStyle(
-                  fontSize: AppDimens.fontSizeMediumX,
+                  fontSize:  AppDimens.fontSizeMediumX,
                   color: AppColors.current.text
               ),
             ),
@@ -406,7 +407,7 @@ class EditClientView extends StatelessWidget {
                 }),
             Text('No',
               style: TextStyle(
-                  fontSize: AppDimens.fontSizeMediumX,
+                  fontSize:  AppDimens.fontSizeMediumX,
                   color: AppColors.current.text
               ),
             ),
@@ -434,7 +435,7 @@ class EditClientView extends StatelessWidget {
           hintText: 'Brief',
           hintStyle: TextStyle(
             fontWeight: FontWeight.normal,
-            fontSize: AppDimens.fontSizeMediumX,
+            fontSize:  AppDimens.fontSizeMediumX,
             color: AppColors.current.dimmedX,
           ),
         ),
@@ -451,7 +452,7 @@ class EditClientView extends StatelessWidget {
         ),
         child: Container(
           decoration: BoxDecoration(
-              color: AppColors.current.dimmedLightX, borderRadius: BorderRadius.circular(AppDimens.borderRadiusOuter)),
+              color: AppColors.current.dimmedLightX, borderRadius: BorderRadius.circular( AppDimens.borderRadiusOuter)),
           child: Center(
             child: DropdownButtonHideUnderline(
               child: DropdownButton(
@@ -473,7 +474,7 @@ class EditClientView extends StatelessWidget {
                       style: TextStyle(
                           color: AppColors.current.dimmedXXXX,
                           fontWeight: FontWeight.w600,
-                          fontSize: AppDimens.fontSizeMedium.sp),
+                          fontSize:  AppDimens.fontSizeMedium.sp),
                     ),
                   );
                 }).toList(),
@@ -494,7 +495,7 @@ class EditClientView extends StatelessWidget {
         ),
         child: Container(
           decoration: BoxDecoration(
-              color: AppColors.current.dimmedLightX, borderRadius: BorderRadius.circular(AppDimens.borderRadiusOuter)),
+              color: AppColors.current.dimmedLightX, borderRadius: BorderRadius.circular( AppDimens.borderRadiusOuter)),
           child: Center(
             child: DropdownButtonHideUnderline(
               child: DropdownButton(
@@ -516,7 +517,7 @@ class EditClientView extends StatelessWidget {
                       style: TextStyle(
                           color: AppColors.current.dimmedXXXX,
                           fontWeight: FontWeight.w600,
-                          fontSize: AppDimens.fontSizeMedium.sp),
+                          fontSize:  AppDimens.fontSizeMedium.sp),
                     ),
                   );
                 }).toList(),
@@ -537,7 +538,7 @@ class EditClientView extends StatelessWidget {
         ),
         child: Container(
           decoration: BoxDecoration(
-              color: AppColors.current.dimmedLightX, borderRadius: BorderRadius.circular(AppDimens.borderRadiusOuter)),
+              color: AppColors.current.dimmedLightX, borderRadius: BorderRadius.circular( AppDimens.borderRadiusOuter)),
           child: Center(
             child: DropdownButtonHideUnderline(
               child: DropdownButton(
@@ -559,7 +560,7 @@ class EditClientView extends StatelessWidget {
                       style: TextStyle(
                           color: AppColors.current.dimmedXXXX,
                           fontWeight: FontWeight.w600,
-                          fontSize: AppDimens.fontSizeMedium.sp),
+                          fontSize:  AppDimens.fontSizeMedium.sp),
                     ),
                   );
                 }).toList(),
@@ -580,7 +581,7 @@ class EditClientView extends StatelessWidget {
         ),
         child: Container(
           decoration: BoxDecoration(
-              color: AppColors.current.dimmedLightX, borderRadius: BorderRadius.circular(AppDimens.borderRadiusOuter)),
+              color: AppColors.current.dimmedLightX, borderRadius: BorderRadius.circular( AppDimens.borderRadiusOuter)),
           child: Center(
             child: DropdownButtonHideUnderline(
               child: DropdownButton(
@@ -602,7 +603,7 @@ class EditClientView extends StatelessWidget {
                       style: TextStyle(
                           color: AppColors.current.dimmedXXXX,
                           fontWeight: FontWeight.w600,
-                          fontSize: AppDimens.fontSizeMedium.sp),
+                          fontSize:  AppDimens.fontSizeMedium.sp),
                     ),
                   );
                 }).toList(),
@@ -623,7 +624,7 @@ class EditClientView extends StatelessWidget {
         ),
         child: Container(
           decoration: BoxDecoration(
-              color: AppColors.current.dimmedLightX, borderRadius: BorderRadius.circular(AppDimens.borderRadiusOuter)),
+              color: AppColors.current.dimmedLightX, borderRadius: BorderRadius.circular( AppDimens.borderRadiusOuter)),
           child: Center(
             child: DropdownButtonHideUnderline(
               child: DropdownButton(
@@ -645,7 +646,7 @@ class EditClientView extends StatelessWidget {
                       style: TextStyle(
                           color: AppColors.current.dimmedXXXX,
                           fontWeight: FontWeight.w600,
-                          fontSize: AppDimens.fontSizeMedium.sp),
+                          fontSize:  AppDimens.fontSizeMedium.sp),
                     ),
                   );
                 }).toList(),
@@ -666,7 +667,7 @@ class EditClientView extends StatelessWidget {
         ),
         child: Container(
           decoration: BoxDecoration(
-              color: AppColors.current.dimmedLightX, borderRadius: BorderRadius.circular(AppDimens.borderRadiusOuter)),
+              color: AppColors.current.dimmedLightX, borderRadius: BorderRadius.circular( AppDimens.borderRadiusOuter)),
           child: Center(
             child: DropdownButtonHideUnderline(
               child: DropdownButton(
@@ -688,7 +689,7 @@ class EditClientView extends StatelessWidget {
                       style: TextStyle(
                           color: AppColors.current.dimmedXXXX,
                           fontWeight: FontWeight.w600,
-                          fontSize: AppDimens.fontSizeMedium.sp),
+                          fontSize:  AppDimens.fontSizeMedium.sp),
                     ),
                   );
                 }).toList(),
@@ -709,7 +710,7 @@ class EditClientView extends StatelessWidget {
         ),
         child: Container(
           decoration: BoxDecoration(
-              color: AppColors.current.dimmedLightX, borderRadius: BorderRadius.circular(AppDimens.borderRadiusOuter)),
+              color: AppColors.current.dimmedLightX, borderRadius: BorderRadius.circular( AppDimens.borderRadiusOuter)),
           child: Center(
             child: DropdownButtonHideUnderline(
               child: DropdownButton(
@@ -731,7 +732,7 @@ class EditClientView extends StatelessWidget {
                       style: TextStyle(
                           color: AppColors.current.dimmedXXXX,
                           fontWeight: FontWeight.w600,
-                          fontSize: AppDimens.fontSizeMedium.sp),
+                          fontSize:  AppDimens.fontSizeMedium.sp),
                     ),
                   );
                 }).toList(),
@@ -752,7 +753,7 @@ class EditClientView extends StatelessWidget {
         ),
         child: Container(
           decoration: BoxDecoration(
-              color: AppColors.current.dimmedLightX, borderRadius: BorderRadius.circular(AppDimens.borderRadiusOuter)),
+              color: AppColors.current.dimmedLightX, borderRadius: BorderRadius.circular( AppDimens.borderRadiusOuter)),
           child: Center(
             child: DropdownButtonHideUnderline(
               child: DropdownButton(
@@ -774,7 +775,7 @@ class EditClientView extends StatelessWidget {
                       style: TextStyle(
                           color: AppColors.current.dimmedXXXX,
                           fontWeight: FontWeight.w600,
-                          fontSize: AppDimens.fontSizeMedium.sp),
+                          fontSize:  AppDimens.fontSizeMedium.sp),
                     ),
                   );
                 }).toList(),
@@ -795,7 +796,7 @@ class EditClientView extends StatelessWidget {
         ),
         child: Container(
           decoration: BoxDecoration(
-              color: AppColors.current.dimmedLightX, borderRadius: BorderRadius.circular(AppDimens.borderRadiusOuter)),
+              color: AppColors.current.dimmedLightX, borderRadius: BorderRadius.circular( AppDimens.borderRadiusOuter)),
           child: Center(
             child: DropdownButtonHideUnderline(
               child: DropdownButton(
@@ -817,7 +818,7 @@ class EditClientView extends StatelessWidget {
                       style: TextStyle(
                           color: AppColors.current.dimmedXXXX,
                           fontWeight: FontWeight.w600,
-                          fontSize: AppDimens.fontSizeMedium.sp),
+                          fontSize:  AppDimens.fontSizeMedium.sp),
                     ),
                   );
                 }).toList(),
@@ -838,7 +839,7 @@ class EditClientView extends StatelessWidget {
         ),
         child: Container(
           decoration: BoxDecoration(
-              color: AppColors.current.dimmedLightX, borderRadius: BorderRadius.circular(AppDimens.borderRadiusOuter)),
+              color: AppColors.current.dimmedLightX, borderRadius: BorderRadius.circular( AppDimens.borderRadiusOuter)),
           child: Center(
             child: DropdownButtonHideUnderline(
               child: DropdownButton(
@@ -860,7 +861,7 @@ class EditClientView extends StatelessWidget {
                       style: TextStyle(
                           color: AppColors.current.dimmedXXXX,
                           fontWeight: FontWeight.w600,
-                          fontSize: AppDimens.fontSizeMedium.sp),
+                          fontSize:  AppDimens.fontSizeMedium.sp),
                     ),
                   );
                 }).toList(),
@@ -881,7 +882,7 @@ class EditClientView extends StatelessWidget {
         ),
         child: Container(
           decoration: BoxDecoration(
-              color: AppColors.current.dimmedLightX, borderRadius: BorderRadius.circular(AppDimens.borderRadiusOuter)),
+              color: AppColors.current.dimmedLightX, borderRadius: BorderRadius.circular( AppDimens.borderRadiusOuter)),
           child: Center(
             child: DropdownButtonHideUnderline(
               child: DropdownButton(
@@ -903,7 +904,7 @@ class EditClientView extends StatelessWidget {
                       style: TextStyle(
                           color: AppColors.current.dimmedXXXX,
                           fontWeight: FontWeight.w600,
-                          fontSize: AppDimens.fontSizeMedium.sp),
+                          fontSize:  AppDimens.fontSizeMedium.sp),
                     ),
                   );
                 }).toList(),
@@ -919,27 +920,60 @@ class EditClientView extends StatelessWidget {
 
 
 
-  Widget _buildSubmitButton() {
+  Widget _buildEditButton() {
     return Padding(
       padding: const EdgeInsets.only(
-        top: AppDimens.paddingSize24,
-        bottom: AppDimens.paddingSize12,
+        top:  AppDimens.paddingSize24,
+        bottom:  AppDimens.paddingSize12,
       ),
       child: Container(
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(AppDimens.borderRadiusOuter),
+            borderRadius: BorderRadius.circular( AppDimens.borderRadiusOuter),
         ),
         width: 324.w,
         height: 60.h,
         child: ElevatedButton(
-          onPressed: () {},
+          onPressed: () {
+            Get.back();
+          },
           style: ElevatedButton.styleFrom(
             primary: AppColors.current.primaryX,
           ),
           child: Text(
-            'Submit',
+            'Edit',
             style: TextStyle(
-                fontSize: AppDimens.fontSizeMediumX, color: AppColors.current.neutral, fontWeight: FontWeight.w500),
+                fontSize:  AppDimens.fontSizeMediumX, color: AppColors.current.neutral, fontWeight: FontWeight.w500),
+          ),
+        ),
+      ),
+    );
+  }
+  Widget _buildDeleteButton() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(
+        horizontal:  AppDimens.paddingSize12,
+      ),
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular( AppDimens.borderRadiusOuter),
+          border: Border.all(
+            width: 1,
+            color: AppColors.current.neutral,
+          )
+        ),
+        width: 324.w,
+        height: 60.h,
+        child: ElevatedButton(
+          onPressed: () {
+            Get.back();
+          },
+          style: ElevatedButton.styleFrom(
+            primary: AppColors.current.primary,
+          ),
+          child: Text(
+            'Delete',
+            style: TextStyle(
+                fontSize:  AppDimens.fontSizeMediumX, color: AppColors.current.neutral, fontWeight: FontWeight.w500),
           ),
         ),
       ),
@@ -954,7 +988,7 @@ class EditClientView extends StatelessWidget {
         width: 135.w,
         decoration: BoxDecoration(
           color: AppColors.current.text,
-          borderRadius: BorderRadius.circular(AppDimens.borderRadiusLine),
+          borderRadius: BorderRadius.circular( AppDimens.borderRadiusLine),
         ),
       ),
     );

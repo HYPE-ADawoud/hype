@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -15,14 +16,12 @@ class DepartmentItems extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(
-        top: AppDimens.paddingSize24,
-        left: AppDimens.paddingSize18,
-        right: AppDimens.paddingSize18,
-        bottom: AppDimens.paddingSize10,
+      padding: const EdgeInsets.symmetric(
+        horizontal:  AppDimens.paddingSize18,
+        vertical:  AppDimens.paddingSize8,
       ),
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: AppDimens.paddingSize15.w, vertical: AppDimens.paddingSize20.h),
+        padding: EdgeInsets.symmetric(horizontal:  AppDimens.paddingSize15.w, vertical:  AppDimens.paddingSize20.h),
         width: 339.w,
         height: 120.h,
         decoration: BoxDecoration(
@@ -39,47 +38,49 @@ class DepartmentItems extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        _buildName(),
-        _buildDivider(),
         _buildJobTitle(),
+        _buildDivider(),
+        _buildName(),
+
+
       ],
     );
   }
 
   Widget _buildName() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Text(
-          department.name,
-          style: TextStyle(fontSize: 20.sp, color: AppColors.current.primary, fontWeight: FontWeight.w700),
-        ),
-        InkWell(
-          onTap: () => Get.toNamed(Routes.ADMIN),
-          child: SvgPicture.asset(
-            AppAssets.editIcon,
-            width: 16,
-            height: 16,
-          ),
-        ),
-      ],
+    return Text(
+      department.name,
+      style: TextStyle(fontSize: 16.sp, color: AppColors.current.dimmedXXXXX, fontWeight: FontWeight.w400),
     );
   }
 
   Widget _buildDivider() {
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: AppDimens.paddingSize10.h),
+      padding: EdgeInsets.symmetric(vertical:  AppDimens.paddingSize10.h),
       child: Divider(
         color: AppColors.current.dimmedXXXX,
-        height: 0.5,
+        height: 1,
       ),
     );
   }
 
   Widget _buildJobTitle() {
-    return Text(
-      department.jobTitle,
-      style: TextStyle(fontSize: 16.sp, color: AppColors.current.dimmedXXXXX, fontWeight: FontWeight.w400),
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text(
+          department.jobTitle,
+          style: TextStyle(fontSize: 20.sp, color: AppColors.current.primary, fontWeight: FontWeight.w700),
+        ),
+        InkWell(
+          onTap: () => Get.toNamed(Routes.ADMIN_DEPARTMENT),
+          child: SvgPicture.asset(
+            AppAssets.editIcon,
+            width: 18,
+            height: 18,
+          ),
+        ),
+      ],
     );
   }
 }
