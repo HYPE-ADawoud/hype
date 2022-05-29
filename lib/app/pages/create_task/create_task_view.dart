@@ -8,7 +8,7 @@ import 'package:hype/app/common/themes/app_colors.dart';
 import 'package:hype/app/common/themes/app_dims.dart';
 import 'package:hype/app/common/widgets/app_toolbar.dart';
 import 'package:hype/app/pages/create_task/create_task_controller.dart';
-import 'package:hype/app/pages/side_menu/side_menu_view.dart';
+import 'package:hype/app/pages/drawer/drawer_view.dart';
 import 'package:hype/utils/ui/empty.dart';
 
 class CreateTaskView extends GetView<CreateTaskController> {
@@ -19,7 +19,7 @@ class CreateTaskView extends GetView<CreateTaskController> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
-      drawer: SideMenuView(),
+      drawer: const DrawerView(),
       backgroundColor: AppColors.current.neutral,
       body:_buildBody(),
     );
@@ -30,7 +30,7 @@ class CreateTaskView extends GetView<CreateTaskController> {
       child: Column(
         children: [
           AppToolbar(
-            backCallBack: ()=>Get.back(),
+            backCallBack: () {},
             title: 'Create',
           ),
           _buildBodyView(),
@@ -80,8 +80,8 @@ class CreateTaskView extends GetView<CreateTaskController> {
           _buildTypeOfClient(),
           _buildClientName(),
           _buildAssignedByFormField(),
-          _buildRequestDateFormField(),
-          _buildDeadLineDateFormField(),
+          _buildDateFormField(),
+          _buildMaterialFormField(),
         ],
       ),
     );
@@ -103,7 +103,7 @@ class CreateTaskView extends GetView<CreateTaskController> {
     return Text(
       title,
       style: TextStyle(
-        fontSize: AppDims.fontSizeLarge,
+        fontSize: AppDimens.fontSizeLarge,
         fontWeight: FontWeight.w300,
         color: AppColors.current.text,
       ),
@@ -131,7 +131,7 @@ class CreateTaskView extends GetView<CreateTaskController> {
           width: 324.w,
           height: 44.h,
           decoration:
-              BoxDecoration(color: AppColors.current.text, borderRadius: BorderRadius.circular(AppDims.borderRadius)),
+              BoxDecoration(color: AppColors.current.text, borderRadius: BorderRadius.circular(AppDimens.borderRadius)),
           child: Center(
             child: DropdownButtonHideUnderline(
               child: DropdownButton(
@@ -151,7 +151,7 @@ class CreateTaskView extends GetView<CreateTaskController> {
                       style: TextStyle(
                           color: AppColors.current.dimmedXXXX,
                           fontWeight: FontWeight.w500,
-                          fontSize: AppDims.fontSizeMediumX),
+                          fontSize: AppDimens.fontSizeMediumX),
                     ),
                   );
                 }).toList(),
@@ -172,7 +172,7 @@ class CreateTaskView extends GetView<CreateTaskController> {
           width: 324.w,
           height: 44.h,
           decoration:
-              BoxDecoration(color: AppColors.current.text, borderRadius: BorderRadius.circular(AppDims.borderRadius)),
+              BoxDecoration(color: AppColors.current.text, borderRadius: BorderRadius.circular(AppDimens.borderRadius)),
           child: Center(
             child: DropdownButtonHideUnderline(
               child: DropdownButton(
@@ -192,7 +192,7 @@ class CreateTaskView extends GetView<CreateTaskController> {
                       style: TextStyle(
                           color: AppColors.current.dimmedXXXX,
                           fontWeight: FontWeight.w500,
-                          fontSize: AppDims.fontSizeMediumX),
+                          fontSize: AppDimens.fontSizeMediumX),
                     ),
                   );
                 }).toList(),
@@ -213,7 +213,7 @@ class CreateTaskView extends GetView<CreateTaskController> {
         height: 44.h,
         decoration: BoxDecoration(
           color: AppColors.current.text,
-          borderRadius: BorderRadius.circular(AppDims.borderRadius),
+          borderRadius: BorderRadius.circular(AppDimens.borderRadius),
         ),
         child: TextFormField(
           decoration: InputDecoration(
@@ -225,7 +225,7 @@ class CreateTaskView extends GetView<CreateTaskController> {
             hintText: 'Assigned By',
             hintStyle: TextStyle(
               fontWeight: FontWeight.normal,
-              fontSize: AppDims.fontSizeMediumX,
+              fontSize: AppDimens.fontSizeMediumX,
               color: AppColors.current.dimmedX,
             ),
           ),
@@ -235,7 +235,7 @@ class CreateTaskView extends GetView<CreateTaskController> {
     );
   }
 
-  Widget _buildRequestDateFormField() {
+  Widget _buildDateFormField() {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 25.w, vertical: 12.0.h),
       child: Container(
@@ -243,7 +243,7 @@ class CreateTaskView extends GetView<CreateTaskController> {
         height: 44.h,
         decoration: BoxDecoration(
           color: AppColors.current.text,
-          borderRadius: BorderRadius.circular(AppDims.borderRadius),
+          borderRadius: BorderRadius.circular(AppDimens.borderRadius),
         ),
         child: TextFormField(
           decoration: InputDecoration(
@@ -259,7 +259,7 @@ class CreateTaskView extends GetView<CreateTaskController> {
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontWeight: FontWeight.normal,
-                  fontSize: AppDims.fontSizeMediumX,
+                  fontSize: AppDimens.fontSizeMediumX,
                   color: AppColors.current.dimmedX,
                 ),
               ),
@@ -267,48 +267,7 @@ class CreateTaskView extends GetView<CreateTaskController> {
             hintText: '2022-04-21',
             hintStyle: TextStyle(
               fontWeight: FontWeight.normal,
-              fontSize: AppDims.fontSizeMediumX,
-              color: AppColors.current.dimmedX,
-            ),
-          ),
-
-        ),
-      ),
-    );
-  }
-  Widget _buildDeadLineDateFormField() {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 25.w, vertical: 12.0.h),
-      child: Container(
-        width: 324.w,
-        height: 44.h,
-        decoration: BoxDecoration(
-          color: AppColors.current.text,
-          borderRadius: BorderRadius.circular(AppDims.borderRadius),
-        ),
-        child: TextFormField(
-          decoration: InputDecoration(
-            border: InputBorder.none,
-            focusedBorder: InputBorder.none,
-            enabledBorder: InputBorder.none,
-            errorBorder: InputBorder.none,
-            disabledBorder: InputBorder.none,
-            suffixIcon: Padding(
-              padding: const EdgeInsets.only(top: 8.0, right: 8),
-              child: Text(
-                'DeadLine',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontWeight: FontWeight.normal,
-                  fontSize: AppDims.fontSizeMediumX,
-                  color: AppColors.current.dimmedX,
-                ),
-              ),
-            ),
-            hintText: '2022-05-5',
-            hintStyle: TextStyle(
-              fontWeight: FontWeight.normal,
-              fontSize: AppDims.fontSizeMediumX,
+              fontSize: AppDimens.fontSizeMediumX,
               color: AppColors.current.dimmedX,
             ),
           ),
@@ -354,7 +313,7 @@ class CreateTaskView extends GetView<CreateTaskController> {
         height: 44.h,
         decoration: BoxDecoration(
           color: AppColors.current.text,
-          borderRadius: BorderRadius.circular(AppDims.borderRadius),
+          borderRadius: BorderRadius.circular(AppDimens.borderRadius),
         ),
         child: TextFormField(
           decoration: InputDecoration(
@@ -363,10 +322,10 @@ class CreateTaskView extends GetView<CreateTaskController> {
             enabledBorder: InputBorder.none,
             errorBorder: InputBorder.none,
             disabledBorder: InputBorder.none,
-            hintText: 'Brief Title',
+            hintText: 'Briefs',
             hintStyle: TextStyle(
               fontWeight: FontWeight.normal,
-              fontSize: AppDims.fontSizeMediumX,
+              fontSize: AppDimens.fontSizeMediumX,
               color: AppColors.current.dimmedX,
             ),
           ),
@@ -383,7 +342,7 @@ class CreateTaskView extends GetView<CreateTaskController> {
           width: 324.w,
           height: 44.h,
           decoration:
-              BoxDecoration(color: AppColors.current.text, borderRadius: BorderRadius.circular(AppDims.borderRadius)),
+              BoxDecoration(color: AppColors.current.text, borderRadius: BorderRadius.circular(AppDimens.borderRadius)),
           child: Center(
             child: DropdownButtonHideUnderline(
               child: DropdownButton(
@@ -403,7 +362,7 @@ class CreateTaskView extends GetView<CreateTaskController> {
                       style: TextStyle(
                           color: AppColors.current.dimmedXXXX,
                           fontWeight: FontWeight.w500,
-                          fontSize: AppDims.fontSizeMediumX),
+                          fontSize: AppDimens.fontSizeMediumX),
                     ),
                   );
                 }).toList(),
@@ -424,7 +383,7 @@ class CreateTaskView extends GetView<CreateTaskController> {
           width: 324.w,
           height: 44.h,
           decoration:
-              BoxDecoration(color: AppColors.current.text, borderRadius: BorderRadius.circular(AppDims.borderRadius)),
+              BoxDecoration(color: AppColors.current.text, borderRadius: BorderRadius.circular(AppDimens.borderRadius)),
           child: Center(
             child: DropdownButtonHideUnderline(
               child: DropdownButton(
@@ -444,7 +403,7 @@ class CreateTaskView extends GetView<CreateTaskController> {
                       style: TextStyle(
                           color: AppColors.current.dimmedXXXX,
                           fontWeight: FontWeight.w500,
-                          fontSize: AppDims.fontSizeMediumX),
+                          fontSize: AppDimens.fontSizeMediumX),
                     ),
                   );
                 }).toList(),
@@ -465,7 +424,7 @@ class CreateTaskView extends GetView<CreateTaskController> {
           width: 324.w,
           height: 44.h,
           decoration:
-              BoxDecoration(color: AppColors.current.text, borderRadius: BorderRadius.circular(AppDims.borderRadius)),
+              BoxDecoration(color: AppColors.current.text, borderRadius: BorderRadius.circular(AppDimens.borderRadius)),
           child: Center(
             child: DropdownButtonHideUnderline(
               child: DropdownButton(
@@ -485,7 +444,7 @@ class CreateTaskView extends GetView<CreateTaskController> {
                       style: TextStyle(
                           color: AppColors.current.dimmedXXXX,
                           fontWeight: FontWeight.w500,
-                          fontSize: AppDims.fontSizeMediumX),
+                          fontSize: AppDimens.fontSizeMediumX),
                     ),
                   );
                 }).toList(),
@@ -502,7 +461,7 @@ class CreateTaskView extends GetView<CreateTaskController> {
 
   Widget _buildNumberOfDesigns() {
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: 20.h, horizontal: 25.w),
+      padding: EdgeInsets.only(top: 105.h, bottom: 22.h, right: 25.w, left: 25.w),
       child: Row(
         children: [
           _buildTitleNumberOfDesigns(),
@@ -522,7 +481,7 @@ class CreateTaskView extends GetView<CreateTaskController> {
       child: Text(
         'Number of Designs',
         style:
-            TextStyle(fontSize: AppDims.fontSizeMedium, color: AppColors.current.neutral, fontWeight: FontWeight.w500),
+            TextStyle(fontSize: AppDimens.fontSizeMedium, color: AppColors.current.neutral, fontWeight: FontWeight.w500),
       ),
     );
   }
@@ -539,7 +498,7 @@ class CreateTaskView extends GetView<CreateTaskController> {
           ),
           Text(
             '0',
-            style: TextStyle(color: AppColors.current.neutral, fontSize: AppDims.fontSizeMediumXX),
+            style: TextStyle(color: AppColors.current.neutral, fontSize: AppDimens.fontSizeMediumXX),
           ),
           Empty(
             width: 8.w,
@@ -560,10 +519,7 @@ class CreateTaskView extends GetView<CreateTaskController> {
           color: AppColors.current.neutral,
           shape: BoxShape.circle,
         ),
-        child: Center(
-            child: SvgPicture.asset(imageName,
-                width: 16.w,
-                height: 16.h)),
+        child: Center(child: SvgPicture.asset(imageName, width: 16.w, height: 16.h)),
       ),
     );
   }
@@ -578,7 +534,7 @@ class CreateTaskView extends GetView<CreateTaskController> {
           width: 324.w,
           height: 44.h,
           decoration:
-              BoxDecoration(color: AppColors.current.text, borderRadius: BorderRadius.circular(AppDims.borderRadius)),
+              BoxDecoration(color: AppColors.current.text, borderRadius: BorderRadius.circular(AppDimens.borderRadius)),
           child: Center(
             child: DropdownButtonHideUnderline(
               child: DropdownButton(
@@ -617,7 +573,7 @@ class CreateTaskView extends GetView<CreateTaskController> {
           width: 324.w,
           height: 44.h,
           decoration:
-              BoxDecoration(color: AppColors.current.text, borderRadius: BorderRadius.circular(AppDims.borderRadius)),
+              BoxDecoration(color: AppColors.current.text, borderRadius: BorderRadius.circular(AppDimens.borderRadius)),
           child: Center(
             child: DropdownButtonHideUnderline(
               child: DropdownButton(
@@ -637,7 +593,7 @@ class CreateTaskView extends GetView<CreateTaskController> {
                       style: TextStyle(
                           color: AppColors.current.dimmedXXXX,
                           fontWeight: FontWeight.w500,
-                          fontSize: AppDims.fontSizeMediumX),
+                          fontSize: AppDimens.fontSizeMediumX),
                     ),
                   );
                 }).toList(),
@@ -658,7 +614,7 @@ class CreateTaskView extends GetView<CreateTaskController> {
           width: 324.w,
           height: 44.h,
           decoration:
-              BoxDecoration(color: AppColors.current.text, borderRadius: BorderRadius.circular(AppDims.borderRadius)),
+              BoxDecoration(color: AppColors.current.text, borderRadius: BorderRadius.circular(AppDimens.borderRadius)),
           child: Center(
             child: DropdownButtonHideUnderline(
               child: DropdownButton(
@@ -678,7 +634,7 @@ class CreateTaskView extends GetView<CreateTaskController> {
                       style: TextStyle(
                           color: AppColors.current.dimmedXXXX,
                           fontWeight: FontWeight.w500,
-                          fontSize: AppDims.fontSizeMediumX),
+                          fontSize: AppDimens.fontSizeMediumX),
                     ),
                   );
                 }).toList(),
@@ -699,7 +655,7 @@ class CreateTaskView extends GetView<CreateTaskController> {
         height: 82.h,
         decoration: BoxDecoration(
           color: AppColors.current.text,
-          borderRadius: BorderRadius.circular(AppDims.borderRadius),
+          borderRadius: BorderRadius.circular(AppDimens.borderRadius),
         ),
         child: TextFormField(
           decoration: InputDecoration(
@@ -711,7 +667,7 @@ class CreateTaskView extends GetView<CreateTaskController> {
             hintText: 'Reference Link',
             hintStyle: TextStyle(
               fontWeight: FontWeight.normal,
-              fontSize: AppDims.fontSizeMediumX,
+              fontSize: AppDimens.fontSizeMediumX,
               color: AppColors.current.dimmedX,
             ),
           ),
@@ -729,7 +685,7 @@ class CreateTaskView extends GetView<CreateTaskController> {
         height: 82.h,
         decoration: BoxDecoration(
           color: AppColors.current.text,
-          borderRadius: BorderRadius.circular(AppDims.borderRadius),
+          borderRadius: BorderRadius.circular(AppDimens.borderRadius),
         ),
         child: TextFormField(
           decoration: InputDecoration(
@@ -741,7 +697,7 @@ class CreateTaskView extends GetView<CreateTaskController> {
             hintText: 'Material',
             hintStyle: TextStyle(
               fontWeight: FontWeight.normal,
-              fontSize: AppDims.fontSizeMediumX,
+              fontSize: AppDimens.fontSizeMediumX,
               color: AppColors.current.dimmedX,
             ),
           ),
@@ -759,7 +715,7 @@ class CreateTaskView extends GetView<CreateTaskController> {
         height: 82.h,
         decoration: BoxDecoration(
           color: AppColors.current.text,
-          borderRadius: BorderRadius.circular(AppDims.borderRadius),
+          borderRadius: BorderRadius.circular(AppDimens.borderRadius),
         ),
         child: TextFormField(
           decoration: InputDecoration(
@@ -771,7 +727,7 @@ class CreateTaskView extends GetView<CreateTaskController> {
             hintText: 'Brand Guidelines',
             hintStyle: TextStyle(
               fontWeight: FontWeight.normal,
-              fontSize: AppDims.fontSizeMediumX,
+              fontSize: AppDimens.fontSizeMediumX,
               color: AppColors.current.dimmedX,
             ),
           ),
@@ -788,7 +744,7 @@ class CreateTaskView extends GetView<CreateTaskController> {
         height: 82.h,
         decoration: BoxDecoration(
           color: AppColors.current.text,
-          borderRadius: BorderRadius.circular(AppDims.borderRadius),
+          borderRadius: BorderRadius.circular(AppDimens.borderRadius),
         ),
         child: TextFormField(
           decoration: InputDecoration(
@@ -800,7 +756,7 @@ class CreateTaskView extends GetView<CreateTaskController> {
             hintText: 'Brief Description',
             hintStyle: TextStyle(
               fontWeight: FontWeight.normal,
-              fontSize: AppDims.fontSizeMediumX,
+              fontSize: AppDimens.fontSizeMediumX,
               color: AppColors.current.dimmedX,
             ),
           ),
@@ -821,7 +777,7 @@ class CreateTaskView extends GetView<CreateTaskController> {
             child: Text(
               'Creat Task',
               style: TextStyle(
-                  fontSize: AppDims.fontSizeMediumX, color: AppColors.current.primary, fontWeight: FontWeight.w500),
+                  fontSize: AppDimens.fontSizeMediumX, color: AppColors.current.primary, fontWeight: FontWeight.w500),
             ),
             onPressed: () {}),
       ),
@@ -836,7 +792,7 @@ class CreateTaskView extends GetView<CreateTaskController> {
         width: 135.w,
         decoration: BoxDecoration(
           color: AppColors.current.text,
-          borderRadius: BorderRadius.circular(AppDims.borderRadiusLine),
+          borderRadius: BorderRadius.circular(AppDimens.borderRadiusLine),
         ),
       ),
     );

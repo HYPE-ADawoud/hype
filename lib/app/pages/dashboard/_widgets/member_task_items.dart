@@ -19,7 +19,7 @@ class MemberTaskItems extends StatelessWidget {
           children: [
             Text(memberTask.name,
               style: TextStyle(
-                  fontSize: AppDims.fontSizeMedium,
+                  fontSize: AppDimens.fontSizeMedium,
                   fontWeight: FontWeight.w600,
                   color: AppColors.current.dimmedXXXXX
               ),
@@ -28,7 +28,7 @@ class MemberTaskItems extends StatelessWidget {
             Text(memberTask.number.toString(),
               textAlign: TextAlign.start,
               style: TextStyle(
-                  fontSize: AppDims.fontSizeMedium,
+                  fontSize: AppDimens.fontSizeMedium,
                   fontWeight: FontWeight.w400,
                   color: AppColors.current.primary
               ),

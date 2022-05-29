@@ -19,7 +19,7 @@ class TopClientItems extends StatelessWidget {
             width: 110.w,
             child: Text(topClient.name,
               style: TextStyle(
-                  fontSize: AppDims.fontSizeMedium,
+                  fontSize: AppDimens.fontSizeMedium,
                   fontWeight: FontWeight.w600,
                   color: AppColors.current.dimmedXXXXX
               ),
@@ -27,11 +27,11 @@ class TopClientItems extends StatelessWidget {
           ),
 
           SizedBox(
-            width: 148.w,
+            width: 136.w,
             child: Text(topClient.timeSpent,
               textAlign: TextAlign.start,
               style: TextStyle(
-                  fontSize: AppDims.fontSizeMedium,
+                  fontSize: AppDimens.fontSizeMedium,
                   fontWeight: FontWeight.w600,
                   color: AppColors.current.dimmedXXXXX
               ),
@@ -42,7 +42,7 @@ class TopClientItems extends StatelessWidget {
             width: 48.w,
             child: Text(topClient.tasks.toString(),
               style: TextStyle(
-                  fontSize: AppDims.fontSizeMedium,
+                  fontSize: AppDimens.fontSizeMedium,
                   fontWeight: FontWeight.w300,
                   color: AppColors.current.primary
               ),

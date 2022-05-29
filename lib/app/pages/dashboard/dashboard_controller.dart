@@ -5,19 +5,19 @@ class DashboardController extends GetxController{
   RxList topClients = [
     TopClient(
         name: 'Hype',
-        timeSpent: '408 D 11 H 41 M',
+        timeSpent: '408d 11h 41m',
         tasks: 253),
     TopClient(
         name: 'Al Arabia',
-        timeSpent: '408 D 11 H 41 M',
+        timeSpent: '119d 11h 5m',
         tasks: 253),
     TopClient(
         name: 'Renaissance',
-        timeSpent: '408 D 11 H 41 M',
+        timeSpent: '119d 11h 5m',
         tasks: 253),
     TopClient(
         name: 'Culture Lab',
-        timeSpent: '408 D 11 H 41 M',
+        timeSpent: '119d 11h 5m',
         tasks: 253),
   ].obs;
 

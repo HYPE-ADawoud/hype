@@ -37,7 +37,7 @@ abstract class AppTheme {
           backgroundColor: MaterialStateProperty.all(colors.transparent),
           padding: MaterialStateProperty.all(const EdgeInsets.symmetric(vertical: 5, horizontal: 15)),
           foregroundColor: MaterialStateProperty.all(colors.text),
-          textStyle: MaterialStateProperty.all(TextStyle(fontSize: AppDims.fontSizeMediumX, fontWeight: FontWeight.bold)),
+          textStyle: MaterialStateProperty.all(TextStyle(fontSize: AppDimens.fontSizeMediumX, fontWeight: FontWeight.bold)),
         )
       ),
 
@@ -47,26 +47,26 @@ abstract class AppTheme {
             padding: MaterialStateProperty.all(const EdgeInsets.symmetric(vertical: 5, horizontal: 15)),
             foregroundColor: MaterialStateProperty.all(colors.primary),
             side: MaterialStateProperty.all(BorderSide(color: colors.primary, width: 1)),
-            textStyle: MaterialStateProperty.all(TextStyle(fontSize: AppDims.fontSizeMediumX,)),
+            textStyle: MaterialStateProperty.all(TextStyle(fontSize: AppDimens.fontSizeMediumX,)),
           )
       ),
 
       //> elevated buttons
       elevatedButtonTheme: ElevatedButtonThemeData(
           style: ButtonStyle(
-        elevation: MaterialStateProperty.all<double>(AppDims.elevation),
+        elevation: MaterialStateProperty.all<double>(0),
         shape: MaterialStateProperty.all(_roundedRecShapeOuter),
-        backgroundColor: MaterialStateProperty.all(colors.neutral),
+        backgroundColor: MaterialStateProperty.all(Colors.black.withOpacity(0.2)),
         overlayColor: MaterialStateProperty.all(colors.primaryLight),
-        padding: MaterialStateProperty.all(AppDims.buttonPadding),
+        padding: MaterialStateProperty.all(AppDimens.buttonPadding),
         shadowColor: MaterialStateProperty.all(colors.text.withOpacity(0.5)),
-        textStyle: MaterialStateProperty.all(TextStyle(fontSize: AppDims.fontSizeMediumX, fontWeight: FontWeight.bold, color: colors.primary)),
+        textStyle: MaterialStateProperty.all(TextStyle(fontSize: AppDimens.fontSizeLarge, fontWeight: FontWeight.w500, color: colors.primary)),
       )),
 
       //> toggle buttons
       toggleButtonsTheme: ToggleButtonsThemeData(
         selectedColor: colors.primaryLight,
-        borderRadius: BorderRadius.circular(AppDims.borderRadius),
+        borderRadius: BorderRadius.circular(AppDimens.borderRadius),
       ),
 
       //> input
@@ -78,13 +78,13 @@ abstract class AppTheme {
           enabledBorder: _outlineInputBorder(colors.dimmedLight),
           focusedBorder: _outlineInputBorder(colors.primary),
           errorBorder: _outlineInputBorder(colors.error),
-          contentPadding: AppDims.contentPadding,
+          contentPadding: AppDimens.contentPadding,
           errorStyle: TextStyle(color: colors.error, fontSize: 12)),
 
       //> card
       cardTheme: CardTheme(
         color: colors.neutral,
-        elevation: AppDims.elevation,
+        elevation: AppDimens.elevation,
         margin: const EdgeInsets.all(10),
         shadowColor: colors.text.withOpacity(0.5),
         shape: _roundedRecShape,
@@ -92,12 +92,12 @@ abstract class AppTheme {
     );
   }
 
-  static OutlinedBorder get _roundedRecShape => RoundedRectangleBorder(borderRadius: BorderRadius.circular(AppDims.borderRadius));
+  static OutlinedBorder get _roundedRecShape => RoundedRectangleBorder(borderRadius: BorderRadius.circular(AppDimens.borderRadius));
 
-  static OutlinedBorder get _roundedRecShapeOuter => RoundedRectangleBorder(borderRadius: BorderRadius.circular(AppDims.borderRadiusOuter));
+  static OutlinedBorder get _roundedRecShapeOuter => RoundedRectangleBorder(borderRadius: BorderRadius.circular(AppDimens.borderRadiusOuter));
 
   static OutlineInputBorder _outlineInputBorder(color){
-    return OutlineInputBorder(borderRadius:   BorderRadius.all(Radius.circular(AppDims.borderRadius)), borderSide: BorderSide(color: color, width: 1,));
+    return OutlineInputBorder(borderRadius:   BorderRadius.all(Radius.circular(AppDimens.borderRadius)), borderSide: BorderSide(color: color, width: 1,));
   }
 
   static BoxDecoration bottomNavBarDecoration(){

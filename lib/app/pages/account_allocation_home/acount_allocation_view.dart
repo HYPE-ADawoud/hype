@@ -1,4 +1,3 @@
-import 'package:align_positioned/align_positioned.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -11,7 +10,6 @@ import 'package:hype/app/common/widgets/app_toolbar.dart';
 import 'package:hype/app/pages/account_allocation_home/_widgets/account_allocation_items.dart';
 import 'package:hype/app/pages/account_allocation_home/main_acount_allocation_controller.dart';
 import 'package:hype/app/routes/app_pages.dart';
-import 'package:hype/utils/ui/empty.dart';
 
 class MainAccountAllocationView extends StatelessWidget {
 
@@ -81,15 +79,15 @@ class MainAccountAllocationView extends StatelessWidget {
   Widget _buildSearch() {
     return Padding(
       padding: const EdgeInsets.only(
-          left: AppDims.paddingSize24,
-          right: AppDims.paddingSize24,
-          top: AppDims.paddingSize16,
-          bottom: AppDims.paddingSize24),
+          left: AppDimens.paddingSize24,
+          right: AppDimens.paddingSize24,
+          top: AppDimens.paddingSize16,
+          bottom: AppDimens.paddingSize24),
       child: TextFormField(
         decoration: InputDecoration(
           suffixIcon: SvgPicture.asset(AppAssets.searchIcon,
           fit: BoxFit.scaleDown),
-          hintText: 'Client name',
+          hintText: 'Client Name',
             hintStyle: TextStyle(
               color: AppColors.current.dimmedX
             ),

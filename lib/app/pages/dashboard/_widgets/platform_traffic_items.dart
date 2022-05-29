@@ -19,7 +19,7 @@ class PlatformTrafficItems extends StatelessWidget {
             width: 164.w,
             child: Text(platformsTraffic.typeOfNumber,
               style: TextStyle(
-                  fontSize: AppDims.fontSizeMedium,
+                  fontSize: AppDimens.fontSizeMedium,
                   fontWeight: FontWeight.w600,
                   color: AppColors.current.dimmedXXXXX
               ),
@@ -31,7 +31,7 @@ class PlatformTrafficItems extends StatelessWidget {
             child: Text(platformsTraffic.valueNumber.toString(),
               textAlign: TextAlign.start,
               style: TextStyle(
-                  fontSize: AppDims.fontSizeMedium,
+                  fontSize: AppDimens.fontSizeMedium,
                   fontWeight: FontWeight.w600,
                   color: AppColors.current.dimmedXXXXX
               ),
@@ -42,7 +42,7 @@ class PlatformTrafficItems extends StatelessWidget {
             width: 80.w,
             child: Text('${platformsTraffic.percentage} %',
               style: TextStyle(
-                  fontSize: AppDims.fontSizeMedium,
+                  fontSize: AppDimens.fontSizeMedium,
                   fontWeight: FontWeight.w300,
                   color: AppColors.current.primary
               ),

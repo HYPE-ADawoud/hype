@@ -9,8 +9,14 @@ import 'package:hype/setup.dart';
 class HomeController extends GetxController {
   final _cacheManager = DI.find<ICacheManager>();
   final _apiManager = DI.find<IHomeApiManager>();
+  late Stopwatch stopwatch;
 
 
+  var isVisible = true.obs;
+  void showVisible() {
+    isVisible.value = !isVisible.value;
+
+  }
   List<TaskModel> list=[
     TaskModel(
       name: 'Hype',

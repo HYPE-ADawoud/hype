@@ -9,7 +9,8 @@ import 'package:hype/app/pages/dashboard/_widgets/member_task_items.dart';
 import 'package:hype/app/pages/dashboard/_widgets/platform_traffic_items.dart';
 import 'package:hype/app/pages/dashboard/_widgets/top_client_items.dart';
 import 'package:hype/app/pages/dashboard/dashboard_controller.dart';
-import 'package:hype/app/pages/side_menu/side_menu_view.dart';
+import 'package:hype/app/pages/drawer/drawer_view.dart';
+
 
 class DashboardView extends StatelessWidget {
   DashboardController controller = Get.find();
@@ -21,7 +22,7 @@ class DashboardView extends StatelessWidget {
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: AppColors.current.neutral,
-      drawer: SideMenuView(),
+      drawer: const DrawerView(),
       body: _buildBody(),
     );
   }
@@ -64,7 +65,7 @@ class DashboardView extends StatelessWidget {
         padding: const EdgeInsets.all(16.0),
         decoration: BoxDecoration(
           color: AppColors.current.neutral,
-          borderRadius: BorderRadius.circular(AppDims.paddingSize16)
+          borderRadius: BorderRadius.circular(AppDimens.paddingSize16)
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -83,7 +84,7 @@ class DashboardView extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 8.0),
       child: Text(title,
       style: TextStyle(
-        fontSize: AppDims.fontSizeLarge,
+        fontSize: AppDimens.fontSizeLarge,
         fontWeight: FontWeight.w700,
         color: AppColors.current.primary
       ),
@@ -92,13 +93,13 @@ class DashboardView extends StatelessWidget {
   }
   Widget _buildContentName(){
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: AppDims.paddingSize8),
+      padding: const EdgeInsets.symmetric(vertical: AppDimens.paddingSize8),
       child: Container(
-        padding: const EdgeInsets.symmetric(vertical: AppDims.paddingSize8,
-        horizontal: AppDims.paddingSize8),
+        padding: const EdgeInsets.symmetric(vertical: AppDimens.paddingSize8,
+        horizontal: AppDimens.paddingSize8),
         decoration: BoxDecoration(
           color: AppColors.current.primary,
-          borderRadius: BorderRadius.circular(AppDims.borderRadius),
+          borderRadius: BorderRadius.circular(AppDimens.borderRadius),
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -114,7 +115,7 @@ class DashboardView extends StatelessWidget {
   Widget _buildName({required String contentName}){
     return Text(contentName,
       style: TextStyle(
-          fontSize: AppDims.fontSizeMedium,
+          fontSize: AppDimens.fontSizeMedium,
           fontWeight: FontWeight.w600,
           color: AppColors.current.text
       ),
@@ -143,7 +144,7 @@ class DashboardView extends StatelessWidget {
         padding: const EdgeInsets.all(16.0),
         decoration: BoxDecoration(
             color: AppColors.current.neutral,
-            borderRadius: BorderRadius.circular(AppDims.paddingSize16)
+            borderRadius: BorderRadius.circular(AppDimens.paddingSize16)
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -179,7 +180,7 @@ class DashboardView extends StatelessWidget {
         padding: const EdgeInsets.all(16.0),
         decoration: BoxDecoration(
             color: AppColors.current.neutral,
-            borderRadius: BorderRadius.circular(AppDims.paddingSize16)
+            borderRadius: BorderRadius.circular(AppDimens.paddingSize16)
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,

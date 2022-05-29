@@ -1,4 +1,3 @@
-import 'package:align_positioned/align_positioned.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -61,7 +60,7 @@ class EditTaskView extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 16),
         decoration: BoxDecoration(
           color: AppColors.current.neutral,
-          borderRadius: BorderRadius.circular(AppDims.paddingSize16)
+          borderRadius: BorderRadius.circular(AppDimens.paddingSize16)
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -91,7 +90,7 @@ Widget _buildTitle({required String title}){
     return Text(title,
     style: TextStyle(
       color: AppColors.current.primary,
-      fontSize: AppDims.fontSizeMediumXX,
+      fontSize: AppDimens.fontSizeMediumXX,
       fontWeight: FontWeight.w700
     ),);
 }
@@ -99,8 +98,8 @@ Widget _buildTitle({required String title}){
   Widget _buildNameFormField() {
     return Padding(
       padding: const EdgeInsets.symmetric(
-        horizontal: AppDims.paddingSize8,
-        vertical: AppDims.paddingSize12,
+        horizontal: AppDimens.paddingSize8,
+        vertical: AppDimens.paddingSize12,
 
       ),
       child: TextFormField(
@@ -108,7 +107,7 @@ Widget _buildTitle({required String title}){
           hintText: 'Hype',
           hintStyle: TextStyle(
               color: AppColors.current.dimmedXXXXX,
-              fontSize: AppDims.fontSizeMedium
+              fontSize: AppDimens.fontSizeMedium
           ),
           filled: true,
           fillColor: AppColors.current.dimmedLightX,
@@ -126,7 +125,7 @@ Widget _buildTitle({required String title}){
           height: 44.h,
           decoration: BoxDecoration(
               color: AppColors.current.dimmedLightX,
-              borderRadius: BorderRadius.circular(AppDims.borderRadius)),
+              borderRadius: BorderRadius.circular(AppDimens.borderRadius)),
           child: Center(
             child: DropdownButtonHideUnderline(
               child: DropdownButton(
@@ -146,7 +145,7 @@ Widget _buildTitle({required String title}){
                       style: TextStyle(
                           color: AppColors.current.orangeX,
                           fontWeight: FontWeight.w500,
-                          fontSize: AppDims.fontSizeMediumX),
+                          fontSize: AppDimens.fontSizeMediumX),
                     ),
                   );
                 }).toList(),
@@ -162,8 +161,8 @@ Widget _buildTitle({required String title}){
     return Padding(
       padding: const EdgeInsets.symmetric(
 
-        horizontal: AppDims.paddingSize8,
-        vertical: AppDims.paddingSize12,
+        horizontal: AppDimens.paddingSize8,
+        vertical: AppDimens.paddingSize12,
 
       ),
       child: TextFormField(
@@ -171,7 +170,7 @@ Widget _buildTitle({required String title}){
           hintText: 'Hiring Post Account director',
           hintStyle: TextStyle(
               color: AppColors.current.dimmedXXXXX,
-              fontSize: AppDims.fontSizeMedium
+              fontSize: AppDimens.fontSizeMedium
           ),
           filled: true,
           fillColor: AppColors.current.dimmedLightX,
@@ -185,8 +184,8 @@ Widget _buildTitle({required String title}){
     return Padding(
       padding: const EdgeInsets.symmetric(
 
-        horizontal: AppDims.paddingSize8,
-        vertical: AppDims.paddingSize12,
+        horizontal: AppDimens.paddingSize8,
+        vertical: AppDimens.paddingSize12,
 
       ),
       child: TextFormField(
@@ -194,7 +193,7 @@ Widget _buildTitle({required String title}){
           hintText: 'Amera Ayman',
           hintStyle: TextStyle(
               color: AppColors.current.dimmedXXXXX,
-              fontSize: AppDims.fontSizeMedium
+              fontSize: AppDimens.fontSizeMedium
           ),
           filled: true,
           fillColor: AppColors.current.dimmedLightX,
@@ -205,13 +204,13 @@ Widget _buildTitle({required String title}){
   }
   Widget _buildTimer() {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: AppDims.paddingSize16),
+      padding: const EdgeInsets.symmetric(vertical: AppDimens.paddingSize16),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text('00:00:06:45',
               style: TextStyle(
-                  fontWeight: FontWeight.w700, color: AppColors.current.dimmedXXX, fontSize: AppDims.fontSizeLarge)),
+                  fontWeight: FontWeight.w700, color: AppColors.current.dimmedXXX, fontSize: AppDimens.fontSizeLarge)),
 
           Empty(height: 16.w,),
 
@@ -244,7 +243,7 @@ Widget _buildTitle({required String title}){
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontWeight: FontWeight.normal,
-                fontSize: AppDims.fontSizeMediumX,
+                fontSize: AppDimens.fontSizeMediumX,
                 color: AppColors.current.dimmedX,
               ),
             ),
@@ -252,7 +251,7 @@ Widget _buildTitle({required String title}){
           hintText: '2022-04-21',
           hintStyle: TextStyle(
               color: AppColors.current.dimmedXXXXX,
-              fontSize: AppDims.fontSizeMedium
+              fontSize: AppDimens.fontSizeMedium
           ),
           filled: true,
           fillColor: AppColors.current.dimmedLightX,
@@ -277,7 +276,7 @@ Widget _buildTitle({required String title}){
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontWeight: FontWeight.normal,
-                fontSize: AppDims.fontSizeMediumX,
+                fontSize: AppDimens.fontSizeMediumX,
                 color: AppColors.current.dimmedX,
               ),
             ),
@@ -285,7 +284,7 @@ Widget _buildTitle({required String title}){
           hintText: '2022-05-5',
           hintStyle: TextStyle(
               color: AppColors.current.dimmedXXXXX,
-              fontSize: AppDims.fontSizeMedium
+              fontSize: AppDimens.fontSizeMedium
           ),
           filled: true,
           fillColor: AppColors.current.dimmedLightX,
@@ -300,12 +299,12 @@ Widget _buildTitle({required String title}){
   Widget _buildEditButton() {
     return Padding(
       padding: const EdgeInsets.only(
-        top: AppDims.paddingSize16,
-        bottom: AppDims.paddingSize12,
+        top: AppDimens.paddingSize16,
+        bottom: AppDimens.paddingSize12,
       ),
       child: Container(
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(AppDims.borderRadiusOuter),
+          borderRadius: BorderRadius.circular(AppDimens.borderRadiusOuter),
         ),
         width: 324.w,
         height: 60.h,
@@ -317,7 +316,7 @@ Widget _buildTitle({required String title}){
           child: Text(
             'Edit',
             style: TextStyle(
-                fontSize: AppDims.fontSizeMediumX, color: AppColors.current.neutral, fontWeight: FontWeight.w500),
+                fontSize: AppDimens.fontSizeMediumX, color: AppColors.current.neutral, fontWeight: FontWeight.w500),
           ),
         ),
       ),

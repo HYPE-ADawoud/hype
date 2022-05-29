@@ -5,7 +5,6 @@ import 'package:get/get.dart';
 import 'package:hype/app/common/themes/app_colors.dart';
 import 'package:hype/app/common/themes/app_dims.dart';
 import 'package:hype/app/common/widgets/app_toolbar.dart';
-import 'package:hype/app/pages/admin_department/admin_department_controller.dart';
 import 'package:hype/app/pages/admin_department_add/add_admin_department_controller.dart';
 
 class AddAdminDepartmentView extends StatelessWidget {
@@ -39,7 +38,7 @@ class AddAdminDepartmentView extends StatelessWidget {
   Widget _buildBodyView() {
     return Expanded(
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: AppDims.paddingSize24.w),
+        padding: EdgeInsets.symmetric(horizontal: AppDimens.paddingSize24.w),
         color: AppColors.current.primary,
         child: _buildFormAdmin(),
       ),
@@ -63,16 +62,16 @@ class AddAdminDepartmentView extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(
         top: 64,
-        right: AppDims.paddingSize5,
-        left: AppDims.paddingSize5,
-        bottom: AppDims.paddingSize16,
+        right: AppDimens.paddingSize5,
+        left: AppDimens.paddingSize5,
+        bottom: AppDimens.paddingSize16,
       ),
       child: TextFormField(
         decoration: InputDecoration(
           hintText: 'Write New Department',
           hintStyle: TextStyle(
               color: AppColors.current.text,
-            fontSize: AppDims.fontSizeMedium
+            fontSize: AppDimens.fontSizeMedium
           ),
           filled: true,
           fillColor: AppColors.current.primary,
@@ -84,15 +83,15 @@ class AddAdminDepartmentView extends StatelessWidget {
   Widget _buildResponsibleDepartment() {
     return Padding(
       padding: const EdgeInsets.symmetric(
-        horizontal: AppDims.paddingSize5,
-        vertical: AppDims.paddingSize8,
+        horizontal: AppDimens.paddingSize5,
+        vertical: AppDimens.paddingSize8,
       ),
       child: TextFormField(
         decoration: InputDecoration(
           hintText: 'Write Responsible Department',
           hintStyle: TextStyle(
               color: AppColors.current.text,
-              fontSize: AppDims.fontSizeMedium
+              fontSize: AppDimens.fontSizeMedium
           ),
           filled: true,
           fillColor: AppColors.current.primary,
@@ -109,7 +108,7 @@ class AddAdminDepartmentView extends StatelessWidget {
       ),
       child: Container(
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(AppDims.borderRadiusOuter),
+          borderRadius: BorderRadius.circular(AppDimens.borderRadiusOuter),
         ),
         width: 324.w,
         height: 60.h,
@@ -121,7 +120,7 @@ class AddAdminDepartmentView extends StatelessWidget {
           child: Text(
             'Add',
             style: TextStyle(
-                fontSize: AppDims.fontSizeMediumX, color: AppColors.current.neutral, fontWeight: FontWeight.w500),
+                fontSize: AppDimens.fontSizeMediumX, color: AppColors.current.neutral, fontWeight: FontWeight.w500),
           ),
         ),
       ),

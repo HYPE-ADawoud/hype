@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:hype/app/common/themes/app_theme.dart';
-import 'package:hype/app/pages/account_allocation/acount_allocation_binding.dart';
-import 'package:hype/app/pages/account_allocation_edit/edit_acount_allocation_binding.dart';
-import 'package:hype/app/pages/admin/admin_binding.dart';
+import 'package:hype/app/pages/splash/splash_binding.dart';
 import 'package:hype/setup.dart';
 
 import 'app/routes/app_pages.dart';
@@ -18,11 +16,11 @@ void main() async{
       designSize: const Size(375, 812),
       minTextAdapt: true,
       splitScreenMode: true,
-      builder:(_)=> GetMaterialApp(
+      builder:(cxt, child)=> GetMaterialApp(
         // Use this line to prevent extra rebuilds
         useInheritedMediaQuery: true,
         title: "HYPE",
-        initialBinding: AccountAllocationBinding(),
+        initialBinding: SplashBinding(),
         getPages: AppPages.routes,
         initialRoute: AppPages.INITIAL,
         enableLog: BUILD_TYPE == BuildType.debug,

@@ -15,13 +15,13 @@ class ContentItemBrief extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(AppDims.paddingSize16),
+      padding: const EdgeInsets.all(AppDimens.paddingSize16),
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: AppDims.paddingSize16.w, vertical: AppDims.paddingSize16.h),
+        padding: EdgeInsets.symmetric(horizontal: AppDimens.paddingSize16.w, vertical: AppDimens.paddingSize16.h),
         width: 339.w,
         height: 193.h,
         decoration: BoxDecoration(
-            color: AppColors.current.neutral, borderRadius: BorderRadius.circular(AppDims.borderRadiusOuter)),
+            color: AppColors.current.neutral, borderRadius: BorderRadius.circular(AppDimens.borderRadiusOuter)),
         child: _buildContentItemsBrief(),
       ),
     );
@@ -69,7 +69,7 @@ class ContentItemBrief extends StatelessWidget {
   }
   _buildDivider() {
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: AppDims.paddingSize10.h),
+      padding: EdgeInsets.symmetric(vertical: AppDimens.paddingSize10.h),
       child: Divider(
         color: AppColors.current.dimmedXXXX,
         height: 0.5,
@@ -87,7 +87,7 @@ class ContentItemBrief extends StatelessWidget {
               fontWeight: FontWeight.w600),
         ),
         Padding(
-          padding: const EdgeInsets.only(right:AppDims.paddingSize10),
+          padding: const EdgeInsets.only(right:AppDimens.paddingSize10),
           child: Text(
             status,
             style: TextStyle(fontSize: 14.sp,
