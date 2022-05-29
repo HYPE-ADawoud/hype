@@ -1,0 +1,266 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
+import 'package:hype/app/common/themes/app_assets.dart';
+import 'package:hype/app/common/themes/app_colors.dart';
+import 'package:hype/app/common/themes/app_dims.dart';
+import 'package:hype/app/common/widgets/app_toolbar.dart';
+import 'package:hype/app/pages/admin/_widgets/build_content_item_brief.dart';
+import 'package:hype/app/pages/admin/_widgets/build_content_item_user.dart';
+import 'package:hype/app/pages/admin/admin_controller.dart';
+import 'package:hype/app/pages/side_menu/side_menu_view.dart';
+import 'package:hype/app/routes/app_pages.dart';
+import 'package:hype/utils/ui/empty.dart';
+
+class AdminView extends StatelessWidget {
+  AdminController controller = Get.find();
+  final scaffoldKey = GlobalKey<ScaffoldState>();
+  AdminView({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Obx(() {
+      return DefaultTabController(
+        length: controller.selectedIndex.value,
+        child: Scaffold(
+          key: scaffoldKey,
+          backgroundColor: AppColors.current.neutral,
+          drawer: SideMenuView(),
+          body: _buildBody(),
+        ),
+      );
+    });
+  }
+
+  Widget _buildBody() {
+    return SafeArea(
+      child: Column(
+        children: [
+          AppToolbar(
+            title: 'Admin',
+            drawerCallBack: () => scaffoldKey.currentState?.openDrawer(),
+            //actions: IconButton(onPressed: () {}, icon: SvgPicture.asset(AppAssets.searchIcon)),
+          ),
+          _buildViewBody(),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildViewBody() {
+    return Expanded(
+      child: Container(
+        width: double.infinity,
+        color: AppColors.current.primary,
+        child: Column(
+          children: [
+            _buildTabs(),
+            _buildContent(),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildTabs() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 18.0, vertical: 36),
+      child: Container(
+        width: 320.w,
+        height: 30.h,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(AppDims.borderRadius,),
+          color: AppColors.current.neutral,
+        ),
+        padding: const EdgeInsets.all(2),
+        child: TabBar(
+          controller: controller.tabController,
+          onTap: (index) => controller.onTabClick(index),
+          indicator: BoxDecoration(
+            borderRadius: BorderRadius.circular(
+              AppDims.borderRadius,
+            ),
+            color: AppColors.current.primary,
+          ),
+          labelColor: AppColors.current.neutral,
+          unselectedLabelColor: AppColors.current.primary,
+          tabs: [
+             _buildTabUser(),
+            _buildTabBrief(),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildTabUser() {
+    return Tab(
+      child: Text(
+        'Users',
+        style: TextStyle(
+          fontSize: AppDims.fontSizeMedium,
+          fontWeight: FontWeight.w400,
+        ),
+      ),
+    );
+  }
+
+  Widget _buildTabBrief() {
+    return Tab(
+      child: Text(
+        'Brief Types',
+        style: TextStyle(
+          fontSize: AppDims.fontSizeMedium,
+          fontWeight: FontWeight.w400,
+        ),
+      ),
+    );
+  }
+
+  Widget _buildContent() {
+    return Expanded(
+      child: TabBarView(
+          controller: controller.tabController,
+          children: [
+            _buildContentUser(),
+            _buildContentBrief(),
+      ]),
+    );
+  }
+
+  Widget _buildContentUser(){
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          _buildSearch(),
+          _buildCreateNewUser(),
+          _buildContentItemsUser(),
+        ],
+      ),
+    );
+  }
+Widget _buildContentItemsUser(){
+    return ListView.builder(
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+      itemCount: controller.users.length,
+      itemBuilder: (context, index) {
+        return ContentItemUser(user: controller.users[index],);
+      },
+    );
+}
+  Widget _buildContentBrief(){
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          _buildSearch(),
+          _buildCreateNewBrief(),
+          _buildContentItemBrief(),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildContentItemBrief(){
+    return ListView.builder(
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+      itemCount: controller.briefs.length,
+      itemBuilder: (context, index) {
+        return ContentItemBrief(brief: controller.briefs[index],);
+      },
+    );
+  }
+  Widget _buildSearch() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(
+        horizontal: AppDims.paddingSize24,
+        vertical: AppDims.paddingSize16,
+      ),
+      child: TextFormField(
+        decoration: InputDecoration(
+          suffixIcon:SvgPicture.asset(AppAssets.searchIcon,color: AppColors.current.neutral,
+            fit: BoxFit.scaleDown,),
+          hintText: 'Search here',
+          hintStyle: TextStyle(
+            color: AppColors.current.text.withOpacity(0.5),
+          ),
+          filled: true,
+          fillColor: AppColors.current.primary,
+          focusColor: AppColors.current.primary,
+        ),
+      ),
+    );
+  }
+  Widget _buildCreateNewUser(){
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 8.0),
+      child: InkWell(
+        onTap: ()=>Get.toNamed(Routes.ADD_ADMIN_USER),
+        child: Container(
+          width: 260.w,
+          height: 48.h,
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(AppDims.borderRadiusOuter),
+              border: Border.all(
+                width: 1,
+                color: AppColors.current.neutral,
+              )
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text('create a new ',
+                style: TextStyle(
+                  fontSize: 16.sp,
+                  fontWeight: FontWeight.w500,
+                  color: AppColors.current.text,
+                ),
+              ),
+              Empty(
+                width: 8,
+              ),
+              SvgPicture.asset(AppAssets.createClientIcon),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+  Widget _buildCreateNewBrief(){
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 8.0),
+      child: InkWell(
+        onTap: ()=>Get.toNamed(Routes.ADD_ADMIN_USER),
+        child: Container(
+          width: 260.w,
+          height: 48.h,
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(AppDims.borderRadiusOuter),
+              border: Border.all(
+                width: 1,
+                color: AppColors.current.neutral,
+              )
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text('create a new ',
+                style: TextStyle(
+                  fontSize: 16.sp,
+                  fontWeight: FontWeight.w500,
+                  color: AppColors.current.text,
+                ),
+              ),
+              Empty(
+                width: 8,
+              ),
+              SvgPicture.asset(AppAssets.createClientIcon),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
