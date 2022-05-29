@@ -26,6 +26,11 @@ abstract class AppAssets{
   static const String playIcon = 'assets/svg/play_icon.svg';
   static const String sideMenuIcon = 'assets/svg/side_menu.svg';
   static const String searchIcon = 'assets/svg/search.svg';
+  static const String plusIcon = 'assets/svg/plus_icon.svg';
+  static const String subIcon = 'assets/svg/sub_icon.svg';
+  static const String completeRedIcon = 'assets/svg/complete_red_icon.svg';
+  static const String addIcon = 'assets/svg/add_icon.svg';
+
 
   static const String homeIcon = 'assets/svg/home_icon.svg';
   static const String profileIcon = 'assets/svg/profile_icon.svg';
